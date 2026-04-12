@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama Geeks: Brand Style Guide v1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ─────────────────────────────────────────────
+       TOKENS
+    ───────────────────────────────────────────── */
+    :root {
+      --ink:         #14142B;
+      --cream:       #FBF8F3;
+      --blue:        #00A8DC;
+      --yellow:      #FFD93E;
+      --mid:         #5D6577;
+      --blue-wash:   #EAF7FC;
+      --yellow-wash: #FFF6D1;
+
+      --sp-1:  4px;
+      --sp-2:  8px;
+      --sp-3:  16px;
+      --sp-4:  24px;
+      --sp-5:  40px;
+      --sp-6:  64px;
+      --sp-7:  96px;
+      --sp-8:  160px;
+
+      --r-card: 12px;
+      --r-pill: 100px;
+
+      --col: 1200px;
+      --gutter: clamp(var(--sp-4), 5vw, var(--sp-6));
+
+      --nav-h: 56px;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET + BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-h) + 24px);
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY UTILITIES
+    ───────────────────────────────────────────── */
+    .fraunces { font-family: 'Fraunces', serif; }
+
+    .display-xl {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(56px, 9vw, 96px);
+      font-weight: 700;
+      line-height: 1.0;
+      font-optical-sizing: auto;
+      letter-spacing: -0.03em;
+    }
+
+    .display-lg {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(40px, 6vw, 64px);
+      font-weight: 600;
+      line-height: 1.05;
+      font-optical-sizing: auto;
+      letter-spacing: -0.025em;
+    }
+
+    .section-label {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 600;
+      line-height: 1.1;
+      font-optical-sizing: auto;
+      letter-spacing: -0.02em;
+      margin-top: var(--sp-3);
+    }
+
+    /* ─────────────────────────────────────────────
+       LAYOUT
+    ───────────────────────────────────────────── */
+    .container {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    section {
+      padding: var(--sp-8) 0;
+      border-top: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    section:first-of-type {
+      border-top: none;
+    }
+
+    .section-header {
+      margin-bottom: var(--sp-6);
+    }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(251, 248, 243, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(20, 20, 43, 0.09);
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-5);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .nav-inner::-webkit-scrollbar { display: none; }
+
+    .nav-wordmark {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 700;
+      font-optical-sizing: auto;
+      color: var(--ink);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(20, 20, 43, 0.15);
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--sp-4);
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--mid);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: var(--ink);
+    }
+
+    /* ─────────────────────────────────────────────
+       COVER
+    ───────────────────────────────────────────── */
+    #cover {
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding: var(--sp-8) 0;
+      border-top: none;
+    }
+
+    .cover-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-5);
+      padding-bottom: var(--sp-7);
+    }
+
+    .cover-kicker {
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.1s;
+    }
+
+    .cover-title {
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.25s;
+    }
+
+    .cover-meta {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-2);
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.4s;
+    }
+
+    .cover-version {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--mid);
+    }
+
+    .cover-date {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 14px;
+      color: var(--mid);
+    }
+
+    .cover-purpose {
+      max-width: 560px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--mid);
+      animation: fadeUp 0.6s ease both;
+      animation-delay: 0.55s;
+    }
+
+    .cover-accent {
+      display: inline-block;
+      width: 48px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 0;
+      margin-bottom: var(--sp-4);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─────────────────────────────────────────────
+       BRAND VOICE
+    ───────────────────────────────────────────── */
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-6);
+    }
+
+    .principle-card {
+      background: white;
+      border-radius: var(--r-card);
+      padding: var(--sp-5);
+      border: 1px solid rgba(20, 20, 43, 0.07);
+    }
+
+    .principle-number {
+      font-family: 'Fraunces', serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      font-optical-sizing: auto;
+      margin-bottom: var(--sp-3);
+    }
+
+    .principle-title {
+      font-family: 'Fraunces', serif;
+      font-size: 22px;
+      font-weight: 600;
+      font-optical-sizing: auto;
+      line-height: 1.2;
+      margin-bottom: var(--sp-3);
+      letter-spacing: -0.01em;
+    }
+
+    .principle-body {
+      font-size: 15px;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    .voice-table-label {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 600;
+      font-optical-sizing: auto;
+      letter-spacing: -0.015em;
+      margin-bottom: var(--sp-4);
+    }
+
+    .voice-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: var(--r-card);
+      overflow: hidden;
+      border: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .voice-col-header {
+      padding: var(--sp-3) var(--sp-4);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .voice-col-header.dont {
+      background: #F5F0EA;
+      color: var(--mid);
+      border-right: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .voice-col-header.do {
+      background: var(--yellow-wash);
+      color: var(--ink);
+    }
+
+    .voice-row {
+      display: contents;
+    }
+
+    .voice-cell {
+      padding: var(--sp-3) var(--sp-4);
+      font-size: 15px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(20, 20, 43, 0.07);
+    }
+
+    .voice-cell.dont {
+      color: var(--mid);
+      text-decoration: line-through;
+      text-decoration-color: rgba(93, 101, 119, 0.4);
+      background: #FDFAF6;
+      border-right: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .voice-cell.do {
+      color: var(--ink);
+      font-weight: 500;
+      background: var(--cream);
+    }
+
+    /* ─────────────────────────────────────────────
+       COLOUR
+    ───────────────────────────────────────────── */
+    .swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--sp-4);
+      margin-bottom: var(--sp-5);
+    }
+
+    .swatch-card {
+      border-radius: var(--r-card);
+      overflow: hidden;
+      border: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .swatch-block {
+      height: 120px;
+    }
+
+    .swatch-info {
+      padding: var(--sp-3);
+      background: white;
+    }
+
+    .swatch-name {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: var(--sp-1);
+    }
+
+    .swatch-hex {
+      font-size: 13px;
+      color: var(--mid);
+      font-family: 'Inter Tight', sans-serif;
+      margin-bottom: var(--sp-1);
+      font-weight: 400;
+    }
+
+    .swatch-var {
+      font-size: 12px;
+      color: var(--mid);
+      font-family: 'Inter Tight', sans-serif;
+      opacity: 0.75;
+      margin-bottom: var(--sp-3);
+      font-weight: 400;
+    }
+
+    .swatch-contrast {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-1);
+    }
+
+    .contrast-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+
+    .contrast-label {
+      color: var(--mid);
+    }
+
+    .contrast-value {
+      font-weight: 600;
+      font-size: 12px;
+    }
+
+    .contrast-pass-aaa { color: #1A7F4B; }
+    .contrast-pass-aa  { color: #2D6FB3; }
+    .contrast-pass-lg  { color: #8B6914; }
+    .contrast-fail     { color: #C0392B; }
+
+    .colour-callout {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--sp-4);
+      margin-top: var(--sp-5);
+    }
+
+    .callout-card {
+      background: var(--blue-wash);
+      border-radius: var(--r-card);
+      padding: var(--sp-4) var(--sp-5);
+    }
+
+    .callout-card.yellow {
+      background: var(--yellow-wash);
+    }
+
+    .callout-title {
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: var(--sp-2);
+    }
+
+    .callout-body {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--ink);
+      opacity: 0.8;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY
+    ───────────────────────────────────────────── */
+    .type-specimens {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-6);
+      margin-bottom: var(--sp-6);
+    }
+
+    .type-family-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: var(--sp-4);
+      padding-bottom: var(--sp-2);
+      border-bottom: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .type-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: var(--sp-4);
+      align-items: baseline;
+      padding: var(--sp-4) 0;
+      border-bottom: 1px solid rgba(20, 20, 43, 0.06);
+    }
+
+    .type-row:last-child {
+      border-bottom: none;
+    }
+
+    .type-size-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--mid);
+      padding-top: 4px;
+    }
+
+    .type-sample-f64 {
+      font-family: 'Fraunces', serif;
+      font-size: 64px;
+      font-weight: 700;
+      line-height: 1.0;
+      font-optical-sizing: auto;
+      letter-spacing: -0.03em;
+    }
+
+    .type-sample-f48 {
+      font-family: 'Fraunces', serif;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.05;
+      font-optical-sizing: auto;
+      letter-spacing: -0.025em;
+    }
+
+    .type-sample-f32 {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.1;
+      font-optical-sizing: auto;
+      letter-spacing: -0.02em;
+    }
+
+    .type-sample-b18 {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .type-sample-b16 {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.65;
+    }
+
+    .type-sample-b14 {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--mid);
+    }
+
+    /* ─────────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────────── */
+    .buttons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: var(--sp-4);
+    }
+
+    .button-demo {
+      background: white;
+      border-radius: var(--r-card);
+      padding: var(--sp-5);
+      border: 1px solid rgba(20, 20, 43, 0.07);
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-4);
+    }
+
+    .button-demo-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .button-demo-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 80px;
+    }
+
+    .button-demo-meta {
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* Button base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 14px 28px;
+      border-radius: var(--r-pill);
+      border: 2px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s, border-color 0.15s, box-shadow 0.15s, transform 0.1s;
+      outline: none;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: 0.01em;
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    /* Primary */
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--ink);
+      border-color: var(--yellow);
+    }
+
+    .btn-primary:hover {
+      background: #F5CB2A;
+      border-color: #F5CB2A;
+    }
+
+    .btn-primary:focus-visible {
+      box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--yellow);
+    }
+
+    /* Secondary */
+    .btn-secondary {
+      background: var(--blue);
+      color: var(--cream);
+      border-color: var(--blue);
+    }
+
+    .btn-secondary:hover {
+      background: #0098C8;
+      border-color: #0098C8;
+    }
+
+    .btn-secondary:focus-visible {
+      box-shadow: 0 0 0 3px var(--ink), 0 0 0 5px var(--blue);
+    }
+
+    /* Outline */
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .btn-outline:hover {
+      background: var(--blue);
+      color: var(--cream);
+    }
+
+    .btn-outline:focus-visible {
+      box-shadow: 0 0 0 3px rgba(0, 168, 220, 0.35);
+    }
+
+    /* Ghost */
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .btn-ghost:focus-visible {
+      box-shadow: 0 0 0 3px rgba(20, 20, 43, 0.25);
+    }
+
+    /* ─────────────────────────────────────────────
+       SPACING
+    ───────────────────────────────────────────── */
+    .spacing-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+
+    .spacing-row {
+      display: grid;
+      grid-template-columns: 52px 1fr 52px;
+      align-items: center;
+      gap: var(--sp-4);
+    }
+
+    .spacing-px {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--mid);
+      text-align: right;
+    }
+
+    .spacing-bar-track {
+      background: rgba(20, 20, 43, 0.06);
+      border-radius: 0;
+      height: 24px;
+      overflow: hidden;
+    }
+
+    .spacing-bar {
+      height: 100%;
+      background: var(--blue);
+      border-radius: 0;
+    }
+
+    .spacing-var {
+      font-size: 12px;
+      color: var(--mid);
+      font-family: 'Inter Tight', sans-serif;
+      opacity: 0.7;
+    }
+
+    /* ─────────────────────────────────────────────
+       RADIUS
+    ───────────────────────────────────────────── */
+    .radius-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--sp-5);
+      align-items: flex-end;
+    }
+
+    .radius-demo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-3);
+    }
+
+    .radius-square {
+      width: 120px;
+      height: 120px;
+      background: var(--blue-wash);
+      border: 2px solid var(--blue);
+    }
+
+    .radius-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .radius-sub {
+      font-size: 12px;
+      color: var(--mid);
+      margin-top: -var(--sp-2);
+    }
+
+    /* ─────────────────────────────────────────────
+       DO / DON'T
+    ───────────────────────────────────────────── */
+    .dodont-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--sp-4);
+    }
+
+    .dodont-card {
+      border-radius: var(--r-card);
+      overflow: hidden;
+      border: 1px solid rgba(20, 20, 43, 0.09);
+    }
+
+    .dodont-preview {
+      height: 160px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--sp-4);
+    }
+
+    .dodont-footer {
+      padding: var(--sp-3) var(--sp-4);
+      background: white;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-2);
+    }
+
+    .dodont-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: var(--r-pill);
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .dodont-badge.do {
+      background: #D4EDDA;
+      color: #1A5C2E;
+    }
+
+    .dodont-badge.dont {
+      background: #F8D7DA;
+      color: #7A1A20;
+    }
+
+    .dodont-text {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+
+    /* ─────────────────────────────────────────────
+       INLINE CODE / MONO UTILITY
+    ───────────────────────────────────────────── */
+    code {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 0.875em;
+      background: rgba(20, 20, 43, 0.06);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    .page-footer {
+      padding: var(--sp-6) 0;
+      border-top: 1px solid rgba(20, 20, 43, 0.09);
+      color: var(--mid);
+      font-size: 13px;
+    }
+
+    .page-footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--sp-3);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 640px) {
+      :root { --sp-8: 96px; }
+
+      .type-row {
+        grid-template-columns: 1fr;
+        gap: var(--sp-2);
+      }
+
+      .type-size-label {
+        display: none;
+      }
+
+      .type-sample-f64 { font-size: 40px; }
+      .type-sample-f48 { font-size: 32px; }
+      .type-sample-f32 { font-size: 24px; }
+
+      .voice-table {
+        grid-template-columns: 1fr;
+      }
+
+      .voice-col-header.dont { border-right: none; border-bottom: 1px solid rgba(20,20,43,0.09); }
+
+      .voice-cell.dont { border-right: none; }
+
+      .spacing-row {
+        grid-template-columns: 40px 1fr 60px;
+        gap: var(--sp-2);
+      }
+
+      .radius-grid {
+        justify-content: flex-start;
+        gap: var(--sp-4);
+      }
+
+      .radius-square { width: 88px; height: 88px; }
+    }
+
+    @media (min-width: 1200px) {
+      .swatches-grid {
+        grid-template-columns: repeat(7, 1fr);
+      }
+    }
+
+    /* ─────────────────────────────────────────────
+       PRINT
+    ───────────────────────────────────────────── */
+    @media print {
+      .nav { display: none; }
+
+      html { scroll-behavior: auto; }
+
+      body { font-size: 12pt; background: white; }
+
+      section {
+        padding: 48pt 0;
+        page-break-inside: avoid;
+      }
+
+      .cover-purpose, .principle-body, .voice-cell, .type-sample-b18,
+      .type-sample-b16, .type-sample-b14 { color: #333; }
+
+      .button-demo-stage .btn { box-shadow: none !important; }
+
+      a { text-decoration: none; color: inherit; }
+
+      .dodont-card, .swatch-card, .principle-card, .button-demo {
+        break-inside: avoid;
+      }
+
+      .display-xl { font-size: 48pt; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ────────────────────────────────── NAV ──── -->
+  <nav class="nav" role="navigation" aria-label="Style guide sections">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#cover" class="nav-wordmark">Drama Geeks</a>
+        <div class="nav-divider" aria-hidden="true"></div>
+        <ul class="nav-links">
+          <li><a href="#voice">Voice</a></li>
+          <li><a href="#colour">Colour</a></li>
+          <li><a href="#typography">Type</a></li>
+          <li><a href="#buttons">Buttons</a></li>
+          <li><a href="#spacing">Spacing</a></li>
+          <li><a href="#radius">Radius</a></li>
+          <li><a href="#dodont">Do / Don't</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ────────────────────────────────── COVER ──── -->
+  <section id="cover">
+    <div class="container">
+      <div class="cover-inner">
+        <div class="cover-kicker">
+          <span class="section-label">Brand Style Guide</span>
+        </div>
+        <div class="cover-title">
+          <span class="display-xl">Drama<br>Geeks</span>
+        </div>
+        <div class="cover-meta">
+          <span class="cover-version">Version 1.0</span>
+          <span class="cover-date">11 April 2026</span>
+        </div>
+        <p class="cover-purpose">
+          A working reference for everyone who creates communications on behalf of Drama Geeks: what we say, how it looks, and why the choices were made.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── VOICE ──── -->
+  <section id="voice">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">01 / Brand Identity</p>
+        <h2 class="section-title">Brand Voice</h2>
+      </div>
+
+      <div class="principles-grid">
+        <div class="principle-card">
+          <p class="principle-number">Principle 01</p>
+          <h3 class="principle-title">Write for the parent, not the child</h3>
+          <p class="principle-body">Our classes are for kids, but our communications are for the adults booking and paying for them. Speak to parents as capable people making an informed decision, not as recipients of a sales pitch.</p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">Principle 02</p>
+          <h3 class="principle-title">Warm and confident, not boastful</h3>
+          <p class="principle-body">We know what we are good at, and we say so plainly. We do not inflate our credentials or stack superlatives. Confidence that comes from substance does not need exclamation marks to land.</p>
+        </div>
+        <div class="principle-card">
+          <p class="principle-number">Principle 03</p>
+          <h3 class="principle-title">Specific, not vague</h3>
+          <p class="principle-body">Concrete details build trust faster than grand claims. A real venue name, a class time, an age range: these are worth more than a page of aspirational language. If you cannot be specific, do not write it yet.</p>
+        </div>
+      </div>
+
+      <h3 class="voice-table-label">In practice</h3>
+      <div class="voice-table" role="table" aria-label="Language examples: what we avoid and what we say instead">
+        <div class="voice-col-header dont" role="columnheader">We do not say</div>
+        <div class="voice-col-header do" role="columnheader">We say instead</div>
+
+        <div class="voice-row" role="row">
+          <div class="voice-cell dont" role="cell">Nurturing artistic minds</div>
+          <div class="voice-cell do" role="cell">Kids learn by actually being on stage</div>
+        </div>
+        <div class="voice-row" role="row">
+          <div class="voice-cell dont" role="cell">A holistic performing arts experience</div>
+          <div class="voice-cell do" role="cell">Singing, acting, and dancing in one class</div>
+        </div>
+        <div class="voice-row" role="row">
+          <div class="voice-cell dont" role="cell">Fostering self-expression and creativity</div>
+          <div class="voice-cell do" role="cell">Your child will find their voice, literally</div>
+        </div>
+        <div class="voice-row" role="row">
+          <div class="voice-cell dont" role="cell">Our passionate, dedicated educators</div>
+          <div class="voice-cell do" role="cell">Our teachers have worked in professional theatre</div>
+        </div>
+        <div class="voice-row" role="row">
+          <div class="voice-cell dont" role="cell">Accessible to all abilities and backgrounds</div>
+          <div class="voice-cell do" role="cell">No auditions. No experience needed.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── COLOUR ──── -->
+  <section id="colour">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">02 / Visual Identity</p>
+        <h2 class="section-title">Colour</h2>
+      </div>
+
+      <div class="swatches-grid">
+
+        <!-- Ink -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#14142B;"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Ink</p>
+            <p class="swatch-hex">#14142B</p>
+            <p class="swatch-var"><code>--ink</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream</span>
+                <span class="contrast-value contrast-pass-aaa">17.0:1 AAA</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream (large)</span>
+                <span class="contrast-value contrast-pass-aaa">17.0:1 AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cream -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#FBF8F3; border-bottom:1px solid rgba(20,20,43,0.09);"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Cream</p>
+            <p class="swatch-hex">#FBF8F3</p>
+            <p class="swatch-var"><code>--cream</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">on Ink</span>
+                <span class="contrast-value contrast-pass-aaa">17.0:1 AAA</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">Background role</span>
+                <span class="contrast-value" style="color:var(--mid);">Page base</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#00A8DC;"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Blue</p>
+            <p class="swatch-hex">#00A8DC</p>
+            <p class="swatch-var"><code>--blue</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream</span>
+                <span class="contrast-value contrast-fail">2.6:1 Fail</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">on Ink</span>
+                <span class="contrast-value contrast-pass-aa">6.6:1 AA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yellow -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#FFD93E;"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Yellow</p>
+            <p class="swatch-hex">#FFD93E</p>
+            <p class="swatch-var"><code>--yellow</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream</span>
+                <span class="contrast-value contrast-fail">1.3:1 Fail</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">on Ink</span>
+                <span class="contrast-value contrast-pass-aaa">13.1:1 AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mid -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#5D6577;"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Mid</p>
+            <p class="swatch-hex">#5D6577</p>
+            <p class="swatch-var"><code>--mid</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream</span>
+                <span class="contrast-value contrast-pass-aa">5.5:1 AA</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">on Cream (large)</span>
+                <span class="contrast-value contrast-pass-aaa">5.5:1 AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blue Wash -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#EAF7FC; border-bottom:1px solid rgba(20,20,43,0.09);"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Blue Wash</p>
+            <p class="swatch-hex">#EAF7FC</p>
+            <p class="swatch-var"><code>--blue-wash</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">Use with Ink text</span>
+                <span class="contrast-value contrast-pass-aaa">Background only</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">Ink on Blue Wash</span>
+                <span class="contrast-value contrast-pass-aaa">15.4:1 AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yellow Wash -->
+        <div class="swatch-card">
+          <div class="swatch-block" style="background:#FFF6D1; border-bottom:1px solid rgba(20,20,43,0.09);"></div>
+          <div class="swatch-info">
+            <p class="swatch-name">Yellow Wash</p>
+            <p class="swatch-hex">#FFF6D1</p>
+            <p class="swatch-var"><code>--yellow-wash</code></p>
+            <div class="swatch-contrast">
+              <div class="contrast-row">
+                <span class="contrast-label">Use with Ink text</span>
+                <span class="contrast-value contrast-pass-aaa">Background only</span>
+              </div>
+              <div class="contrast-row">
+                <span class="contrast-label">Ink on Yellow Wash</span>
+                <span class="contrast-value contrast-pass-aaa">16.5:1 AAA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /swatches-grid -->
+
+      <div class="colour-callout">
+        <div class="callout-card">
+          <p class="callout-title">Blue: three-place rule</p>
+          <p class="callout-body">Blue should appear in no more than three places within any single viewport. It reads as an accent and a signal. Used more freely, it stops reading as a signal and starts reading as noise.</p>
+        </div>
+        <div class="callout-card yellow">
+          <p class="callout-title">Yellow: two appearances per view</p>
+          <p class="callout-body">Yellow is for emphasis only. Cap it at two visible instances per screen. It must always be paired with Ink text, never Cream. Never use Yellow as a large section background: at scale it overpowers everything else on the page.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── TYPOGRAPHY ──── -->
+  <section id="typography">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">03 / Visual Identity</p>
+        <h2 class="section-title">Typography</h2>
+      </div>
+
+      <div class="type-specimens">
+
+        <!-- Fraunces -->
+        <div>
+          <p class="type-family-label">Fraunces / Display and Headings</p>
+
+          <div class="type-row">
+            <span class="type-size-label">64px</span>
+            <p class="type-sample-f64">Every child deserves a stage.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-size-label">48px</span>
+            <p class="type-sample-f48">Saturday classes at the Westovian Theatre</p>
+          </div>
+          <div class="type-row">
+            <span class="type-size-label">32px</span>
+            <p class="type-sample-f32">Term three begins 8 February. Places are limited.</p>
+          </div>
+        </div>
+
+        <!-- Inter Tight -->
+        <div>
+          <p class="type-family-label">Inter Tight / Body and Interface</p>
+
+          <div class="type-row">
+            <span class="type-size-label">18px</span>
+            <p class="type-sample-b18">Drama Geeks runs weekly performing arts classes for ages 4 to 18 in South Shields. No auditions, no experience needed. Just turn up.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-size-label">16px</span>
+            <p class="type-sample-b16">Classes run every Saturday morning at the Westovian Theatre, Ocean Road. Doors open at 9:45am. The session runs from 10am to 12 noon and includes singing, acting, and dance.</p>
+          </div>
+          <div class="type-row">
+            <span class="type-size-label">14px</span>
+            <p class="type-sample-b14">Fees are payable termly in advance. A sibling discount of 10% applies from the second child. Contact Charlotte directly for bursary enquiries.</p>
+          </div>
+        </div>
+
+      </div><!-- /type-specimens -->
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── BUTTONS ──── -->
+  <section id="buttons">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">04 / Components</p>
+        <h2 class="section-title">Buttons</h2>
+      </div>
+
+      <div class="buttons-grid">
+
+        <div class="button-demo">
+          <p class="button-demo-label">Primary</p>
+          <div class="button-demo-stage">
+            <button class="btn btn-primary">Book a place</button>
+          </div>
+          <p class="button-demo-meta">Yellow fill, Ink text. Use for the single most important action on a page. One per screen.</p>
+        </div>
+
+        <div class="button-demo">
+          <p class="button-demo-label">Secondary</p>
+          <div class="button-demo-stage">
+            <button class="btn btn-secondary">Find out more</button>
+          </div>
+          <p class="button-demo-meta">Blue fill, Cream text. For supporting actions. Keep to two or three per screen alongside a Primary.</p>
+        </div>
+
+        <div class="button-demo">
+          <p class="button-demo-label">Outline</p>
+          <div class="button-demo-stage">
+            <button class="btn btn-outline">Download timetable</button>
+          </div>
+          <p class="button-demo-meta">Transparent with Blue border. Fills to Blue on hover. For tertiary actions or where visual weight should be lower.</p>
+        </div>
+
+        <div class="button-demo" style="background:var(--ink);">
+          <p class="button-demo-label" style="color:rgba(251,248,243,0.5);">Ghost</p>
+          <div class="button-demo-stage">
+            <button class="btn btn-ghost" style="color:var(--cream); border-color:var(--cream);">Learn about us</button>
+          </div>
+          <p class="button-demo-meta" style="color:rgba(251,248,243,0.5);">Transparent with Cream border on dark backgrounds (photos, Ink sections). Fills to Cream on hover.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── SPACING ──── -->
+  <section id="spacing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">05 / Foundations</p>
+        <h2 class="section-title">Spacing Scale</h2>
+      </div>
+
+      <div class="spacing-list">
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">4px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:2.5%;"></div></div>
+          <span class="spacing-var">--sp-1</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">8px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:5%;"></div></div>
+          <span class="spacing-var">--sp-2</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">16px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:10%;"></div></div>
+          <span class="spacing-var">--sp-3</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">24px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:15%;"></div></div>
+          <span class="spacing-var">--sp-4</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">40px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:25%;"></div></div>
+          <span class="spacing-var">--sp-5</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">64px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:40%;"></div></div>
+          <span class="spacing-var">--sp-6</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">96px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:60%;"></div></div>
+          <span class="spacing-var">--sp-7</span>
+        </div>
+        <div class="spacing-row">
+          <span class="spacing-px" style="text-align:right;">160px</span>
+          <div class="spacing-bar-track"><div class="spacing-bar" style="width:100%;"></div></div>
+          <span class="spacing-var">--sp-8</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── RADIUS ──── -->
+  <section id="radius">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">06 / Foundations</p>
+        <h2 class="section-title">Border Radius</h2>
+      </div>
+
+      <div class="radius-grid">
+
+        <div class="radius-demo">
+          <div class="radius-square" style="border-radius:0;"></div>
+          <p class="radius-label">Sharp</p>
+          <p class="radius-sub" style="font-size:12px;color:var(--mid);">0px, default</p>
+        </div>
+
+        <div class="radius-demo">
+          <div class="radius-square" style="border-radius:12px;"></div>
+          <p class="radius-label">Card</p>
+          <p class="radius-sub" style="font-size:12px;color:var(--mid);">12px, <code>--r-card</code></p>
+        </div>
+
+        <div class="radius-demo">
+          <div class="radius-square" style="border-radius:100px;"></div>
+          <p class="radius-label">Pill</p>
+          <p class="radius-sub" style="font-size:12px;color:var(--mid);">100px, <code>--r-pill</code></p>
+        </div>
+
+      </div>
+
+      <p style="margin-top:var(--sp-5);font-size:14px;color:var(--mid);max-width:560px;line-height:1.65;">
+        Use Sharp (0px) on structural elements: section dividers, images, tables. Use Card (12px) on contained components: callout boxes, colour swatches, form inputs. Use Pill (100px) exclusively on interactive controls: buttons and tags.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── DO / DON'T ──── -->
+  <section id="dodont">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label">07 / Usage</p>
+        <h2 class="section-title">Do / Don't</h2>
+      </div>
+
+      <div class="dodont-grid">
+
+        <!-- DON'T: Blue text on cream -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--cream);">
+            <p style="font-size:22px;font-family:'Fraunces',serif;font-weight:600;color:#00A8DC;font-optical-sizing:auto;text-align:center;line-height:1.2;">Book your child's<br>place today</p>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge dont">Don't</span>
+            <p class="dodont-text">Blue text on a Cream background fails WCAG at all sizes (2.6:1). Use Ink for body copy; reserve Blue for UI elements on darker surfaces.</p>
+          </div>
+        </div>
+
+        <!-- DO: Ink text on cream -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--cream);">
+            <p style="font-size:22px;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-optical-sizing:auto;text-align:center;line-height:1.2;">Book your child's<br>place today</p>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge do">Do</span>
+            <p class="dodont-text">Ink on Cream passes at 17.0:1. Cream should dominate the page; it is the breathing room. Ink text carries the message.</p>
+          </div>
+        </div>
+
+        <!-- DON'T: Yellow section background -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--yellow);padding:var(--sp-4);">
+            <div style="text-align:center;">
+              <p style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:8px;">Saturday classes</p>
+              <p style="font-size:13px;color:var(--ink);line-height:1.5;">Westovian Theatre, South Shields. Ages 4 to 18.</p>
+            </div>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge dont">Don't</span>
+            <p class="dodont-text">Yellow at section scale overwhelms the palette and removes contrast hierarchy. Yellow works as highlight, not as wallpaper.</p>
+          </div>
+        </div>
+
+        <!-- DO: Yellow wash for callouts -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--cream);padding:var(--sp-4);">
+            <div style="background:var(--yellow-wash);border-radius:12px;padding:16px 20px;max-width:240px;">
+              <p style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:4px;">Places filling fast</p>
+              <p style="font-size:12px;color:var(--mid);line-height:1.5;">Only 4 spaces remaining for Spring term.</p>
+            </div>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge do">Do</span>
+            <p class="dodont-text">Yellow Wash as a contained card highlights urgency without dominating. Cream surrounds and balances it. Ink text throughout.</p>
+          </div>
+        </div>
+
+        <!-- DON'T: Multiple yellow accents -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--cream);display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <button class="btn btn-primary" style="font-size:13px;padding:10px 20px;pointer-events:none;" tabindex="-1">Book now</button>
+            <span style="background:var(--yellow);color:var(--ink);font-size:12px;font-weight:600;padding:4px 12px;border-radius:100px;">Limited places</span>
+            <p style="font-size:13px;font-weight:700;color:var(--yellow);text-shadow:0 0 0 transparent;">Spring 2026 open</p>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge dont">Don't</span>
+            <p class="dodont-text">Three yellow elements in the same viewport cancel each other out. Apply the two-appearance rule: choose the two that earn it most.</p>
+          </div>
+        </div>
+
+        <!-- DO: Restrained palette -->
+        <div class="dodont-card">
+          <div class="dodont-preview" style="background:var(--cream);display:flex;flex-direction:column;align-items:center;gap:12px;">
+            <p style="font-size:16px;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-optical-sizing:auto;">Spring term 2026</p>
+            <button class="btn btn-primary" style="font-size:13px;padding:10px 20px;pointer-events:none;" tabindex="-1">Book now</button>
+            <p style="font-size:13px;color:var(--mid);">Starts 8 February. No auditions.</p>
+          </div>
+          <div class="dodont-footer">
+            <span class="dodont-badge do">Do</span>
+            <p class="dodont-text">One Yellow accent (the primary button) on a Cream background. Ink carries the heading. Mid handles supporting copy. Restrained, confident.</p>
+          </div>
+        </div>
+
+      </div><!-- /dodont-grid -->
+    </div>
+  </section>
+
+  <!-- ────────────────────────────────── FOOTER ──── -->
+  <footer class="page-footer">
+    <div class="container">
+      <span>Drama Geeks Brand Style Guide v1. For internal use and client sign-off.</span>
+      <span>South Shields, UK. April 2026.</span>
+    </div>
+  </footer>
+
+</body>
+</html>

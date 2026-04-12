@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(python3 -c ':*)",
+      "Bash(python3)",
+      "Read(//c/Projects/Drama Geeks/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Projects\\Drama Geeks\\draft"
+    ]
+  }
+}

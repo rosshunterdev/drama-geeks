@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama Geeks - Fun &amp; Friendly Performing Arts School, South Shields</title>
+  <meta name="description" content="Drama Geeks is a fun and friendly performing arts school in South Shields, inspiring confidence and creativity in children of all ages and abilities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─────────────────────────────────────────────────────
+       TOKENS — from the style guide, no deep-blue variants
+    ───────────────────────────────────────────────────── */
+    :root {
+      --ink:         #14142B;
+      --cream:       #FBF8F3;
+      --blue:        #00A8DC;   /* decorative / large elements only — never body text on cream */
+      --yellow:      #FFD93E;   /* CTA + accents — ink text on top always */
+      --yellow-deep: #E6C100;   /* yellow hover */
+      --mid:         #5D6577;
+      --blue-wash:   #EAF7FC;
+      --yellow-wash: #FFF6D1;
+
+      /* Spacing — style guide scale */
+      --sp-1:  4px;
+      --sp-2:  8px;
+      --sp-3:  16px;
+      --sp-4:  24px;
+      --sp-5:  40px;
+      --sp-6:  64px;
+      --sp-7:  96px;
+      --sp-8:  160px;
+
+      /* Radius */
+      --r-card: 12px;
+      --r-pill: 100px;
+
+      /* Nav — matches style guide exactly */
+      --nav-h: 56px;
+
+      /* Container */
+      --col:     1280px;
+      --gutter:  40px;
+    }
+
+    /* ─────────────────────────────────────────────────────
+       RESET + BASE
+    ───────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--cream);
+      color: var(--ink);
+    }
+
+    body {
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a    { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; }
+    ul, ol { list-style: none; }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+    }
+
+    /* ─────────────────────────────────────────────────────
+       NAV — sticky frosted cream, always visible from load
+       Matches the style guide nav exactly.
+    ───────────────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(251, 248, 243, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      display: flex;
+      align-items: center;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Border appears once there is content beneath */
+    .nav.is-scrolled {
+      border-bottom-color: rgba(20, 20, 43, 0.09);
+      box-shadow: 0 1px 0 rgba(20, 20, 43, 0.04);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-4);
+    }
+
+    /* Brand lockup: DG yellow monogram + DramaGeeks wordmark */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 700;
+      font-optical-sizing: auto;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--ink);
+    }
+
+    /* Italic G — the typographic mark */
+    .nav-logo-text em {
+      font-style: italic;
+      color: var(--yellow-deep);
+    }
+
+    /* Desktop links (hidden on mobile) */
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 2px;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .nav-item-wrap {
+      position: relative;
+    }
+
+    .nav-link,
+    .nav-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--mid);
+      background: none;
+      border: none;
+      padding: 6px 10px;
+      border-radius: var(--r-pill);
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .nav-link:hover,
+    .nav-trigger:hover {
+      color: var(--ink);
+      background: rgba(20, 20, 43, 0.05);
+    }
+
+    .nav-link.is-active {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .nav-chevron {
+      font-size: 8px;
+      opacity: 0.5;
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
+    .nav-item-wrap.is-open .nav-chevron { transform: rotate(180deg); }
+
+    /* Focus rings — ink coloured on cream */
+    .nav-link:focus-visible,
+    .nav-trigger:focus-visible,
+    .nav-parents:focus-visible,
+    .hamburger:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid var(--ink);
+      outline-offset: 2px;
+      border-radius: var(--r-pill);
+    }
+
+    /* Parents Area — outline pill, ink */
+    .nav-parents {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: var(--r-pill);
+      border: 1.5px solid rgba(20, 20, 43, 0.22);
+      color: var(--ink);
+      background: transparent;
+      margin-left: var(--sp-2);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.18s, border-color 0.18s;
+    }
+
+    .nav-parents:hover {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    /* Dropdowns */
+    .dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-4px);
+      min-width: 220px;
+      background: white;
+      border-radius: var(--r-card);
+      box-shadow: 0 4px 32px rgba(20, 20, 43, 0.12), 0 1px 3px rgba(20, 20, 43, 0.06);
+      padding: var(--sp-2) 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.16s ease, transform 0.16s ease;
+      z-index: 10;
+    }
+
+    .nav-item-wrap.is-open .dropdown {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 9px 18px;
+      font-size: 14px;
+      color: var(--ink);
+      transition: background 0.1s;
+    }
+
+    .dropdown a:hover { background: var(--blue-wash); }
+
+    .dropdown a:focus-visible {
+      outline: 2px solid var(--blue);
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+
+    /* Hamburger — ink on cream */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 22px;
+      height: 16px;
+      background: none;
+      border: none;
+      padding: 0;
+      flex-shrink: 0;
+      color: var(--ink);
+    }
+
+    .hamburger span {
+      display: block;
+      height: 1.5px;
+      background: currentColor;
+      border-radius: 2px;
+      transform-origin: center;
+      transition: transform 0.22s ease, opacity 0.22s ease;
+    }
+
+    .hamburger.is-open span:nth-child(1) { transform: translateY(7.25px) rotate(45deg); }
+    .hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.is-open span:nth-child(3) { transform: translateY(-7.25px) rotate(-45deg); }
+
+    /* ─────────────────────────────────────────────────────
+       MOBILE MENU OVERLAY — ink background, cream text
+    ───────────────────────────────────────────────────── */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: var(--ink);
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .mobile-menu.is-open { opacity: 1; pointer-events: all; }
+
+    .mobile-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(var(--sp-4), 5vw, var(--sp-6));
+      height: var(--nav-h);
+      border-bottom: 1px solid rgba(251, 248, 243, 0.07);
+      flex-shrink: 0;
+    }
+
+    .mobile-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .mobile-wordmark {
+      font-family: 'Fraunces', serif;
+      font-size: 18px;
+      font-weight: 700;
+      font-optical-sizing: auto;
+      color: var(--cream);
+      letter-spacing: -0.02em;
+    }
+
+    .mobile-wordmark em { font-style: italic; color: var(--yellow); }
+
+    .mobile-close {
+      background: none;
+      border: none;
+      color: rgba(251, 248, 243, 0.55);
+      font-size: 24px;
+      line-height: 1;
+      padding: var(--sp-2);
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+
+    .mobile-close:hover { color: var(--cream); }
+
+    .mobile-close:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .mobile-nav-list {
+      padding: var(--sp-3) clamp(var(--sp-4), 5vw, var(--sp-6)) var(--sp-6);
+      flex: 1;
+    }
+
+    .mobile-nav-item {
+      border-bottom: 1px solid rgba(251, 248, 243, 0.06);
+    }
+
+    .mobile-nav-item > a,
+    .mobile-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: var(--sp-4) 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: rgba(251, 248, 243, 0.78);
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+
+    .mobile-nav-item > a:hover,
+    .mobile-trigger:hover { color: var(--cream); }
+
+    .mobile-nav-item > a:focus-visible,
+    .mobile-trigger:focus-visible {
+      outline: 2px solid var(--yellow);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    .mobile-chevron {
+      font-size: 10px;
+      opacity: 0.4;
+      transition: transform 0.2s;
+    }
+
+    .mobile-has-dd.is-open .mobile-chevron { transform: rotate(180deg); }
+
+    .mobile-sub { display: none; padding: 0 0 var(--sp-3) var(--sp-4); }
+    .mobile-has-dd.is-open .mobile-sub { display: block; }
+
+    .mobile-sub a {
+      display: block;
+      padding: var(--sp-2) 0 var(--sp-2) var(--sp-3);
+      font-size: 16px;
+      color: rgba(251, 248, 243, 0.5);
+      transition: color 0.15s;
+    }
+
+    .mobile-sub a:hover { color: var(--cream); }
+
+    .mobile-footer {
+      padding: var(--sp-5) clamp(var(--sp-4), 5vw, var(--sp-6));
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+      border-top: 1px solid rgba(251, 248, 243, 0.07);
+    }
+
+    .mobile-cta-yellow {
+      display: block;
+      text-align: center;
+      padding: 14px var(--sp-5);
+      background: var(--yellow);
+      color: var(--ink);
+      border-radius: var(--r-pill);
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.18s;
+    }
+
+    .mobile-cta-yellow:hover { background: var(--yellow-deep); }
+
+    .mobile-cta-ghost {
+      display: block;
+      text-align: center;
+      padding: 13px var(--sp-5);
+      border: 1.5px solid rgba(251, 248, 243, 0.22);
+      color: rgba(251, 248, 243, 0.65);
+      border-radius: var(--r-pill);
+      font-weight: 500;
+      font-size: 15px;
+      transition: border-color 0.18s, color 0.18s;
+    }
+
+    .mobile-cta-ghost:hover {
+      border-color: rgba(251, 248, 243, 0.55);
+      color: var(--cream);
+    }
+
+    /* ─────────────────────────────────────────────────────
+       HERO — cream canvas, generous breathing room
+       Deliberately not min-height: 100vh — content-led height.
+    ───────────────────────────────────────────────────── */
+    .hero {
+      /* Very faint yellow-wash warmth at bottom-right — depth without texture */
+      background:
+        radial-gradient(ellipse 55% 40% at 92% 96%, rgba(255, 246, 209, 0.65) 0%, transparent 100%),
+        var(--cream);
+      padding: var(--sp-7) 0;
+    }
+
+    .hero-inner {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--sp-6);
+      align-items: start;
+    }
+
+    /* ─────────────────────────────────────────────────────
+       HERO TEXT — left column
+    ───────────────────────────────────────────────────── */
+    .hero-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Eyebrow pill — yellow-wash bg, ink text, yellow dot */
+    /*
+      TODO: Confirm founding year with Charlotte — 2014 is a placeholder.
+    */
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      padding: 5px 14px;
+      background: var(--yellow-wash);
+      border-radius: var(--r-pill);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      width: fit-content;
+      margin-bottom: var(--sp-4); /* 24px above H1 */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.08s;
+    }
+
+    .eyebrow-dot {
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--yellow-deep);
+      flex-shrink: 0;
+    }
+
+    /* H1 — Fraunces, ink, large */
+    .hero-h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(44px, 5.5vw, 76px);
+      font-weight: 700;
+      font-optical-sizing: auto;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: var(--sp-4); /* 24px gap to subline */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.17s;
+    }
+
+    .h1-line { display: block; }
+
+    /* "Friendly" — yellow italic + hand-drawn SVG swoosh underline */
+    .hl-word {
+      font-style: italic;
+      color: var(--yellow-deep);
+      position: relative;
+      display: inline-block;
+    }
+
+    /*
+      SVG swoosh is positioned absolutely below the word.
+      overflow: visible ensures it shows outside the inline-block boundary.
+      The path uses two Bezier segments for a slight wobble — hand-drawn, not flat.
+    */
+    .swoosh {
+      position: absolute;
+      top: 100%;
+      left: -3%;
+      width: 106%;
+      height: 12px;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    /* Venue subline — Fraunces italic, mid colour */
+    .hero-subline {
+      font-family: 'Fraunces', serif;
+      font-style: italic;
+      font-optical-sizing: auto;
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--mid);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: var(--sp-2);
+      margin-bottom: var(--sp-5); /* 40px gap to body */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.26s;
+    }
+
+    .hero-subline .sep {
+      display: inline-block;
+      width: 1px;
+      height: 0.7em;
+      background: rgba(93, 101, 119, 0.25);
+      vertical-align: middle;
+      margin: 0 12px;
+      flex-shrink: 0;
+    }
+
+    /* Body paragraph — Inter Tight, ink 80% opacity */
+    .hero-body {
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(20, 20, 43, 0.78);
+      max-width: 520px;
+      margin-bottom: var(--sp-5); /* 40px gap to CTAs */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.35s;
+    }
+
+    /* CTA row */
+    .cta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: var(--sp-5); /* 40px gap to trust strip per brief, adj'd to 32px below */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.44s;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--sp-2);
+      font-family: 'Inter Tight', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      padding: 14px 26px;
+      border-radius: var(--r-pill);
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s, transform 0.1s;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    /* Primary — yellow fill, ink text */
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--ink);
+      border-color: var(--yellow);
+    }
+
+    .btn-primary:hover {
+      background: var(--yellow-deep);
+      border-color: var(--yellow-deep);
+      box-shadow: 0 4px 20px rgba(230, 193, 0, 0.32);
+      transform: translateY(-1px);
+    }
+
+    .btn-arrow {
+      transition: transform 0.18s ease;
+      flex-shrink: 0;
+    }
+
+    .btn-primary:hover .btn-arrow { transform: translateX(3px); }
+
+    /* Secondary — ink outline, fills ink/cream on hover */
+    .btn-secondary {
+      background: transparent;
+      color: var(--ink);
+      border-color: rgba(20, 20, 43, 0.28);
+    }
+
+    .btn-secondary:hover {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    /* Trust strip — mid text, blue dots as accents */
+    .trust-strip {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      row-gap: var(--sp-2);
+      margin-top: calc(var(--sp-5) - var(--sp-3)); /* override margin-bottom on .cta-row to 32px gap total */
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.53s;
+    }
+
+    .trust-item {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--mid);
+    }
+
+    /* Blue dot — one of the few permitted uses of --blue as a graphic accent */
+    .trust-dot {
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--blue);
+      opacity: 0.75;
+      margin: 0 12px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+
+    /* ─────────────────────────────────────────────────────
+       PHOTO PLACEHOLDER PANEL — right column
+       On the cream canvas the panel uses --blue-wash fill
+       so it reads as a positive shape, not a hole.
+
+       PLACEHOLDER NOTE: When Charlotte sends real photos —
+       1. Remove .panel-placeholder entirely
+       2. Add <img src="..." alt="..." class="panel-photo"> inside .panel-main
+       3. .panel-photo { width:100%; height:100%; object-fit:cover; display:block; }
+       4. Keep .corner-accent, .badge-loved, .stat-card — they overlay the real photo
+    ───────────────────────────────────────────────────── */
+    .panel-wrap {
+      position: relative;
+      /* Padding creates room for the corner accent and badges to overflow cleanly */
+      padding: 14px 20px 28px 16px;
+      /* animation */
+      opacity: 0;
+      animation: fadeUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      animation-delay: 0.62s;
+    }
+
+    /* Yellow rounded-square outline peeking behind panel's top-left corner */
+    .corner-accent {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 90px;
+      border-radius: 16px;
+      border: 6px solid var(--yellow);
+      background: transparent;
+      z-index: 0;
+    }
+
+    /* Main panel — blue-wash fill, cream-compatible */
+    .panel-main {
+      position: relative;
+      z-index: 1;
+      border-radius: var(--r-card);
+      background: var(--blue-wash);
+      border: 1px solid rgba(20, 20, 43, 0.08);
+      /* Inset shadow gives the tray-like depth the deep-blue version got from colour alone */
+      box-shadow:
+        inset 0 1px 6px rgba(20, 20, 43, 0.06),
+        inset 0 0 0 1px rgba(20, 20, 43, 0.03);
+      min-height: 440px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Placeholder centred state */
+    .panel-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--sp-3);
+      padding: var(--sp-6);
+      text-align: center;
+    }
+
+    .placeholder-icon {
+      opacity: 0.35;
+      color: var(--mid);
+    }
+
+    .placeholder-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--mid);
+      opacity: 0.7;
+    }
+
+    /* Floating "Loved by parents" badge — white pill, top-right, overlaps panel edge */
+    .badge-loved {
+      position: absolute;
+      top: 28px;
+      right: 0;
+      background: white;
+      border-radius: var(--r-pill);
+      padding: 8px 14px 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: var(--sp-2);
+      box-shadow: 0 2px 16px rgba(20, 20, 43, 0.11), 0 1px 3px rgba(20, 20, 43, 0.06);
+      z-index: 3;
+      white-space: nowrap;
+    }
+
+    .badge-stars {
+      color: var(--yellow-deep);
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      line-height: 1;
+    }
+
+    .badge-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    /* Floating stat card — white rounded card, bottom-left, overlaps panel edge */
+    .stat-card {
+      position: absolute;
+      bottom: 14px;
+      left: 0;
+      background: white;
+      border-radius: var(--r-card);
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 2px 16px rgba(20, 20, 43, 0.1), 0 1px 3px rgba(20, 20, 43, 0.05);
+      z-index: 3;
+    }
+
+    .stat-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--yellow);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .stat-desc {
+      display: block;
+      font-size: 12px;
+      color: var(--mid);
+      line-height: 1.3;
+    }
+
+    /* ─────────────────────────────────────────────────────
+       ENTRANCE ANIMATION
+    ───────────────────────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─────────────────────────────────────────────────────
+       RESPONSIVE: TABLET 768px+
+    ───────────────────────────────────────────────────── */
+    @media (min-width: 768px) {
+      .panel-main {
+        min-height: 500px;
+      }
+
+      .hero {
+        padding: var(--sp-7) 0;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────
+       RESPONSIVE: DESKTOP 1024px+
+       Two-column layout: text ~50% left, panel ~50% right,
+       80px gap between them.
+    ───────────────────────────────────────────────────── */
+    @media (min-width: 1024px) {
+      .nav-links { display: flex; }
+      .hamburger { display: none; }
+
+      .hero {
+        padding: var(--sp-7) 0;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+
+      .panel-main {
+        min-height: 520px;
+      }
+    }
+
+    /* Wide desktop */
+    @media (min-width: 1280px) {
+      .panel-main {
+        min-height: 560px;
+      }
+    }
+
+    /* ─────────────────────────────────────────────────────
+       REDUCED MOTION
+    ───────────────────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, .hero-h1, .hero-subline, .hero-body,
+      .cta-row, .trust-strip, .panel-wrap {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+
+      .nav, .nav-link, .nav-trigger, .nav-parents,
+      .dropdown, .btn, .btn-arrow { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       MOBILE MENU — full-screen ink overlay
+  ════════════════════════════════════════════ -->
+  <div
+    class="mobile-menu"
+    id="mobile-menu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Site navigation"
+    aria-hidden="true"
+  >
+    <div class="mobile-top">
+      <div class="mobile-brand">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none" aria-hidden="true" focusable="false">
+          <rect width="34" height="34" rx="7" fill="#FFD93E"/>
+          <text x="17" y="23" font-family="Fraunces, Georgia, serif" font-size="14" font-weight="700" text-anchor="middle" fill="#14142B">DG</text>
+        </svg>
+        <span class="mobile-wordmark">Drama<em>G</em>eeks</span>
+      </div>
+      <button class="mobile-close" id="mobile-close" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <ul class="mobile-nav-list">
+
+      <li class="mobile-nav-item">
+        <a href="#">Home</a>
+      </li>
+
+      <li class="mobile-nav-item mobile-has-dd">
+        <button class="mobile-trigger" aria-expanded="false">
+          Classes
+          <span class="mobile-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <ul class="mobile-sub">
+          <li><a href="#">Saturday School</a></li>
+          <li><a href="#">Mini Geeks</a></li>
+          <li><a href="#">Summer School</a></li>
+          <li><a href="#">1-1 Lessons</a></li>
+          <li><a href="#">Industry-Led Workshops</a></li>
+          <li><a href="#">Events &amp; Competitions</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-nav-item mobile-has-dd">
+        <button class="mobile-trigger" aria-expanded="false">
+          Productions
+          <span class="mobile-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <ul class="mobile-sub">
+          <li><a href="#">Current Productions</a></li>
+          <li><a href="#">Past Productions</a></li>
+          <li><a href="#">Student Spotlight</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-nav-item mobile-has-dd">
+        <button class="mobile-trigger" aria-expanded="false">
+          About
+          <span class="mobile-chevron" aria-hidden="true">&#9660;</span>
+        </button>
+        <ul class="mobile-sub">
+          <li><a href="#">The Faculty</a></li>
+          <li><a href="#">Safeguarding</a></li>
+          <li><a href="#">NODA</a></li>
+          <li><a href="#">Testimonials</a></li>
+        </ul>
+      </li>
+
+      <li class="mobile-nav-item">
+        <a href="#">Get In Touch</a>
+      </li>
+
+    </ul>
+
+    <div class="mobile-footer">
+      <a href="#" class="mobile-cta-yellow">Explore Our Classes</a>
+      <a href="#" class="mobile-cta-ghost">Parents Area</a>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       STICKY NAV — frosted cream, always visible
+  ════════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" id="main-nav" aria-label="Main navigation">
+      <div class="nav-inner">
+
+        <!-- Brand lockup -->
+        <a href="#" class="nav-logo" aria-label="Drama Geeks, go to home page">
+          <svg
+            width="38"
+            height="38"
+            viewBox="0 0 38 38"
+            fill="none"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <rect width="38" height="38" rx="8" fill="#FFD93E"/>
+            <text
+              x="19" y="26"
+              font-family="Fraunces, Georgia, serif"
+              font-size="15"
+              font-weight="700"
+              text-anchor="middle"
+              fill="#14142B"
+            >DG</text>
+          </svg>
+          <span class="nav-logo-text">Drama<em>G</em>eeks</span>
+        </a>
+
+        <!-- Desktop navigation -->
+        <ul class="nav-links" role="list">
+
+          <li>
+            <a href="#" class="nav-link is-active">Home</a>
+          </li>
+
+          <li class="nav-item-wrap">
+            <button
+              class="nav-trigger"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="dd-classes"
+            >
+              Classes <span class="nav-chevron" aria-hidden="true">&#9660;</span>
+            </button>
+            <ul class="dropdown" id="dd-classes" role="menu" aria-label="Classes">
+              <li><a href="#" role="menuitem">Saturday School</a></li>
+              <li><a href="#" role="menuitem">Mini Geeks</a></li>
+              <li><a href="#" role="menuitem">Summer School</a></li>
+              <li><a href="#" role="menuitem">1-1 Lessons</a></li>
+              <li><a href="#" role="menuitem">Industry-Led Workshops</a></li>
+              <li><a href="#" role="menuitem">Events &amp; Competitions</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item-wrap">
+            <button
+              class="nav-trigger"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="dd-productions"
+            >
+              Productions <span class="nav-chevron" aria-hidden="true">&#9660;</span>
+            </button>
+            <ul class="dropdown" id="dd-productions" role="menu" aria-label="Productions">
+              <li><a href="#" role="menuitem">Current Productions</a></li>
+              <li><a href="#" role="menuitem">Past Productions</a></li>
+              <li><a href="#" role="menuitem">Student Spotlight</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item-wrap">
+            <button
+              class="nav-trigger"
+              aria-expanded="false"
+              aria-haspopup="true"
+              aria-controls="dd-about"
+            >
+              About <span class="nav-chevron" aria-hidden="true">&#9660;</span>
+            </button>
+            <ul class="dropdown" id="dd-about" role="menu" aria-label="About">
+              <li><a href="#" role="menuitem">The Faculty</a></li>
+              <li><a href="#" role="menuitem">Safeguarding</a></li>
+              <li><a href="#" role="menuitem">NODA</a></li>
+              <li><a href="#" role="menuitem">Testimonials</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#" class="nav-link">Get In Touch</a>
+          </li>
+
+          <li>
+            <a href="#" class="nav-parents">Parents Area</a>
+          </li>
+
+        </ul>
+
+        <!-- Hamburger — mobile / tablet only -->
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════
+       HERO — cream canvas, two-column on desktop
+  ════════════════════════════════════════════ -->
+  <main>
+    <section class="hero" aria-labelledby="hero-h1">
+      <div class="hero-inner">
+
+        <!-- ─── LEFT: text content ─── -->
+        <div class="hero-text">
+
+          <!--
+            Eyebrow pill.
+            TODO: Confirm founding year with Charlotte — 2014 is a placeholder.
+          -->
+          <div class="eyebrow" role="doc-subtitle">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span>South Shields &middot; Performing Arts Since 2014</span>
+          </div>
+
+          <!--
+            H1: "Friendly" is yellow italic Fraunces.
+            The SVG swoosh beneath it is hand-drawn (two Bezier segments = slight wobble),
+            not a flat underline rectangle.
+          -->
+          <h1 class="hero-h1" id="hero-h1">
+            <span class="h1-line">
+              Fun &amp; <span class="hl-word">Friendly
+                <svg
+                  class="swoosh"
+                  viewBox="0 0 200 14"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <!--
+                    Two-segment cubic bezier: rises mid-left, dips mid-right.
+                    The asymmetry gives it a hand-drawn, confident quality.
+                    stroke-opacity at 0.65 keeps it soft against the cream canvas.
+                  -->
+                  <path
+                    d="M4 11 C40 3 90 13 142 8 C168 5 190 11 197 8"
+                    stroke="#E6C100"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-opacity="0.65"
+                  />
+                </svg>
+              </span>
+            </span>
+            <span class="h1-line">Performing Arts School</span>
+          </h1>
+
+          <!-- Venue subline: Fraunces italic, mid colour -->
+          <p class="hero-subline">
+            <span>The Customs House</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span>The Westovian Theatre</span>
+            <span class="sep" aria-hidden="true"></span>
+            <span>Cleadon Methodist Church</span>
+          </p>
+
+          <!-- Body copy — Charlotte's exact words, comma not semicolon -->
+          <p class="hero-body">
+            Inspiring confidence and creativity in children of all ages and abilities,
+            Drama Geeks is like a big family and offers a multitude of performance
+            opportunities each year.
+          </p>
+
+          <!-- CTAs -->
+          <div class="cta-row">
+            <a href="#" class="btn btn-primary">
+              Explore Our Classes
+              <svg
+                class="btn-arrow"
+                width="15" height="15"
+                viewBox="0 0 15 15"
+                fill="none"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M2.5 7.5h10M9 3.5l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <a href="#" class="btn btn-secondary">Get In Touch</a>
+          </div>
+
+          <!-- Trust strip — blue dots are the accent colour here -->
+          <div class="trust-strip" role="list" aria-label="School at a glance">
+            <span class="trust-item" role="listitem">10+ Years</span>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span class="trust-item" role="listitem">Ages 4&ndash;16</span>
+            <span class="trust-dot" aria-hidden="true"></span>
+            <span class="trust-item" role="listitem">100+ Students Each Year</span>
+          </div>
+
+        </div><!-- /hero-text -->
+
+        <!-- ─── RIGHT: photo placeholder panel ─── -->
+        <!--
+          PLACEHOLDER PANEL
+          Replace when Charlotte sends the real hero photo:
+            1. Remove <div class="panel-placeholder"> and its contents entirely
+            2. Inside .panel-main, add:
+               <img src="your-photo.jpg" alt="Descriptive alt text" class="panel-photo">
+            3. Add to CSS: .panel-photo { width:100%; height:100%; object-fit:cover; display:block; }
+            4. The .corner-accent, .badge-loved, and .stat-card all remain as overlays on the photo.
+        -->
+        <div class="panel-wrap">
+
+          <!-- Yellow outline rounded square peeking behind top-left of panel -->
+          <div class="corner-accent" aria-hidden="true"></div>
+
+          <!-- Panel body — blue-wash fill sits positively on the cream canvas -->
+          <div class="panel-main">
+            <div class="panel-placeholder">
+              <!-- Photo placeholder icon -->
+              <svg
+                class="placeholder-icon"
+                width="52" height="52"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+              <p class="placeholder-label">Hero photo coming soon</p>
+            </div>
+          </div>
+
+          <!-- Floating badge: Loved by parents — white pill, top-right -->
+          <div class="badge-loved" role="img" aria-label="Loved by parents, 5 star rating">
+            <span class="badge-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="badge-label">Loved by parents</span>
+          </div>
+
+          <!-- Floating stat card — white card, bottom-left -->
+          <div class="stat-card" aria-label="100 plus students each term">
+            <div class="stat-icon" aria-hidden="true">
+              <svg
+                width="18" height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#14142B"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div>
+              <span class="stat-number">100+</span>
+              <span class="stat-desc">Students each term</span>
+            </div>
+          </div>
+
+        </div><!-- /panel-wrap -->
+
+      </div><!-- /hero-inner -->
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      'use strict';
+
+      var nav        = document.getElementById('main-nav');
+      var hamburger  = document.getElementById('hamburger');
+      var mobileMenu = document.getElementById('mobile-menu');
+      var mobileClose = document.getElementById('mobile-close');
+
+      // Nav border appears once user scrolls
+      function syncNav() {
+        nav.classList.toggle('is-scrolled', window.scrollY > 10);
+      }
+      window.addEventListener('scroll', syncNav, { passive: true });
+      syncNav();
+
+      // ── Desktop dropdowns ─────────────────────────────────────
+      var triggers = Array.prototype.slice.call(nav.querySelectorAll('.nav-trigger'));
+
+      function closeAll() {
+        triggers.forEach(function (t) {
+          var w = t.closest('.nav-item-wrap');
+          w.classList.remove('is-open');
+          t.setAttribute('aria-expanded', 'false');
+        });
+      }
+
+      triggers.forEach(function (trigger) {
+        var wrap = trigger.closest('.nav-item-wrap');
+
+        wrap.addEventListener('mouseenter', function () {
+          if (window.innerWidth >= 1024) {
+            closeAll();
+            wrap.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+
+        wrap.addEventListener('mouseleave', function () {
+          if (window.innerWidth >= 1024) {
+            wrap.classList.remove('is-open');
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        trigger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          var open = wrap.classList.contains('is-open');
+          closeAll();
+          if (!open) {
+            wrap.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      document.addEventListener('click', function (e) {
+        if (!e.target.closest('.nav-item-wrap')) { closeAll(); }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') { closeAll(); closeMobile(); }
+      });
+
+      // ── Mobile menu ───────────────────────────────────────────
+      function openMobile() {
+        mobileMenu.classList.add('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Close navigation menu');
+        document.body.style.overflow = 'hidden';
+        mobileClose.focus();
+      }
+
+      function closeMobile() {
+        if (!mobileMenu.classList.contains('is-open')) { return; }
+        mobileMenu.classList.remove('is-open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Open navigation menu');
+        document.body.style.overflow = '';
+        hamburger.focus();
+      }
+
+      hamburger.addEventListener('click', function () {
+        mobileMenu.classList.contains('is-open') ? closeMobile() : openMobile();
+      });
+      mobileClose.addEventListener('click', closeMobile);
+
+      Array.prototype.slice.call(mobileMenu.querySelectorAll('.mobile-trigger')).forEach(function (t) {
+        t.addEventListener('click', function () {
+          var li = t.closest('.mobile-has-dd');
+          var was = li.classList.contains('is-open');
+          mobileMenu.querySelectorAll('.mobile-has-dd').forEach(function (x) {
+            x.classList.remove('is-open');
+            x.querySelector('.mobile-trigger').setAttribute('aria-expanded', 'false');
+          });
+          if (!was) {
+            li.classList.add('is-open');
+            t.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', closeMobile);
+      });
+
+    }());
+  </script>
+
+</body>
+</html>
