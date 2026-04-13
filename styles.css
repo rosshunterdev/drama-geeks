@@ -211,6 +211,68 @@ nav {
   transform: translateY(-50%);
 }
 
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--yellow);
+  z-index: 200; /* above nav (z-index 100) */
+  pointer-events: none;
+}
+
+/* ── Button component ── */
+.btn {
+  display: inline-block;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--r-pill);
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.btn--primary:hover {
+  background: #f0c800;
+}
+
+/* ── Nav CTA (desktop) ── */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  margin-left: var(--sp-2);
+}
+
+/* ── Mobile nav CTA ── */
+.mobile-nav-item--cta {
+  border-bottom: none !important;
+  padding: var(--sp-3) 0 0;
+  margin-top: var(--sp-2);
+}
+
+.mobile-nav-cta {
+  display: block !important;
+  text-align: center !important;
+  padding: 14px var(--sp-5) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  border-bottom: none !important;
+  color: var(--ink) !important;
+}
+
 /* ── Dropdowns ── */
 .nav-item.has-dropdown {
   position: static;
@@ -231,7 +293,8 @@ nav {
   min-width: 200px;
 }
 
-.nav-item.has-dropdown:hover > .nav-dropdown,
+/* Open via JS-managed class or keyboard focus-within */
+.nav-item.has-dropdown.is-open > .nav-dropdown,
 .nav-item.has-dropdown:focus-within > .nav-dropdown {
   display: block;
 }
@@ -265,10 +328,7 @@ nav {
   left: 0;
   right: 0;
   width: auto;
-  flex-direction: row;
-  gap: 16px;
-  padding: 28px 32px;
-  min-height: 180px;
+  padding: 20px 32px;
   border-radius: 0 0 12px 12px;
   z-index: 1000;
   background: var(--cream);
@@ -277,19 +337,28 @@ nav {
   box-shadow: 0 8px 24px rgba(20, 20, 43, 0.10);
 }
 
-.nav-item.has-mega:hover > .nav-mega,
+/* Open via JS-managed class or keyboard focus-within */
+.nav-item.has-mega.is-open > .nav-mega,
 .nav-item.has-mega:focus-within > .nav-mega {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+@media (max-width: 1100px) {
+  .nav-item.has-mega.is-open > .nav-mega,
+  .nav-item.has-mega:focus-within > .nav-mega {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .mega-card {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 160px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  gap: 4px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 12px;
+  border-radius: 10px;
+  gap: 12px;
   text-decoration: none;
 }
 
@@ -297,12 +366,21 @@ nav {
   background: var(--blue-wash);
 }
 
+/* Thumbnail: square 80×80, real <img> element */
 .mega-thumb {
-  width: 100%;
-  height: 100px;
-  background: var(--line);
+  width: 80px;
+  height: 80px;
   border-radius: 8px;
-  margin-bottom: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: block;
+}
+
+.mega-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
 }
 
 .mega-age {
@@ -324,6 +402,42 @@ nav {
   color: var(--mid);
 }
 
+/* ── Dropdown stagger-fade animation ── */
+@keyframes dropdown-item-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animate items when their parent dropdown is open */
+.nav-item.has-dropdown.is-open > .nav-dropdown li,
+.nav-item.has-dropdown:focus-within > .nav-dropdown li,
+.nav-item.has-mega.is-open > .nav-mega li,
+.nav-item.has-mega:focus-within > .nav-mega li {
+  animation: dropdown-item-in 0.2s ease both;
+}
+
+/* Stagger each item by 40ms */
+.nav-dropdown li:nth-child(1), .nav-mega li:nth-child(1) { animation-delay: 0ms; }
+.nav-dropdown li:nth-child(2), .nav-mega li:nth-child(2) { animation-delay: 40ms; }
+.nav-dropdown li:nth-child(3), .nav-mega li:nth-child(3) { animation-delay: 80ms; }
+.nav-dropdown li:nth-child(4), .nav-mega li:nth-child(4) { animation-delay: 120ms; }
+
+/* Respect prefers-reduced-motion: items appear instantly */
+@media (prefers-reduced-motion: reduce) {
+  .nav-item.has-dropdown.is-open > .nav-dropdown li,
+  .nav-item.has-dropdown:focus-within > .nav-dropdown li,
+  .nav-item.has-mega.is-open > .nav-mega li,
+  .nav-item.has-mega:focus-within > .nav-mega li {
+    animation: none;
+  }
+}
+
 /* ── Nav chevron ── */
 .nav-chevron {
   display: inline-block;
@@ -338,7 +452,7 @@ nav {
   vertical-align: middle;
 }
 
-.nav-item.has-dropdown:hover .nav-chevron,
+.nav-item.has-dropdown.is-open .nav-chevron,
 .nav-item.has-dropdown:focus-within .nav-chevron {
   transform: rotate(180deg);
   opacity: 1;

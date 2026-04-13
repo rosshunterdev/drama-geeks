@@ -4,7 +4,12 @@
       "Bash(python -c ':*)",
       "Bash(python3 -c ':*)",
       "Bash(python3)",
-      "Read(//c/Projects/Drama Geeks/**)"
+      "Read(//c/Projects/Drama Geeks/**)",
+      "Read(//c/Users/rossh/Downloads/code prompts dramageeks/**)",
+      "Read(//c/Users/rossh/Downloads/**)",
+      "Read(//c/Users/rossh/**)",
+      "Bash(unzip -l \"code prompts dramageeks.zip\")",
+      "Bash(unzip -p \"code prompts dramageeks.zip\" \"01-navbar-enhancements.md\")"
     ],
     "additionalDirectories": [
       "c:\\Projects\\Drama Geeks\\draft"
