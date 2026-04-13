@@ -54,6 +54,33 @@ if (navToggle && mobileNav) {
   });
 }
 
+// ── Nav pill hover effect ──
+// Only initialise on desktop where .nav-links is visible (> 900px breakpoint).
+(function () {
+  const navLinks = document.querySelector('.nav-links');
+  const navInner = document.querySelector('.nav-inner');
+  if (!navLinks || !navInner) return;
+  if (window.innerWidth <= 900) return;
+
+  const pill = document.createElement('div');
+  pill.className = 'nav-pill';
+  pill.setAttribute('aria-hidden', 'true');
+  navInner.appendChild(pill);
+
+  navLinks.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      // offsetLeft is relative to .nav-inner (its offsetParent, now position:relative)
+      pill.style.left    = item.offsetLeft + 'px';
+      pill.style.width   = item.offsetWidth + 'px';
+      pill.style.opacity = '1';
+    });
+  });
+
+  navLinks.addEventListener('mouseleave', () => {
+    pill.style.opacity = '0';
+  });
+})();
+
 const photoRevealSection = document.querySelector('.photo-reveal');
 
 // Single observer on the section — fires for all .reveal-photo children at once.

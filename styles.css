@@ -117,6 +117,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: var(--sp-5);
+  position: relative;
 }
 
 .nav-left {
@@ -173,6 +174,8 @@ nav {
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
   transition: color 0.15s, text-decoration-color 0.15s;
+  position: relative;
+  z-index: 1;
 }
 
 .nav-links a:hover {
@@ -184,6 +187,161 @@ nav {
 .nav-links a[aria-current="page"] {
   color: var(--ink);
   text-decoration-color: var(--blue);
+}
+
+/* ── Nav item base (ensures links sit above the pill) ── */
+.nav-item {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Nav pill (floating hover highlight) ── */
+.nav-pill {
+  position: absolute;
+  height: 36px;
+  background: var(--blue-wash);
+  border-radius: var(--r-pill);
+  transition: left 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              width 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.18s;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ── Dropdowns ── */
+.nav-item.has-dropdown {
+  position: static;
+}
+
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: auto;
+  z-index: 1000;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--blue);
+  box-shadow: 0 8px 24px rgba(20, 20, 43, 0.10);
+  border-radius: 0 0 12px 12px;
+  padding: 8px 0;
+  min-width: 200px;
+}
+
+.nav-item.has-dropdown:hover > .nav-dropdown,
+.nav-item.has-dropdown:focus-within > .nav-dropdown {
+  display: block;
+}
+
+.nav-dropdown li {
+  list-style: none;
+}
+
+.nav-dropdown li a {
+  display: block;
+  padding: 10px 24px;
+  font-size: 14px;
+  color: var(--mid);
+  text-decoration: none;
+}
+
+.nav-dropdown li a:hover {
+  background: var(--blue-wash);
+  color: var(--blue);
+}
+
+/* ── Mega menu ── */
+.nav-item.has-mega {
+  position: static;
+}
+
+.nav-mega {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: auto;
+  flex-direction: row;
+  gap: 16px;
+  padding: 28px 32px;
+  min-height: 180px;
+  border-radius: 0 0 12px 12px;
+  z-index: 1000;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--blue);
+  box-shadow: 0 8px 24px rgba(20, 20, 43, 0.10);
+}
+
+.nav-item.has-mega:hover > .nav-mega,
+.nav-item.has-mega:focus-within > .nav-mega {
+  display: flex;
+}
+
+.mega-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 160px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.mega-card:hover {
+  background: var(--blue-wash);
+}
+
+.mega-thumb {
+  width: 100%;
+  height: 100px;
+  background: var(--line);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.mega-age {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--blue);
+}
+
+.mega-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.mega-desc {
+  font-size: 13px;
+  color: var(--mid);
+}
+
+/* ── Nav chevron ── */
+.nav-chevron {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  margin-left: 5px;
+  opacity: 0.5;
+  transition: transform 0.18s;
+  vertical-align: middle;
+}
+
+.nav-item.has-dropdown:hover .nav-chevron,
+.nav-item.has-dropdown:focus-within .nav-chevron {
+  transform: rotate(180deg);
+  opacity: 1;
 }
 
 /* ── Hamburger ── */
@@ -344,6 +502,7 @@ nav {
   right: -60px;
   transform: rotate(3deg);
   flex-shrink: 0;
+  z-index:2;
 
   box-shadow: -8px 8px 40px rgba(0,0,0,0.22);
 }
