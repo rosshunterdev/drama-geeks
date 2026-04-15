@@ -5,7 +5,7 @@
   const placeholder = document.getElementById('nav-placeholder');
   if (!placeholder) return;
 
-  fetch('components/nav.html')
+  fetch('/components/nav.html')
     .then(function (r) {
       if (!r.ok) throw new Error('nav-loader: HTTP ' + r.status);
       return r.text();

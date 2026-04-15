@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
+  <url><loc>https://www.dramageeks.co.uk/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/contact/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Classes -->
+  <url><loc>https://www.dramageeks.co.uk/classes/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/classes/mini-geeks/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/classes/junior-geeks/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/classes/senior-geeks/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/classes/elite-geeks/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+
+  <!-- What's On -->
+  <url><loc>https://www.dramageeks.co.uk/whats-on/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/whats-on/productions/</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/whats-on/holiday-workshops/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/whats-on/parties/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/whats-on/gallery/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+
+  <!-- About -->
+  <url><loc>https://www.dramageeks.co.uk/about/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/about/our-story/</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/about/team/</loc><priority>0.6</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/about/venues/</loc><priority>0.6</priority><changefreq>yearly</changefreq></url>
+
+  <!-- Parents -->
+  <url><loc>https://www.dramageeks.co.uk/parents/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/parents/faq/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/parents/term-dates/</loc><priority>0.8</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/parents/safeguarding/</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/parents/fees/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Legal -->
+  <url><loc>https://www.dramageeks.co.uk/privacy/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/cookies/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://www.dramageeks.co.uk/terms/</loc><priority>0.3</priority><changefreq>yearly</changefreq></url>
+
+</urlset>

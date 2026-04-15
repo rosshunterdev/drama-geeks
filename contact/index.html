@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Drama Geeks</title>
+<meta name="description" content="Get in touch with Drama Geeks — book a free trial, ask a question, or find out more about our South Shields performing arts classes for ages 4–18.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<header class="page-header" id="book">
+  <div class="page-header__inner">
+    <p class="page-header__eyebrow">Get in Touch</p>
+    <h1 class="page-header__title">Let's <em>talk.</em></h1>
+    <p class="page-header__sub">Book a free trial, ask a question, or just say hello. We reply to every message personally.</p>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="inner-wrap">
+      <div class="contact-layout">
+        <div>
+          <p class="section-eyebrow">SEND A MESSAGE</p>
+          <h2 class="section-title" style="font-size:clamp(24px,3vw,36px);margin-bottom:var(--sp-5)">Book a trial or ask a question</h2>
+
+          <!-- Form submits to /thanks — replace action with real endpoint when available -->
+          <!-- TODO: owner content — connect form to email service or backend -->
+          <form class="contact-form" action="/thanks/" method="POST">
+            <div class="form-group">
+              <label class="form-label" for="name">Your name</label>
+              <input class="form-input" type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email address</label>
+              <input class="form-input" type="email" id="email" name="email" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone number <span style="font-weight:400;color:var(--mid)">(optional)</span></label>
+              <input class="form-input" type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="child-age">Child's age</label>
+              <select class="form-select" id="child-age" name="child_age">
+                <option value="">Select age range</option>
+                <option value="4-6">4–6 (Mini Geeks)</option>
+                <option value="7-10">7–10 (Junior Geeks)</option>
+                <option value="11-14">11–14 (Senior Geeks)</option>
+                <option value="15-18">15–18 (Elite Geeks)</option>
+              </select>
+            </div>
+            <div class="form-group form-group--full">
+              <label class="form-label" for="message">Your message</label>
+              <textarea class="form-textarea" id="message" name="message" placeholder="Tell us a little about your child and what you're looking for..."></textarea>
+            </div>
+            <div class="form-group form-group--full">
+              <button type="submit" class="btn btn--primary" style="font-size:15px;padding:14px 32px">Send Message →</button>
+            </div>
+          </form>
+        </div>
+
+        <aside>
+          <div class="contact-sidebar" style="margin-bottom:var(--sp-4)">
+            <h3>Contact Details</h3>
+            <div class="contact-detail">
+              <span>📧</span>
+              <div><strong>Email</strong><br><a href="mailto:cereid89@icloud.com">cereid89@icloud.com</a></div>
+            </div>
+            <!-- TODO: owner content — add phone number if desired -->
+            <div class="contact-detail" style="margin-top:var(--sp-3)">
+              <span>📍</span>
+              <div><strong>Where we are</strong><br><a href="/about/venues/" style="color:var(--blue)">See our three venues →</a></div>
+            </div>
+          </div>
+
+          <div class="contact-sidebar">
+            <h3>Quick Links</h3>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:var(--sp-2)">
+              <li><a href="/parents/faq/" style="color:var(--blue);font-size:14px">Read our FAQ →</a></li>
+              <li><a href="/parents/term-dates/" style="color:var(--blue);font-size:14px">See term dates →</a></li>
+              <li><a href="/parents/fees/" style="color:var(--blue);font-size:14px">View fees →</a></li>
+              <li><a href="/classes/" style="color:var(--blue);font-size:14px">Compare classes →</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--tight">
+    <div class="inner-wrap">
+      <!-- TODO: owner content — embed Google Map showing three venues -->
+      <div style="background:var(--blue-wash);border-radius:var(--r-card);height:300px;display:flex;align-items:center;justify-content:center">
+        <p style="color:var(--mid);font-size:14px">Map embed — three venues <!-- TODO: owner content — add Google Maps embed here --></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="footer-placeholder"></div>
+<script src="/components/nav-loader.js"></script>
+<script src="/components/footer-loader.js"></script>
+</body>
+</html>
