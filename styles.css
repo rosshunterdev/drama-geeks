@@ -1616,7 +1616,7 @@ h1 .dot {
 }
 
 .skill-item::before {
-  content: '→';
+  /*content: '→'; */
   color: var(--blue);
   font-weight: 600;
   flex-shrink: 0;
