@@ -588,6 +588,7 @@ nav {
   position: relative;
   margin-left: auto;
   padding-left: 120px;
+  font:aramic;
 }
 
 .hero-icon {
@@ -744,6 +745,11 @@ h1 em {
 
 h1 .dot {
   color: var(--yellow);
+}
+
+.hero-center h1 {
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 0.01em;
 }
 
 .subtitle {
