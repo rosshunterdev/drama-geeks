@@ -3,7 +3,7 @@
   --cream:       #FBF8F3;
   --blue:        #00A8DC;
   --yellow:      #FFD93E;
-  --blue-deep:   #0D3B5C;
+  --blue-deep:   #1E1E24;
   --mid:         #5D6577;
   --blue-wash:   #EAF7FC;
   --yellow-wash: #FFF6D1;
@@ -85,8 +85,9 @@ img {
   padding: 12px var(--gutter);
   display: flex;
   /* Change justify-content to space-between to push items apart */
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.45), inset 0 -1px 0 rgba(255,255,255,0.06);
   font-size: 11px;
   letter-spacing: 1.5px;
   /* row-reverse flips the HTML order so the email appears first (on the left) */
@@ -180,9 +181,9 @@ nav {
 }
 
 .logo-img img:last-child {
-  height: 48px;
+  height: 44px;
   width: auto;
-  margin-left: 80px; /* increase this to push it further right */
+  margin-left: 0px; /* increase this to push it further right */
 }
 
 .nav-links {
@@ -781,19 +782,20 @@ h1 .dot {
 }
 
 .cta-secondary {
+  display: inline-block;
   font-size: 14px;
   font-weight: 500;
-  color: var(--mid);
-  text-decoration: underline;
-  text-decoration-color: transparent;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  transition: color 0.15s, text-decoration-color 0.15s;
+  color: var(--ink);
+  background: var(--yellow);
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
 }
 
 .cta-secondary:hover {
+  background: #f5c800;
   color: var(--ink);
-  text-decoration-color: var(--blue);
 }
 
 .cta-primary {
@@ -813,6 +815,32 @@ h1 .dot {
 
 .cta-primary:hover {
   background: var(--blue-deep);
+}
+
+.cta-yellow {
+  /* Shape & Spacing */
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px; /* Adjust for more or less roundness */
+  
+  /* Colors */
+  background-color: #FFD700; /* A classic golden yellow */
+  color: #000000; /* Black text for better contrast on yellow */
+  
+  /* Typography */
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  
+  /* Interaction */
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.cta-yellow:hover {
+  background-color: #FFC400; /* Slightly darker on hover */
 }
 
 .hero-venues {
@@ -899,6 +927,7 @@ h1 .dot {
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4), inset 0 -1px 0 rgba(255,255,255,0.06);
 }
 
 /* ── Classes section ── */
@@ -1066,12 +1095,12 @@ h1 .dot {
 .rp-2 { transition-delay: 0.1s;  }
 .rp-3 { transition-delay: 0.2s;  }
 .rp-4 { transition-delay: 0.32s; }
+/*
 .rp-5 { transition-delay: 0.46s; }
-/* Stagger delays for the new images so they pop in sequence */
 .rp-6 { transition-delay: 0.58s; width: 320px; }
 .rp-7 { transition-delay: 0.7s;  width: 240px; margin-bottom: 120px; }
 .rp-8 { transition-delay: 0.82s; width: 200px; margin-top: 40px; }
-
+*/
 /* Set specific heights for the new images */
 .rp-6 img { height: 300px; }
 .rp-7 img { height: 240px; }
@@ -1203,6 +1232,7 @@ h1 .dot {
 .section--dark {
   background: var(--blue-deep);
   color: white;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 8px 32px rgba(0,0,0,0.35);
 }
 
 .section--dark .section-title { color: white; }
@@ -1214,6 +1244,7 @@ h1 .dot {
   background: var(--blue-deep);
   color: white;
   padding: 72px var(--gutter) 64px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4), inset 0 -1px 0 rgba(255,255,255,0.06);
 }
 
 .page-header__inner {
@@ -1418,6 +1449,7 @@ h1 .dot {
   font-size: 13px;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  box-shadow: inset 0 -2px 0 rgba(255,255,255,0.08);
 }
 
 .comparison-table td {
