@@ -1,0 +1,95 @@
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/images/logo-img.png" alt="Drama Geeks Logo">
+          <span>DRAMA GEEKS</span>
+        </a>
+        <p class="footer-tagline">Fun &amp; Friendly Performing Arts School for ages 4–18 in South Shields.</p>
+        <div class="footer-socials">
+          <!-- TODO: owner content — add real social URLs -->
+          <a href="#" aria-label="Facebook" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" aria-label="Instagram" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube" class="footer-social-link">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.97C18.88 4 12 4 12 4s-6.88 0-8.59.45A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.97C5.12 20 12 20 12 20s6.88 0 8.59-.45a2.78 2.78 0 0 0 1.95-1.97A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <div class="footer-col">
+          <h3 class="footer-heading">Classes</h3>
+          <ul>
+            <li><a href="/classes/">All Classes</a></li>
+            <li><a href="/classes/mini-geeks/">Mini Geeks <span class="footer-age">4–6</span></a></li>
+            <li><a href="/classes/junior-geeks/">Junior Geeks <span class="footer-age">7–10</span></a></li>
+            <li><a href="/classes/senior-geeks/">Senior Geeks <span class="footer-age">11–14</span></a></li>
+            <li><a href="/classes/elite-geeks/">Elite Geeks <span class="footer-age">15–18</span></a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">What's On</h3>
+          <ul>
+            <li><a href="/whats-on/">What's On</a></li>
+            <li><a href="/whats-on/productions/">Productions</a></li>
+            <li><a href="/whats-on/holiday-workshops/">Holiday Workshops</a></li>
+            <li><a href="/whats-on/parties/">Parties</a></li>
+            <li><a href="/whats-on/gallery/">Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">About</h3>
+          <ul>
+            <li><a href="/about/">About Us</a></li>
+            <li><a href="/about/our-story/">Our Story</a></li>
+            <li><a href="/about/team/">Meet the Team</a></li>
+            <li><a href="/about/venues/">Our Venues</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">Parents</h3>
+          <ul>
+            <li><a href="/parents/">For Parents</a></li>
+            <li><a href="/parents/faq/">FAQ</a></li>
+            <li><a href="/parents/term-dates/">Term Dates</a></li>
+            <li><a href="/parents/safeguarding/">Safeguarding</a></li>
+            <li><a href="/parents/fees/">Fees &amp; Payments</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">Get in Touch</h3>
+          <ul class="footer-contact">
+            <!-- TODO: owner content — confirm phone number -->
+            <li><a href="mailto:hello@dramageeks.co.uk">hello@dramageeks.co.uk</a></li>
+            <li><a href="tel:+447700000000">07700 000 000</a></li>
+            <li><a href="/contact/">Send a message →</a></li>
+            <li class="footer-contact__book"><a href="/contact/#book" class="btn btn--primary">Book a Free Trial</a></li>
+          </ul>
+        </div>
+      </nav>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; <span id="footer-year"></span> Drama Geeks. All rights reserved. EST. 2012 · South Shields.</p>
+      <ul class="footer-legal">
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/cookies/">Cookie Policy</a></li>
+        <li><a href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    var el = document.getElementById('footer-year');
+    if (el) el.textContent = new Date().getFullYear();
+  </script>

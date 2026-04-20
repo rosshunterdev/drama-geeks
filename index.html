@@ -1,145 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drama Geeks — Fun & Friendly Performing Arts School</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drama Geeks — Fun &amp; Friendly Performing Arts School</title>
+  <meta name="description" content="Drama Geeks is a fun and friendly performing arts school in South Shields for children aged 4–18. Classes in drama, musical theatre, singing and dance. Book a free trial today.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
+  <!-- Navbar component -->
   <div id="nav-placeholder"></div>
 
-<section class="hero">
-  <div class="hero-stage">
-    <div class="hero-center">
-      <p class="eyebrow">EST. 2012 · SOUTH SHIELDS</p>
-      <h1>Drama <em>Geeks</em><span class="dot">.</span></h1>
-      <p class="subtitle">Fun &amp; Friendly Performing Arts School</p>
-      <p class="tagline">
-        Inspiring confidence and creativity in children of all ages and abilities. Drama Geeks is like a big family and offers a multitude of performance opportunities each year.
-      </p>
-      <div class="cta-wrap">
-        <a href="#classes" class="cta-primary">Explore our classes →</a>
-        <a href="productions.html" class="cta-secondary">Or see upcoming productions →</a>
-      </div>
-      <p class="hero-venues">
-        <span class="hero-venues__label">As seen at:</span>
-        The Customs House · The Westovian Theatre · Cleadon Methodist Church
-      </p>
-    </div>
-    <div class="hero-photos">
-      <div class="hero-photo-a">
-        <img src="images/home_3.JPG" alt="Drama Geeks students on stage">
-      </div>
-      
-      <div class="hero-photo-b">
-        <img src="images/sky1.JPG" alt="Drama Geeks students in performance">
-      </div>
-      
-    </div>
-  </div>
-</section>
+  <main>
 
-<section class="photo-reveal" id="photo-reveal">
-  <div class="photo-reveal-track">
-    <div class="reveal-photo rp-1">
-      <img src="images/hero-ensemble.JPG" alt="Drama Geeks ensemble">
-    </div>
-    <div class="reveal-photo rp-2">
-      <img src="images/home1.JPG" alt="Drama Geeks performance">
-    </div>
-    <div class="reveal-photo rp-3">
-      <img src="images/hero-musical.JPG" alt="Drama Geeks musical">
-    </div>
-    <div class="reveal-photo rp-4">
-      <img src="images/home2.JPG" alt="Drama Geeks students">
-    </div>
-    <div class="reveal-photo rp-5">
-      <img src="images/hero-teens.JPG" alt="Drama Geeks seniors">
-    </div>
-    <div class="reveal-photo rp-6">
-      <img src="images/hero-teens.JPG" alt="Chain image 1">
-    </div>
-    <div class="reveal-photo rp-7">
-      <img src="images/hero-teens.JPG" alt="Chain image 2">
-    </div>
-    <div class="reveal-photo rp-8">
-      <img src="images/hero-teens.JPG" alt="Chain image 3">
-    </div>
-  </div>
-</section>
-
-  <div class="ticker">
-    <span>· AGES 4–18</span>
-    <span>· NODA AFFILIATED</span>
-    <span>· DBS CHECKED</span>
-    <span>· SAFEGUARDING FIRST</span>
-    <span>· 12+ YEARS RUNNING</span>
-  </div>
-
-  <section class="classes" id="classes">
-    <div class="section-head">
-      <div class="section-eyebrow">OUR CLASSES</div>
-      <h2 class="section-title">A class for <em>every</em> age.</h2>
-      <p class="section-sub">From first-timers finding their feet to confident performers preparing for the stage — every group is taught by industry-experienced tutors.</p>
-    </div>
-
-    <div class="class-grid">
-      <div class="class-card">
-        <div class="age">MINI GEEKS</div>
-        <div class="age-num">4<em>–</em>6</div>
-        <h3>First Steps</h3>
-        <p>Playful introduction to drama through games, storytelling and movement. Building confidence one giggle at a time.</p>
-        <div class="meta">
-          <span>Saturday mornings</span>
-          <span>45 minutes</span>
-          <span>Cleadon Methodist</span>
+    <!-- ── Homepage hero (unique to this page — all other pages use .page-header) ── -->
+    <section class="hero">
+      <div class="hero-stage">
+        <div class="hero-center">
+          <p class="eyebrow">EST. 2012 · SOUTH SHIELDS</p>
+          <h1>Drama <em>Geeks</em><span class="dot">.</span></h1>
+          <p class="subtitle">Fun &amp; Friendly Performing Arts School</p>
+          <p class="tagline">
+            Inspiring confidence and creativity in children of all ages and abilities.
+            Drama Geeks is like a big family and offers a multitude of performance
+            opportunities each year.
+          </p>
+          <div class="cta-wrap">
+            <a href="/contact/#book" class="cta-primary">Book a free trial →</a>
+            <a href="/whats-on/productions/" class="cta-secondary">See upcoming productions →</a>
+          </div>
+          <p class="hero-venues">
+            <span class="hero-venues__label">As seen at:</span>
+            The Customs House · The Westovian Theatre · Cleadon Methodist Church
+          </p>
+        </div>
+        <div class="chain-hero" id="chain-hero" aria-hidden="true">
+          <div class="chain-hero__string"></div>
+          <div class="chain-hero__polaroid chain-hero__polaroid--1">
+            <div class="chain-hero__pin"></div>
+            <img src="/images/home_1.JPG" alt="" loading="lazy">
+          </div>
+          <div class="chain-hero__polaroid chain-hero__polaroid--2">
+            <div class="chain-hero__pin"></div>
+            <img src="/images/home_3.JPG" alt="" loading="lazy">
+          </div>
+          <div class="chain-hero__polaroid chain-hero__polaroid--3">
+            <div class="chain-hero__pin"></div>
+            <img src="/images/sky1.JPG" alt="" loading="lazy">
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="class-card">
-        <div class="age">JUNIOR GEEKS</div>
-        <div class="age-num">7<em>–</em>10</div>
-        <h3>Stage &amp; Script</h3>
-        <p>Acting technique, singing and movement. Students perform in our annual showcase at The Customs House.</p>
-        <div class="meta">
-          <span>Saturday mornings</span>
-          <span>90 minutes</span>
-          <span>The Customs House</span>
-        </div>
+    <!-- ── Photo reveal strip ── -->
+    <section class="photo-reveal" id="photo-reveal">
+      <div class="photo-reveal-track">
+        <div class="reveal-photo rp-1"><img src="/images/hero-ensemble.JPG"  alt="Drama Geeks ensemble"></div>
+        <div class="reveal-photo rp-2"><img src="/images/home1.JPG"           alt="Drama Geeks performance"></div>
+        <div class="reveal-photo rp-3"><img src="/images/hero-musical.JPG"   alt="Drama Geeks musical"></div>
+        <div class="reveal-photo rp-4"><img src="/images/home2.JPG"           alt="Drama Geeks students"></div>
+        <div class="reveal-photo rp-5"><img src="/images/hero-teens.JPG"     alt="Drama Geeks seniors"></div>
+        <div class="reveal-photo rp-6"><img src="/images/image01006.JPG"     alt="Drama Geeks on stage"></div>
+        <div class="reveal-photo rp-7"><img src="/images/image01017.JPG"     alt="Drama Geeks performance"></div>
+        <div class="reveal-photo rp-8"><img src="/images/image01025.JPG"     alt="Drama Geeks showcase"></div>
       </div>
+    </section>
 
-      <div class="class-card">
-        <div class="age">SENIOR GEEKS</div>
-        <div class="age-num">11<em>–</em>14</div>
-        <h3>Musical Theatre</h3>
-        <p>Full triple-threat training: acting, singing, dance. Students star in full-scale productions each term.</p>
-        <div class="meta">
-          <span>Saturday afternoons</span>
-          <span>2 hours</span>
-          <span>The Westovian</span>
-        </div>
-      </div>
-
-      <div class="class-card">
-        <div class="age">ELITE GEEKS</div>
-        <div class="age-num">15<em>–</em>18</div>
-        <h3>Performance Academy</h3>
-        <p>Audition-ready training for students considering drama school or industry work. LAMDA exams available.</p>
-        <div class="meta">
-          <span>Saturday afternoons</span>
-          <span>2.5 hours</span>
-          <span>The Westovian</span>
-        </div>
-      </div>
+    <!-- ── Ticker ── -->
+    <div class="ticker" aria-hidden="true">
+      <span>· AGES 4–18</span>
+      <span>· NODA AFFILIATED</span>
+      <span>· DBS CHECKED</span>
+      <span>· SAFEGUARDING FIRST</span>
+      <span>· 12+ YEARS RUNNING</span>
     </div>
-  </section>
 
-  <script src="components/nav-loader.js"></script>
-  <script src="script.js"></script>
+    <!-- ── ClassCard component — four instances ── -->
+    <section class="classes" id="classes">
+      <div class="section-head">
+        <div class="section-eyebrow">OUR CLASSES</div>
+        <h2 class="section-title">A class for <em>every</em> age.</h2>
+        <p class="section-sub">From first-timers finding their feet to confident performers preparing for the stage — every group is taught by industry-experienced tutors.</p>
+      </div>
+
+      <div class="class-grid">
+
+        <!-- ClassCard: Mini Geeks -->
+        <a href="/classes/mini-geeks/" class="class-card">
+          <img src="/images/home_1.JPG" alt="Mini Geeks — ages 4 to 6" class="class-card__img">
+          <div class="age">MINI GEEKS</div>
+          <div class="age-num">4<em>–</em>6</div>
+          <h3>First Steps</h3>
+          <p>Playful introduction to drama through games, storytelling and movement. Building confidence one giggle at a time.</p>
+          <div class="meta">
+            <span>Saturday mornings</span>
+            <span>45 minutes</span>
+            <span>Cleadon Methodist</span>
+          </div>
+          <span class="class-card__cta">Find out more →</span>
+        </a>
+
+        <!-- ClassCard: Junior Geeks -->
+        <a href="/classes/junior-geeks/" class="class-card">
+          <img src="/images/home_2.JPG" alt="Junior Geeks — ages 7 to 10" class="class-card__img">
+          <div class="age">JUNIOR GEEKS</div>
+          <div class="age-num">7<em>–</em>10</div>
+          <h3>Stage &amp; Script</h3>
+          <p>Acting technique, singing and movement. Students perform in our annual showcase at The Customs House.</p>
+          <div class="meta">
+            <span>Saturday mornings</span>
+            <span>90 minutes</span>
+            <span>The Customs House</span>
+          </div>
+          <span class="class-card__cta">Find out more →</span>
+        </a>
+
+        <!-- ClassCard: Senior Geeks -->
+        <a href="/classes/senior-geeks/" class="class-card">
+          <img src="/images/hero-ensemble.JPG" alt="Senior Geeks — ages 11 to 14" class="class-card__img">
+          <div class="age">SENIOR GEEKS</div>
+          <div class="age-num">11<em>–</em>14</div>
+          <h3>Musical Theatre</h3>
+          <p>Full triple-threat training: acting, singing, dance. Students star in full-scale productions each term.</p>
+          <div class="meta">
+            <span>Saturday afternoons</span>
+            <span>2 hours</span>
+            <span>The Westovian</span>
+          </div>
+          <span class="class-card__cta">Find out more →</span>
+        </a>
+
+        <!-- ClassCard: Elite Geeks -->
+        <a href="/classes/elite-geeks/" class="class-card">
+          <img src="/images/hero-teens.jpg" alt="Elite Geeks — ages 15 to 18" class="class-card__img">
+          <div class="age">ELITE GEEKS</div>
+          <div class="age-num">15<em>–</em>18</div>
+          <h3>Performance Academy</h3>
+          <p>Audition-ready training for students considering drama school or industry work. LAMDA exams available.</p>
+          <div class="meta">
+            <span>Saturday afternoons</span>
+            <span>2.5 hours</span>
+            <span>The Westovian</span>
+          </div>
+          <span class="class-card__cta">Find out more →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ── CTABanner component ── -->
+    <section class="cta-banner">
+      <div class="cta-banner__inner">
+        <p class="cta-banner__eyebrow">No experience needed</p>
+        <h2 class="cta-banner__title">Book a <em>free trial</em> class</h2>
+        <p class="cta-banner__subtitle">Come and see what Drama Geeks is all about — completely free, no obligation. We'd love to meet you.</p>
+        <div class="cta-banner__actions">
+          <a href="/contact/#book" class="btn btn--white">Book a Free Trial</a>
+          <a href="/contact/" class="btn btn--outline-white">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer component -->
+  <div id="footer-placeholder"></div>
+
+  <script src="/components/nav-loader.js"></script>
+  <script src="/script.js"></script>
+  <script src="/js/chain-hero.js"></script>
 </body>
 </html>

@@ -1,25 +1,92 @@
-// Fetches components/nav.html, injects it in place of #nav-placeholder,
-// then re-initialises all nav behaviour (scroll-shrink, hamburger, mobile
-// accordion, hover pill) that needs the DOM elements to exist first.
+// Fetches /components/nav.html and /components/footer.html, injects them
+// in place of #nav-placeholder and #footer-placeholder, then re-initialises
+// all nav behaviour (scroll-shrink, hamburger, mobile accordion, hover pill,
+// dropdowns, scroll-spy) that needs the DOM elements to exist first.
+//
+// Root-relative paths (/components/…) mean this file works correctly from any
+// page depth without modification.
 (function () {
-  const placeholder = document.getElementById('nav-placeholder');
-  if (!placeholder) return;
+  var NAV_PATH    = '/components/nav.html';
+  var FOOTER_PATH = '/components/footer.html';
 
-  fetch('components/nav.html')
-    .then(function (r) {
-      if (!r.ok) throw new Error('nav-loader: HTTP ' + r.status);
-      return r.text();
-    })
-    .then(function (html) {
-      // Replace the placeholder div with the fetched markup.
-      // insertAdjacentHTML keeps sibling order; remove() cleans up the div.
-      placeholder.insertAdjacentHTML('afterend', html);
-      placeholder.remove();
+  var navPlaceholder    = document.getElementById('nav-placeholder');
+  var footerPlaceholder = document.getElementById('footer-placeholder');
+
+  var navLoaded    = false;
+  var footerLoaded = false;
+
+  function checkAllLoaded() {
+    if (navLoaded && footerLoaded) {
       initNav();
-    })
-    .catch(function (err) {
-      console.error('nav-loader: could not load components/nav.html', err);
+      initActiveLink();
+    }
+  }
+
+  // ── Load nav ──
+  if (navPlaceholder) {
+    fetch(NAV_PATH)
+      .then(function (r) {
+        if (!r.ok) throw new Error('nav-loader: HTTP ' + r.status + ' for ' + NAV_PATH);
+        return r.text();
+      })
+      .then(function (html) {
+        navPlaceholder.insertAdjacentHTML('afterend', html);
+        navPlaceholder.remove();
+        navLoaded = true;
+        checkAllLoaded();
+      })
+      .catch(function (err) {
+        console.error('nav-loader: could not load nav.html', err);
+        navLoaded = true; // still attempt footer init
+        checkAllLoaded();
+      });
+  } else {
+    navLoaded = true;
+  }
+
+  // ── Load footer ──
+  if (footerPlaceholder) {
+    fetch(FOOTER_PATH)
+      .then(function (r) {
+        if (!r.ok) throw new Error('nav-loader: HTTP ' + r.status + ' for ' + FOOTER_PATH);
+        return r.text();
+      })
+      .then(function (html) {
+        footerPlaceholder.insertAdjacentHTML('afterend', html);
+        footerPlaceholder.remove();
+        footerLoaded = true;
+        checkAllLoaded();
+      })
+      .catch(function (err) {
+        console.error('nav-loader: could not load footer.html', err);
+        footerLoaded = true;
+        checkAllLoaded();
+      });
+  } else {
+    footerLoaded = true;
+  }
+
+  // If no placeholders exist at all, still init nav if elements are already in DOM
+  if (!navPlaceholder && !footerPlaceholder) {
+    initNav();
+    initActiveLink();
+  }
+
+  // ── Marks the correct top-level nav link as active based on current URL ──
+  function initActiveLink() {
+    var path = window.location.pathname;
+    var links = document.querySelectorAll('.nav-links .nav-item > a');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href || href === '#') return;
+      // Exact match for home, prefix match for sections
+      if (href === '/' && path === '/') {
+        link.classList.add('active');
+      } else if (href !== '/' && path.startsWith(href)) {
+        link.classList.add('active');
+      }
     });
+  }
 
   function initNav() {
     // ── Scroll-shrink: topbar hides, nav compacts ──
@@ -86,7 +153,6 @@
     });
 
     // ── Nav pill hover effect ──
-    // Only on desktop where .nav-links is visible (> 900 px breakpoint).
     var navLinks = document.querySelector('.nav-links');
     var navInner = document.querySelector('.nav-inner');
     if (navLinks && navInner && window.innerWidth > 900) {
@@ -108,12 +174,7 @@
       });
     }
 
-    // ──────────────────────────────────────────────────────────────────────────
     // ── Scroll progress bar ──
-    // A 2px yellow bar fixed at the very top of the viewport that fills from
-    // 0% → 100% as the user scrolls from page top to bottom.
-    // Uses the same requestAnimationFrame-throttled scroll listener pattern.
-    // ──────────────────────────────────────────────────────────────────────────
     (function initProgressBar() {
       var bar = document.createElement('div');
       bar.id = 'scroll-progress';
@@ -137,18 +198,10 @@
         }
       }, { passive: true });
 
-      updateProgress(); // set initial state
+      updateProgress();
     })();
 
-    // ──────────────────────────────────────────────────────────────────────────
     // ── Desktop dropdown behaviour ──
-    // Replaces pure-CSS :hover with JS-managed .is-open class so that:
-    //   • mouseenter / mouseleave keep the familiar hover-open feel
-    //   • aria-expanded is updated on the trigger <a>
-    //   • Escape key closes the open dropdown and refocuses the trigger
-    //   • Clicking outside any open dropdown closes it
-    //   • Clicking a link inside a dropdown closes it
-    // ──────────────────────────────────────────────────────────────────────────
     (function initDropdowns() {
       var dropdownItems = document.querySelectorAll('.nav-links .nav-item.has-dropdown');
 
@@ -172,39 +225,27 @@
       dropdownItems.forEach(function (item) {
         var trigger = item.querySelector(':scope > a');
 
-        // Hover-open (mouse users): open on enter, close on leave
-        item.addEventListener('mouseenter', function () {
-          openDropdown(item);
-        });
-        item.addEventListener('mouseleave', function () {
-          closeDropdown(item);
-        });
+        item.addEventListener('mouseenter', function () { openDropdown(item); });
+        item.addEventListener('mouseleave', function () { closeDropdown(item); });
 
-        // Click-to-toggle (keyboard / touch users)
         if (trigger) {
           trigger.addEventListener('click', function (e) {
             var isOpen = item.classList.contains('is-open');
             if (isOpen) {
-              // If already open, let the href navigate; just close the menu
               closeDropdown(item);
             } else {
-              // Prevent navigation; open the dropdown instead
               e.preventDefault();
               openDropdown(item);
             }
           });
         }
 
-        // Clicking any link inside the dropdown closes it
         var dropdownLinks = item.querySelectorAll('.nav-dropdown a, .nav-mega a');
         dropdownLinks.forEach(function (link) {
-          link.addEventListener('click', function () {
-            closeDropdown(item);
-          });
+          link.addEventListener('click', function () { closeDropdown(item); });
         });
       });
 
-      // Escape key: close any open dropdown, return focus to its trigger
       document.addEventListener('keydown', function (e) {
         if (e.key !== 'Escape') return;
         dropdownItems.forEach(function (item) {
@@ -216,32 +257,17 @@
         });
       });
 
-      // Click outside: close all open dropdowns
       document.addEventListener('click', function (e) {
         var clickedInsideNav = e.target.closest('.nav-links');
         if (!clickedInsideNav) closeAllDropdowns();
       });
     })();
 
-    // ──────────────────────────────────────────────────────────────────────────
-    // ── Scroll-spy active state ──
-    // Uses IntersectionObserver to detect which page section is currently in
-    // the upper portion of the viewport and applies .active to the matching
-    // top-level nav link.
-    //
-    // rootMargin '-80px 0px -60% 0px':
-    //   • -80px top  → shrinks the observation area down by 80px to account
-    //                  for the sticky navbar height, so a section only becomes
-    //                  "active" once its content is actually visible below nav.
-    //   • -60% bottom → only the top 40% of the viewport triggers activation;
-    //                   prevents premature activation of sections just entering
-    //                   from the bottom.
-    // ──────────────────────────────────────────────────────────────────────────
+    // ── Scroll-spy active state (hash-based, for homepage sections) ──
     (function initScrollSpy() {
       var navLinkEls = document.querySelectorAll('.nav-links .nav-item > a');
-
-      // Build a map of section-id → nav <a> element
       var sectionMap = {};
+
       navLinkEls.forEach(function (link) {
         var href = link.getAttribute('href') || '';
         if (href.startsWith('#') && href.length > 1) {
@@ -252,23 +278,18 @@
       });
 
       var sectionIds = Object.keys(sectionMap);
-      if (sectionIds.length === 0) return; // no matching sections on this page
+      if (sectionIds.length === 0) return;
 
       function setActive(id) {
-        // Remove .active from all nav links, then add to matched one
         navLinkEls.forEach(function (l) { l.classList.remove('active'); });
         if (id && sectionMap[id]) sectionMap[id].classList.add('active');
       }
 
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
+          if (entry.isIntersecting) setActive(entry.target.id);
         });
-      }, {
-        rootMargin: '-80px 0px -60% 0px'
-      });
+      }, { rootMargin: '-80px 0px -60% 0px' });
 
       sectionIds.forEach(function (id) {
         observer.observe(document.getElementById(id));
