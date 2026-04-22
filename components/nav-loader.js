@@ -159,12 +159,14 @@
       var pill = document.createElement('div');
       pill.className = 'nav-pill';
       pill.setAttribute('aria-hidden', 'true');
-      navInner.appendChild(pill);
+      navLinks.appendChild(pill);
 
+      var PAD = 10;
       navLinks.querySelectorAll('.nav-item').forEach(function (item) {
+        if (item.classList.contains('nav-cta')) return;
         item.addEventListener('mouseenter', function () {
-          pill.style.left    = item.offsetLeft + 'px';
-          pill.style.width   = item.offsetWidth + 'px';
+          pill.style.left    = (item.offsetLeft - PAD) + 'px';
+          pill.style.width   = (item.offsetWidth + PAD * 2) + 'px';
           pill.style.opacity = '1';
         });
       });
@@ -204,8 +206,11 @@
     // ── Desktop dropdown behaviour ──
     (function initDropdowns() {
       var dropdownItems = document.querySelectorAll('.nav-links .nav-item.has-dropdown');
+      var closeTimer = null;
 
       function openDropdown(item) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
         closeAllDropdowns();
         item.classList.add('is-open');
         var trigger = item.querySelector(':scope > a[aria-expanded]');
@@ -226,7 +231,9 @@
         var trigger = item.querySelector(':scope > a');
 
         item.addEventListener('mouseenter', function () { openDropdown(item); });
-        item.addEventListener('mouseleave', function () { closeDropdown(item); });
+        item.addEventListener('mouseleave', function () {
+          closeTimer = setTimeout(function () { closeDropdown(item); }, 120);
+        });
 
         if (trigger) {
           trigger.addEventListener('click', function (e) {
