@@ -1,5 +1,6 @@
 :root {
-  --ink:         #14142B;
+  --ink:         #111111;
+  --ink-soft:    #222222;
   --cream:       #FBF8F3;
   --blue:        #00A8DC;
   --yellow:      #FFD93E;
@@ -7,7 +8,9 @@
   --mid:         #5D6577;
   --blue-wash:   #EAF7FC;
   --yellow-wash: #FFF6D1;
-  --line:        rgba(20, 20, 43, 0.09);
+  --line:        rgba(17, 17, 17, 0.09);
+  --font-display: 'Fraunces', serif;
+  --font-body:    'Poppins', sans-serif;
 
   --sp-1:  4px;
   --sp-2:  8px;
@@ -648,7 +651,7 @@ h1 {
   font-family: 'Fraunces', serif;
   font-optical-sizing: auto;
   text-align: left;
-  font-size: clamp(56px, 9vw, 96px);
+  font-size: clamp(56px, 10vw, 112px);
   font-weight: 700;
   line-height: 1.0;
   letter-spacing: -0.03em;
@@ -676,7 +679,7 @@ h1 .dot {
 }
 
 .tagline {
-  text-align: left;
+  text-align: center;
   font-size: 18px;
   color: var(--mid);
   max-width: 420px;
@@ -836,10 +839,9 @@ h1 .dot {
 }
 
 .section-title {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: clamp(40px, 6vw, 64px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.025em;
   margin-bottom: var(--sp-4);
@@ -906,10 +908,9 @@ h1 .dot {
 }
 
 .class-card h3 {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: 10px;
 }
@@ -1241,10 +1242,9 @@ a.class-card {
 
 /* ── Section headings (inner pages) ── */
 .inner-heading {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: clamp(28px, 4vw, 44px);
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: var(--sp-3);
@@ -1284,9 +1284,9 @@ a.class-card {
 }
 
 .inner-body h2 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 28px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.02em;
   margin-top: var(--sp-6);
   margin-bottom: var(--sp-3);
@@ -1294,9 +1294,9 @@ a.class-card {
 }
 
 .inner-body h3 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
   margin-top: var(--sp-5);
   margin-bottom: var(--sp-2);
@@ -1345,7 +1345,7 @@ a.class-card {
 }
 
 .link-card__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -1644,7 +1644,7 @@ a.class-card {
 }
 
 .team-card__name {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 4px;
@@ -1696,7 +1696,7 @@ a.class-card {
 }
 
 .venue-card__name {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: var(--sp-2);
@@ -1752,7 +1752,7 @@ a.class-card {
 }
 
 .production-card__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   margin-bottom: var(--sp-2);
@@ -1899,7 +1899,7 @@ a.class-card {
 }
 
 .price-card__name {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 22px;
   font-weight: 600;
   margin-bottom: var(--sp-3);
@@ -1964,8 +1964,7 @@ a.class-card {
 }
 
 .reassurance-card__title {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -2014,8 +2013,7 @@ a.class-card {
 }
 
 .whats-on-feature__title {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -2278,8 +2276,7 @@ a.class-card {
 }
 
 .venue-info__name {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -2336,8 +2333,7 @@ a.class-card {
 }
 
 .teacher-profile__name {
-  font-family: 'Fraunces', serif;
-  font-optical-sizing: auto;
+  font-family: var(--font-body);
   font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -2373,9 +2369,9 @@ a.class-card {
 }
 
 .term-block__heading {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: var(--sp-4);
   padding-bottom: var(--sp-3);
   border-bottom: 2px solid var(--blue);
@@ -2389,9 +2385,9 @@ a.class-card {
 }
 
 .legal-content h2 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: var(--sp-6);
   margin-bottom: var(--sp-3);
   padding-top: var(--sp-6);
@@ -2456,7 +2452,7 @@ a.class-card {
 }
 
 .not-found__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 700;
   margin-bottom: var(--sp-3);
@@ -2496,7 +2492,7 @@ a.class-card {
 }
 
 .thanks-page__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-body);
   font-size: clamp(32px, 5vw, 56px);
   font-weight: 700;
   letter-spacing: -0.025em;
@@ -2746,4 +2742,82 @@ a.class-card {
   .section-title {
     font-size: 40px;
   }
+}
+
+/* ── Schedule grid ── */
+.schedule-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.schedule-day {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.schedule-day__heading {
+  background: var(--ink);
+  color: var(--yellow);
+  padding: var(--sp-3) var(--sp-5);
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.schedule-cards {
+  display: flex;
+  flex-direction: column;
+}
+
+.session-card {
+  padding: var(--sp-5);
+  border-bottom: 1px solid var(--line);
+  background: white;
+}
+
+.session-card:last-child {
+  border-bottom: none;
+}
+
+.session-card__venue {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--sp-2);
+}
+
+.session-card__time {
+  font-size: 14px;
+  color: var(--mid);
+  margin-bottom: var(--sp-2);
+}
+
+.session-card__production {
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--blue);
+  margin-bottom: var(--sp-4);
+}
+
+.session-card__book {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--blue);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.session-card__book:hover {
+  text-decoration: underline;
 }
