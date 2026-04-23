@@ -57,22 +57,30 @@
       <div class="hero-cascade__photo hero-cascade__photo--2">
         <img src="/images/sky1.JPG" alt="">
       </div>
-      <div class="hero-cascade__photo hero-cascade__photo--3">
-        <img src="/images/sky1.JPG" alt="">
-      </div>
     </div>
 
-    <!-- ── Photo reveal strip ── -->
-    <section class="photo-reveal" id="photo-reveal">
-      <div class="photo-reveal-track">
-        <div class="reveal-photo rp-1"><img src="/images/hero-ensemble.JPG"  alt="Drama Geeks ensemble"></div>
-        <div class="reveal-photo rp-2"><img src="/images/home1.JPG"           alt="Drama Geeks performance"></div>
-        <div class="reveal-photo rp-3"><img src="/images/hero-musical.JPG"   alt="Drama Geeks musical"></div>
-        <div class="reveal-photo rp-4"><img src="/images/home2.JPG"           alt="Drama Geeks students"></div>
-        <div class="reveal-photo rp-5"><img src="/images/hero-teens.JPG"     alt="Drama Geeks seniors"></div>
-        <div class="reveal-photo rp-6"><img src="/images/image01006.JPG"     alt="Drama Geeks on stage"></div>
-        <div class="reveal-photo rp-7"><img src="/images/image01017.JPG"     alt="Drama Geeks performance"></div>
-        <div class="reveal-photo rp-8"><img src="/images/image01025.JPG"     alt="Drama Geeks showcase"></div>
+    <!-- ── Photo strip marquee ── -->
+    <section class="photo-reveal" id="photo-reveal" aria-hidden="true">
+      <div class="photo-reveal-mask">
+        <div class="photo-reveal-track">
+          <div class="marquee-photo" style="width:200px;height:240px"><img src="/images/hero-ensemble.JPG"  alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:220px;height:300px"><img src="/images/home1.JPG"           alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:320px;height:260px"><img src="/images/hero-musical.JPG"   alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:180px;height:220px"><img src="/images/home2.JPG"           alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:280px;height:320px"><img src="/images/hero-teens.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:240px;height:260px"><img src="/images/image01006.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:300px;height:280px"><img src="/images/image01017.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:220px;height:260px"><img src="/images/image01025.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <!-- duplicate set for seamless loop -->
+          <div class="marquee-photo" style="width:200px;height:240px"><img src="/images/hero-ensemble.JPG"  alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:220px;height:300px"><img src="/images/home1.JPG"           alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:320px;height:260px"><img src="/images/hero-musical.JPG"   alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:180px;height:220px"><img src="/images/home2.JPG"           alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:280px;height:320px"><img src="/images/hero-teens.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:240px;height:260px"><img src="/images/image01006.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:300px;height:280px"><img src="/images/image01017.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+          <div class="marquee-photo" style="width:220px;height:260px"><img src="/images/image01025.JPG"     alt="" style="object-fit:cover;width:100%;height:100%"></div>
+        </div>
       </div>
     </section>
 
@@ -99,7 +107,7 @@
         <a href="/classes/mini-geeks/" class="class-card">
           <img src="/images/home_1.JPG" alt="Mini Geeks - ages 2 to 5" class="class-card__img">
           <div class="age">MINI GEEKS</div>
-          <div class="age-num">2<em>–</em>5</div>
+          <div class="age-num">2<em>-</em>5</div>
           <h3>Musical Theatre Fun</h3>
           <p>Disney and Musical Theatre songs, games, props and dress-ups, different themes each week. Grown-ups stay and join in!</p>
           <div class="meta">
@@ -114,7 +122,7 @@
         <a href="/classes/drama-geeks/" class="class-card">
           <img src="/images/hero-ensemble.JPG" alt="Drama Geeks - ages 4 to 15" class="class-card__img">
           <div class="age">DRAMA GEEKS</div>
-          <div class="age-num">4<em>–</em>15</div>
+          <div class="age-num">4<em>-</em>15</div>
           <h3>Stage &amp; Performance</h3>
           <p>Acting, singing and movement in a fun, mixed-age group. Students perform in full productions on real stages every term.</p>
           <div class="meta">
@@ -129,7 +137,7 @@
         <a href="/classes/associates/" class="class-card">
           <img src="/images/hero-teens.jpg" alt="DG Associates - ages 11 to 18" class="class-card__img">
           <div class="age">DG ASSOCIATES</div>
-          <div class="age-num">11<em>–</em>18</div>
+          <div class="age-num">11<em>-</em>18</div>
           <h3>Performance Academy</h3>
           <p>Advanced training for teens serious about a career in performing arts. Entry by audition only.</p>
           <div class="meta">
@@ -141,6 +149,7 @@
         </a>
 
       </div>
+      <p style="text-align:center;color:var(--mid);font-size:14px;margin-top:var(--sp-4)">Also offering: Extra Drama (ages 4–12, Saturdays) and Thursday Singing @ Cleadon Methodist. <a href="/classes/" style="color:inherit;text-decoration:underline">See all classes</a></p>
     </section>
 
     <!-- ── Testimonials ── -->
@@ -153,7 +162,7 @@
         <div class="testimonial-grid">
           <div class="testimonial-card">
             <p class="testimonial-card__stars">★★★★★</p>
-            <p class="testimonial-card__quote">"Eva has been a Drama Geek for nearly 8 years, joining when she was just 6 years old. From the very first day she was nurtured, supported and encouraged by Charlotte and her wonderful team. Over the years, Drama Geeks has provided a creative environment that has truly helped Eva to flourish as an aspiring performer. Eva has been able to take on numerous roles in countless productions, every one somehow seeming to reach new levels of brilliance!<br><br>Charlotte and her staff team at Drama Geeks are simply exceptional. They are highly skilled and experienced in all aspects of theatre production, acting and singing but also, and importantly, they have the amazing ability to connect with all students of varying ages and abilities. Charlotte and her team take the time to get to know each child, recognising strengths and weaknesses, encouraging them to push beyond their comfort zones in a way that is not at all demanding, but which builds confidence and skill.<br><br>What really strikes me with Drama Geeks is the inclusive attitude and the strong sense of community. It is more than a place for children to learn acting - it is a safe and wonderful space where they can explore their creativity, develop long standing friendships and grow in ways they won't expect. It really is a family, and we are so delighted to be a part of it.<br><br>I have watched my daughter learn so much since becoming a Drama Geek. Her acting and singing skills have come on in leaps and bounds, her confidence and self esteem has massively increased, and she has developed a real passion for theatre and for perfecting her craft. Drama Geeks gives their students the opportunity to perform regularly in full productions which give the experience of a real theatre show. They are always magnificent to watch, professionally choreographed and staged, and most importantly, full of heart and soul.<br><br>If you are looking for a drama school that offers first class tuition and training, that fosters creativity and growth and that also encourages fun and friendship, Drama Geeks is the place to be. I couldn't be more grateful for the positive impact it has had on my daughter and I would not hesitate in highly recommending Charlotte and the rest of the team to any parent who wants to give their child the best possible start in the world of theatre!"</p>
+            <p class="testimonial-card__quote">"Eva has been a Drama Geek for nearly 8 years, joining when she was just 6 years old. From the very first day she was nurtured, supported and encouraged by Charlotte and her wonderful team. Over the years, Drama Geeks has provided a creative environment that has truly helped Eva to flourish as an aspiring performer. Eva has been able to take on numerous roles in countless productions, every one somehow seeming to reach new levels of brilliance!<br><br>Charlotte and her staff team at Drama Geeks are simply exceptional. They are highly skilled and experienced in all aspects of theatre production, acting and singing but also, and importantly, they have the amazing ability to connect with all students of varying ages and abilities..."</p>
             <p class="testimonial-card__author">Eva's Mum</p>
           </div>
           <div class="testimonial-card">
@@ -349,6 +358,9 @@
           </div>
         </div>
         </div>
+      </div>
+      <div style="text-align:center;margin-top:var(--sp-6)">
+        <a href="https://www.noda.org.uk/show-reports?search=Drama+geeks" class="btn btn--outline-blue" target="_blank" rel="noopener noreferrer">View Our NODA Reviews</a>
       </div>
     </section>
 
