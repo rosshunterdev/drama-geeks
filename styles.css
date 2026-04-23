@@ -617,28 +617,31 @@ nav {
 
 .hero-stage {
   display: grid;
-  grid-template-columns: 55fr 45fr;
+  grid-template-columns: 40fr 60fr;
   gap: clamp(40px, 5vw, 72px);
   max-width: var(--col);
   margin: 0 auto;
-  padding: 32px var(--gutter) 80px clamp(80px, 12vw, 200px);
+  padding: 32px var(--gutter) 80px clamp(20px, 4vw, 60px);
   align-items: start;
+}
+.hero-center {
+  padding-right: 40px; /* pushes text away from the photo */
 }
 
 /* ── Photo cluster hero ── */
 .hero-photos {
   position: relative;
-  min-height: 520px;
+  min-height: 620px;
   padding-top: 40px;
-  padding-bottom: 160px;
+  padding-bottom: 10px;
 }
 
 .hero-yellow-card {
   position: absolute;
-  top: 10px;
-  left: -24px;
+  top: 50px;
+  left: -15px;
   width: 92%;
-  height: 320px;
+  height: 460px;
   background: var(--yellow);
   border-radius: var(--r-card);
   z-index: 0;
@@ -657,10 +660,9 @@ nav {
 
 .hero-photo-a img {
   width: 100%;
-  aspect-ratio: 3 / 4;
-  height: auto;
+  height: 500px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 10%;
   display: block;
 }
 
@@ -680,6 +682,52 @@ nav {
   width: 100%;
   aspect-ratio: 4 / 3;
   height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Hero cascade ── */
+.hero-cascade {
+  position: relative;
+  min-height: 600px;
+  margin-top: -60px;
+  overflow: visible;
+}
+
+.hero-cascade__photo {
+  position: absolute;
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+}
+
+.hero-cascade__photo--1 {
+  width: 35%;
+  max-width: 320px;
+  right: 35%;
+  top: 0;
+  transform: rotate(-2deg);
+}
+
+.hero-cascade__photo--2 {
+  width: 45%;
+  max-width: 400px;
+  right: 28%;
+  top: 200px;
+  transform: rotate(2deg);
+}
+
+.hero-cascade__photo--3 {
+  width: 55%;
+  max-width: 480px;
+  right: 48%;
+  top: 400px;
+  transform: rotate(-1deg);
+}
+
+.hero-cascade__photo img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
 }
@@ -1898,6 +1946,23 @@ a.class-card {
   font-size: 14px;
   color: var(--mid);
   line-height: 1.6;
+}
+
+.noda-mask-wrapper {
+  mask-image: linear-gradient(
+  to right,
+  transparent 0%,
+  black 15%,   /* was 8% */
+  black 85%,   /* was 92% */
+  transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
 }
 
 /* ── Gallery grid ── */
