@@ -5,15 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Drama Geeks - South Shields Performing Arts School</title>
   <meta name="description" content="Learn about Drama Geeks - South Shields' fun and friendly performing arts school for children aged 4–18, founded by Charlotte in 2017. Meet the team, see our venues, and read our story.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="/components/head-loader.js"></script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
   <!-- Navbar component -->
   <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/whats-on/productions/">Shows</a></li>
+        <li><a href="/whats-on/holiday-workshops/">Workshops</a></li>
+        <li><a href="/parents/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
 
   <main>
 
@@ -21,7 +45,7 @@
     <header class="page-header">
       <div class="page-header__inner">
         <p class="page-header__eyebrow">Who we are</p>
-        <h1 class="page-header__title">About <em>Drama Geeks</em></h1>
+        <h1 class="page-header__title">About <span class="page-header__title-accent">Drama Geeks</span></h1>
         <p class="page-header__subtitle">A community built on creativity, confidence, and a genuine love of the performing arts - since 2017.</p>
       </div>
     </header>
@@ -85,21 +109,21 @@
         <div class="link-card-grid">
 
           <a href="/about/our-story/" class="link-card">
-            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
             <p class="link-card__title">Our Story</p>
             <p class="link-card__desc">How Charlotte built Drama Geeks from the ground up - the vision, the milestones, and what makes this school special.</p>
             <span class="link-card__arrow">Read our story</span>
           </a>
 
           <a href="/about/team/" class="link-card">
-            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <p class="link-card__title">Meet the Team</p>
             <p class="link-card__desc">Get to know the dedicated, industry-experienced tutors and staff who make every Drama Geeks session a joy.</p>
             <span class="link-card__arrow">Meet the team</span>
           </a>
 
           <a href="/about/venues/" class="link-card">
-            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
+            <span class="link-card__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></span>
             <p class="link-card__title">Our Venues</p>
             <p class="link-card__desc">We run classes at three fantastic venues across South Tyneside - find out where your child's class takes place.</p>
             <span class="link-card__arrow">See our venues</span>
@@ -116,7 +140,7 @@
         <h2 class="inner-heading">Our ethos</h2>
         <ul class="skill-list">
           <li>
-            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></span>
+            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></span>
             <div>
               <p class="skill-list__title">Every child can shine</p>
               <!-- TODO: owner content -->
@@ -124,7 +148,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
+            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>
             <div>
               <p class="skill-list__title">Safe and inclusive</p>
               <!-- TODO: owner content -->
@@ -132,7 +156,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M2 10s3-3 3-8"/><path d="M22 10s-3-3-3-8"/><path d="M10 2c0 4.4-3.6 8-8 8"/><path d="M14 2c0 4.4 3.6 8 8 8"/><path d="M2 10s2 2 2 5"/><path d="M22 10s-2 2-2 5"/><path d="M8 15h8"/><path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/><path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/></svg></span>
+            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="M2 10s3-3 3-8"/><path d="M22 10s-3-3-3-8"/><path d="M10 2c0 4.4-3.6 8-8 8"/><path d="M14 2c0 4.4 3.6 8 8 8"/><path d="M2 10s2 2 2 5"/><path d="M22 10s-2 2-2 5"/><path d="M8 15h8"/><path d="M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/><path d="M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1"/></svg></span>
             <div>
               <p class="skill-list__title">Real performance experience</p>
               <!-- TODO: owner content -->
@@ -140,7 +164,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+            <span class="skill-list__icon"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--blue)" aria-hidden="true" focusable="false"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
             <div>
               <p class="skill-list__title">A genuine community</p>
               <!-- TODO: owner content -->
@@ -155,7 +179,7 @@
     <section class="cta-banner">
       <div class="cta-banner__inner">
         <p class="cta-banner__eyebrow">Come and meet us</p>
-        <h2 class="cta-banner__title">Book a <em>free trial</em></h2>
+        <h2 class="cta-banner__title">Book a <span class="cta-banner__title-accent">free trial</span></h2>
         <p class="cta-banner__subtitle">The best way to understand Drama Geeks is to experience it. We'd love to meet you and your child.</p>
         <div class="cta-banner__actions">
           <a href="/contact/#book" class="btn btn--white">Book a Free Trial</a>

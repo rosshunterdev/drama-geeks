@@ -26,7 +26,7 @@
 
   --col:    1200px;
   --gutter: clamp(var(--sp-4), 5vw, var(--sp-6));
-  --nav-h:  56px;
+  --nav-h:  64px;
 }
 
 *,
@@ -42,6 +42,12 @@ html {
   scroll-padding-top: calc(var(--nav-h) + 24px);
   background: var(--cream);
   color: var(--ink);
+}
+
+@media (min-width: 900px) {
+  html {
+    scroll-padding-top: calc(88px + 24px);
+  }
 }
 
 body {
@@ -80,6 +86,26 @@ img {
 /* Hamburger — tighter offset so ring sits close to the bars */
 .nav-toggle:focus-visible {
   outline-offset: 6px;
+}
+
+/* Pill buttons — outline follows the curve */
+.btn:focus-visible {
+  border-radius: var(--r-pill);
+}
+
+/* Card-shaped interactive elements — outline follows the card radius */
+.link-card:focus-visible,
+a.class-card:focus-visible {
+  border-radius: var(--r-card);
+}
+
+/* Mega-menu items — outline follows their respective radii */
+.mega-card:focus-visible {
+  border-radius: 10px;
+}
+
+.mega-view-all:focus-visible {
+  border-radius: 8px;
 }
 
 /* ── Top bar ── */
@@ -1174,6 +1200,7 @@ a.class-card {
 .class-grid--two-col {
   grid-template-columns: repeat(2, 1fr);
   max-width: 720px;
+  margin-inline: auto;
 }
 
 /* ── ClassCard — compact variant ── */
@@ -1360,7 +1387,7 @@ a.class-card {
   margin-bottom: var(--sp-3);
 }
 
-.page-header__title em {
+.page-header__title-accent {
   font-style: italic;
   color: var(--blue);
 }
@@ -1371,7 +1398,7 @@ a.class-card {
 }
 
 .page-header__subtitle {
-  font-size: 18px;
+  font-size: clamp(16px, 4vw, 18px);
   line-height: 1.6;
   max-width: 560px;
   opacity: 0.8;
@@ -1908,6 +1935,20 @@ a.class-card {
   gap: var(--sp-4);
 }
 
+/* Current-show feature: image + text side-by-side, collapses to single column */
+.production-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--sp-5);
+  align-items: center;
+}
+
+/* Upcoming productions: 2-up on wide screens, centered, stacks on mobile */
+.production-grid--upcoming {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  justify-content: center;
+}
+
 .production-card {
   background: white;
   border: 1px solid var(--line);
@@ -1917,7 +1958,7 @@ a.class-card {
 
 .production-card__img {
   width: 100%;
-  height: 220px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
 }
@@ -1946,6 +1987,23 @@ a.class-card {
   font-size: 14px;
   color: var(--mid);
   line-height: 1.6;
+}
+
+/* ── NODA section ── */
+.noda-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+  align-items: stretch;
+}
+
+.noda-carousel-card {
+  flex: 0 0 min(280px, 80vw);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  overflow: hidden;
 }
 
 .noda-mask-wrapper {
@@ -1994,6 +2052,17 @@ a.class-card {
 }
 @media (max-width: 480px) {
   .gallery-grid { columns: 1; }
+}
+
+.gallery-item--tall img { height: 280px; }
+.gallery-item--short img { height: 240px; }
+
+@media (max-width: 480px) {
+  .gallery-item--tall img,
+  .gallery-item--short img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
 }
 
 /* ── Contact form ── */
@@ -2392,7 +2461,7 @@ a.class-card {
   margin-bottom: var(--sp-3);
 }
 
-.cta-banner__title em {
+.cta-banner__title-accent {
   font-style: italic;
   color: var(--yellow);
 }
@@ -2967,6 +3036,10 @@ a.class-card {
   }
 
   .class-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-grid--two-col {
     grid-template-columns: 1fr;
   }
 

@@ -5,21 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Productions - Drama Geeks</title>
 <meta name="description" content="See current and upcoming Drama Geeks productions at The Customs House and The Westovian Theatre in South Shields, plus browse past shows from our performing arts school.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="/components/head-loader.js"></script>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
   <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/whats-on/productions/">Shows</a></li>
+        <li><a href="/whats-on/holiday-workshops/">Workshops</a></li>
+        <li><a href="/parents/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
 
   <main>
 
     <header class="page-header">
       <div class="page-header__inner">
         <p class="page-header__eyebrow">What's On</p>
-        <h1 class="page-header__title">Produc<em>tions</em></h1>
+        <h1 class="page-header__title">Produc<span class="page-header__title-accent">tions</span></h1>
         <p class="page-header__subtitle">From debut performances to full-scale musicals - our students take the stage every term.</p>
       </div>
     </header>
@@ -30,7 +54,7 @@
         <span class="inner-eyebrow">This term</span>
         <h2 class="inner-heading">Current production</h2>
         <!-- TODO: owner content - replace with real current show details -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-5);align-items:center">
+        <div class="production-feature-grid">
           <div>
             <img src="/images/hero-musical.JPG" alt="Current production placeholder" style="width:100%;border-radius:16px;object-fit:cover;max-height:380px">
           </div>
@@ -53,7 +77,7 @@
       <div class="inner-content">
         <span class="inner-eyebrow">Coming up</span>
         <h2 class="inner-heading">Upcoming productions</h2>
-        <div class="production-grid" style="grid-template-columns:repeat(2,minmax(0,380px));justify-content:center">
+        <div class="production-grid production-grid--upcoming">
 
           <div class="production-card">
             <div style="aspect-ratio:2/3;width:100%;overflow:hidden">
@@ -130,7 +154,7 @@
     <section class="cta-banner">
       <div class="cta-banner__inner">
         <p class="cta-banner__eyebrow">Want your child on stage?</p>
-        <h2 class="cta-banner__title">Every student <em>performs</em></h2>
+        <h2 class="cta-banner__title">Every student <span class="cta-banner__title-accent">performs</span></h2>
         <p class="cta-banner__subtitle">All Drama Geeks students take part in a production or showcase every term. Book a free trial to get started.</p>
         <div class="cta-banner__actions">
           <a href="/contact/#book" class="btn btn--white">Book a Free Trial</a>

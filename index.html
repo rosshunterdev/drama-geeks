@@ -5,15 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Drama Geeks - Fun &amp; Friendly Performing Arts School</title>
   <meta name="description" content="Drama Geeks is a fun and friendly performing arts school in South Shields for children aged 4–18. Classes in drama, musical theatre, singing and dance. Book a free trial today.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="/components/head-loader.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
   <!-- Navbar component -->
   <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/whats-on/productions/">Shows</a></li>
+        <li><a href="/whats-on/holiday-workshops/">Workshops</a></li>
+        <li><a href="/parents/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
 
   <main>
 
@@ -187,7 +212,7 @@
           <div class="section-eyebrow">RECOGNITION</div>
           <h2 class="section-title">NODA Award <em>Winners</em>.</h2>
         </div>
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--sp-3);margin-bottom:var(--sp-6);align-items:stretch">
+        <div class="noda-photo-grid">
           <img src="/images/noda/noda1.jpg" alt="Drama Geeks NODA" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px">
           <img src="/images/noda/noda2.jpg" alt="Drama Geeks NODA" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px">
           <img src="/images/noda/noda3.jpg" alt="Drama Geeks NODA" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px">
@@ -200,77 +225,77 @@
         <div class="noda-mask-wrapper">
         <div id="noda-strip" style="overflow:hidden;cursor:grab">
           <div id="noda-track" style="display:flex;gap:var(--sp-4)">
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award1.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award2.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award3.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award4.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award5.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award6.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award7.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award8.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award9.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award10.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
                 <p style="font-size:13px;color:var(--mid)"><!-- TODO: owner content -->Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden">
+            <div class="noda-carousel-card">
               <img src="/images/noda/noda-award11.jpg" alt="NODA Award" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px"><!-- TODO: owner content -->Award Name</p>
@@ -278,77 +303,77 @@
               </div>
             </div>
             <!-- duplicate set for seamless loop -->
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award1.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award2.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award3.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award4.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award5.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award6.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award7.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award8.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award9.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award10.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
                 <p style="font-size:13px;color:var(--mid)">Year</p>
               </div>
             </div>
-            <div style="flex:0 0 280px;background:white;border:1px solid var(--line);border-radius:var(--r-card);overflow:hidden" aria-hidden="true">
+            <div class="noda-carousel-card" aria-hidden="true">
               <img src="/images/noda/noda-award11.jpg" alt="" style="width:100%;aspect-ratio:16/9;object-fit:cover">
               <div style="padding:var(--sp-3)">
                 <p style="font-weight:700;margin-bottom:4px">Award Name</p>
@@ -368,7 +393,7 @@
     <section class="cta-banner">
       <div class="cta-banner__inner">
         <p class="cta-banner__eyebrow">No experience needed</p>
-        <h2 class="cta-banner__title">Book a <em>free trial</em> class</h2>
+        <h2 class="cta-banner__title">Book a <span class="cta-banner__title-accent">free trial</span> class</h2>
         <p class="cta-banner__subtitle">Come and see what Drama Geeks is all about - completely free, no obligation. We'd love to meet you.</p>
         <div class="cta-banner__actions">
           <a href="/contact/#book" class="btn btn--white">Book a Free Trial</a>

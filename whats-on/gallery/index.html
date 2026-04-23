@@ -5,21 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photo Gallery - Drama Geeks</title>
 <meta name="description" content="Browse photos from Drama Geeks classes, rehearsals and productions - a glimpse behind the scenes at South Shields' favourite performing arts school for children.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swapfamily=Inter+Tight:wght@300;400;500;600family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swapfamily=Poppins:wght@400;500;600;700family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter+Tight:wght@300;400;500;600&display=swapdisplay=swap" rel="stylesheet">
+<script src="/components/head-loader.js"></script>
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
   <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/whats-on/productions/">Shows</a></li>
+        <li><a href="/whats-on/holiday-workshops/">Workshops</a></li>
+        <li><a href="/parents/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
 
   <main>
 
     <header class="page-header page-header--cream">
       <div class="page-header__inner">
         <p class="page-header__eyebrow">What's On</p>
-        <h1 class="page-header__title">Photo <em>Gallery</em></h1>
+        <h1 class="page-header__title">Photo <span class="page-header__title-accent">Gallery</span></h1>
         <p class="page-header__subtitle">Classes, rehearsals, productions and everything in between - captured in the moment.</p>
       </div>
     </header>
@@ -31,8 +55,8 @@
           <div class="gallery-item">
             <img src="/images/hero-ensemble.JPG" alt="Drama Geeks ensemble performance">
           </div>
-          <div class="gallery-item">
-            <img src="/images/home1.JPG" alt="Drama Geeks class" style="height:280px;object-fit:cover;">
+          <div class="gallery-item gallery-item--tall">
+            <img src="/images/home1.JPG" alt="Drama Geeks class">
           </div>
           <div class="gallery-item">
             <img src="/images/hero-musical.JPG" alt="Drama Geeks musical theatre">
@@ -40,8 +64,8 @@
           <div class="gallery-item">
             <img src="/images/hero-teens.JPG" alt="Drama Geeks senior students">
           </div>
-          <div class="gallery-item">
-            <img src="/images/home2.JPG" alt="Drama Geeks students" style="height:240px;object-fit:cover;">
+          <div class="gallery-item gallery-item--short">
+            <img src="/images/home2.JPG" alt="Drama Geeks students">
           </div>
           <div class="gallery-item">
             <img src="/images/home_1.JPG" alt="Drama Geeks class activity">
@@ -74,7 +98,7 @@
     <section class="cta-banner">
       <div class="cta-banner__inner">
         <p class="cta-banner__eyebrow">See it for yourself</p>
-        <h2 class="cta-banner__title">Come and <em>join us</em></h2>
+        <h2 class="cta-banner__title">Come and <span class="cta-banner__title-accent">join us</span></h2>
         <p class="cta-banner__subtitle">The best photos can't capture the real magic. Come along to a free trial and experience it in person.</p>
         <div class="cta-banner__actions">
           <a href="/contact/#book" class="btn btn--white">Book a Free Trial</a>
