@@ -1100,7 +1100,7 @@ h1 .dot {
 .rp-6 { transition-delay: 0.58s; width: 320px; }
 .rp-7 { transition-delay: 0.7s;  width: 240px; margin-bottom: 120px; }
 .rp-8 { transition-delay: 0.82s; width: 200px; margin-top: 40px; }
-*/
+
 /* Set specific heights for the new images */
 .rp-6 img { height: 300px; }
 .rp-7 img { height: 240px; }
