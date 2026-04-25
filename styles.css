@@ -712,6 +712,28 @@ nav {
   display: block;
 }
 
+.hero-photo-a,
+.hero-photo-b,
+.about-intro__img,
+.production-feature-grid > div:first-child {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-photo-a:hover,
+.hero-photo-b:hover,
+.about-intro__img:hover,
+.production-feature-grid > div:first-child:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.production-feature-grid > div:last-child {
+  background: white;
+  border-radius: var(--r-card);
+  padding: var(--sp-5);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
 /* ── Trust strip ── */
 .trust-strip {
   padding: clamp(3rem, 6vw, 5rem) var(--gutter);
@@ -773,7 +795,6 @@ nav {
 
 .trust-strip__heading-accent {
   color: var(--blue);
-  font-style: italic;
 }
 
 .trust-strip__quote {
@@ -1170,8 +1191,8 @@ h1 .dot {
 }
 
 .section-title em {
-  font-style: italic;
   color: var(--blue);
+  font-style: normal;
 }
 
 .section-sub {
@@ -1195,7 +1216,7 @@ h1 .dot {
   border-radius: var(--r-card);
   padding: var(--sp-5) var(--sp-4);
   position: relative;
-  transition: all 0.2s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .class-card:hover {
@@ -1696,7 +1717,7 @@ a.class-card {
   padding: var(--sp-5);
   text-decoration: none;
   color: var(--ink);
-  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s, transform 0.25s ease, box-shadow 0.25s ease;
   display: flex;
   flex-direction: column;
   gap: var(--sp-3);
@@ -1848,6 +1869,7 @@ a.class-card {
   border: 1px solid var(--line);
   border-radius: var(--r-card);
   padding: var(--sp-5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .testimonial-card__quote {
@@ -1912,6 +1934,33 @@ a.class-card {
   overflow-x: auto;
   border-radius: var(--r-card);
   border: 1px solid var(--line);
+}
+
+/* ── FAQ split layout ── */
+.faq-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+  align-items: stretch;
+}
+.faq-split__img {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  width: 100%;
+}
+.faq-split__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+@media (max-width: 768px) {
+  .faq-split {
+    grid-template-columns: 1fr;
+  }
+  .faq-split__img {
+    display: none;
+  }
 }
 
 /* ── FAQ accordion ── */
@@ -1999,6 +2048,7 @@ a.class-card {
   border-radius: var(--r-card);
   overflow: hidden;
   text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .team-card__photo {
@@ -2046,6 +2096,7 @@ a.class-card {
   border: 1px solid var(--line);
   border-radius: var(--r-card);
   overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .venue-card__map {
@@ -2101,10 +2152,33 @@ a.class-card {
   align-items: center;
 }
 
-/* Upcoming productions: 2-up on wide screens, centered, stacks on mobile */
+/* Upcoming productions: horizontal rows, stacks on mobile */
 .production-grid--upcoming {
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-5);
+}
+
+.production-grid--upcoming .production-card {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+}
+
+.production-grid--upcoming .production-card__img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  max-height: 350px;
+  object-fit: contain;
+  object-position: center top;
+  background-color: #1a1a1a;
+}
+
+@media (max-width: 600px) {
+  .production-grid--upcoming .production-card {
+    grid-template-columns: 1fr;
+  }
 }
 
 .production-card {
@@ -2112,11 +2186,12 @@ a.class-card {
   border: 1px solid var(--line);
   border-radius: var(--r-card);
   overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 .production-card__img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   display: block;
 }
@@ -2145,6 +2220,19 @@ a.class-card {
   font-size: 14px;
   color: var(--mid);
   line-height: 1.6;
+}
+
+/* ── Shared card hover ── */
+.class-card:hover,
+.link-card:hover,
+.testimonial-card:hover,
+.team-card:hover,
+.venue-card:hover,
+.production-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
 /* ── NODA section ── */
