@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Drama Geeks</title>
+  <meta name="description" content="Book a free trial class or send Drama Geeks a message. No experience needed, no commitment required. Charlotte replies within 48 hours.">
+  <script src="/components/head-loader.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/shows/">Shows</a></li>
+        <li><a href="/workshops/">Workshops</a></li>
+        <li><a href="/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
+
+  <main>
+
+    <header class="page-header page-header--blue-wash">
+      <div class="page-header__inner">
+        <p class="page-header__eyebrow">We reply within 48 hours</p>
+        <h1 class="page-header__title">Get in <span class="page-header__title-accent">Touch</span></h1>
+        <p class="page-header__subtitle">Book a free trial, ask a question, or find out more about Drama Geeks.</p>
+      </div>
+    </header>
+
+    <!-- Book a Free Trial -->
+    <section class="inner-section" id="book">
+      <div class="inner-content inner-content--narrow">
+        <span class="inner-eyebrow">Free, no obligation</span>
+        <h2 class="inner-heading">Book a Free Trial</h2>
+        <p class="inner-lead">Come and try a class for free. No experience needed and no commitment required. Fill in the form and Charlotte will be in touch within 48 hours to confirm your date.</p>
+
+        <form
+          name="book-trial"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contact/thank-you/"
+          class="contact-form"
+          novalidate
+        >
+          <p class="contact-form__honeypot" aria-hidden="true">
+            <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="form-field" id="field-parent-name">
+            <label for="parent-name" class="form-label">
+              Your name <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="parent-name"
+              name="parent-name"
+              class="form-input"
+              required
+              aria-required="true"
+              aria-describedby="parent-name-error"
+              autocomplete="name"
+            >
+            <p class="form-error" id="parent-name-error" role="alert" hidden>Please enter your name.</p>
+          </div>
+
+          <div class="form-field" id="field-email">
+            <label for="email" class="form-label">
+              Email address <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+              aria-required="true"
+              aria-describedby="email-error"
+              autocomplete="email"
+            >
+            <p class="form-error" id="email-error" role="alert" hidden>Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="phone" class="form-label">
+              Phone number <span class="form-optional">(optional)</span>
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="form-input"
+              autocomplete="tel"
+            >
+          </div>
+
+          <div class="form-field" id="field-child-name">
+            <label for="child-name" class="form-label">
+              Child's name <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="child-name"
+              name="child-name"
+              class="form-input"
+              required
+              aria-required="true"
+              aria-describedby="child-name-error"
+              autocomplete="off"
+            >
+            <p class="form-error" id="child-name-error" role="alert" hidden>Please enter your child's name.</p>
+          </div>
+
+          <div class="form-field" id="field-child-age">
+            <label for="child-age" class="form-label">
+              Child's age <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <select
+              id="child-age"
+              name="child-age"
+              class="form-input form-select"
+              required
+              aria-required="true"
+              aria-describedby="child-age-error"
+            >
+              <option value="">Select age...</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+            </select>
+            <p class="form-error" id="child-age-error" role="alert" hidden>Please select your child's age.</p>
+          </div>
+
+          <div class="form-field">
+            <label for="preferred-class" class="form-label">
+              Preferred class <span class="form-optional">(optional)</span>
+            </label>
+            <select
+              id="preferred-class"
+              name="preferred-class"
+              class="form-input form-select"
+            >
+              <option value="">Select a class...</option>
+              <option value="Mini Geeks (ages 2-5)">Mini Geeks (ages 2-5)</option>
+              <option value="Drama Geeks (ages 4-15)">Drama Geeks (ages 4-15)</option>
+              <option value="DG Associates (ages 11-18)">DG Associates (ages 11-18)</option>
+              <option value="Not sure">Not sure</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="preferred-time" class="form-label">
+              Preferred day or time <span class="form-optional">(optional)</span>
+            </label>
+            <p class="form-hint" id="preferred-time-hint">For example: Saturday mornings, or after 4pm on weekdays.</p>
+            <textarea
+              id="preferred-time"
+              name="preferred-time"
+              class="form-input form-textarea"
+              rows="2"
+              aria-describedby="preferred-time-hint"
+            ></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="about-child" class="form-label">
+              Tell us about your child <span class="form-optional">(optional)</span>
+            </label>
+            <p class="form-hint" id="about-child-hint">Interests, anything they might be nervous about, or anything else worth mentioning.</p>
+            <textarea
+              id="about-child"
+              name="about-child"
+              class="form-input form-textarea"
+              rows="4"
+              aria-describedby="about-child-hint"
+            ></textarea>
+          </div>
+
+          <p class="form-privacy">
+            We only use this information to contact you about your enquiry and arrange your child's free trial. We will never share your details with third parties. <a href="/privacy/">Privacy Policy</a>.
+          </p>
+
+          <p class="form-required-note">Fields marked <span class="form-req" aria-hidden="true">*</span> are required.</p>
+
+          <button type="submit" class="btn btn--primary form-submit">Request a Free Trial</button>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- Quick contact info -->
+    <section class="inner-section inner-section--cream">
+      <div class="inner-content">
+        <div class="contact-quick">
+          <div class="contact-quick__item">
+            <span class="contact-quick__label">Email</span>
+            <a href="mailto:charlottereid89@yahoo.co.uk" class="contact-quick__value">charlottereid89@yahoo.co.uk</a>
+          </div>
+          <div class="contact-quick__item">
+            <span class="contact-quick__label">Phone</span>
+            <a href="tel:+447700000000" class="contact-quick__value">07700 000 000</a>
+          </div>
+          <div class="contact-quick__item">
+            <span class="contact-quick__label">Classes at</span>
+            <span class="contact-quick__value">Cleadon Methodist · The Customs House · The Westovian</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Send a Message -->
+    <section class="inner-section inner-section--alt" id="enquiry">
+      <div class="inner-content inner-content--narrow">
+        <span class="inner-eyebrow">Got a question?</span>
+        <h2 class="inner-heading">Send a Message</h2>
+        <p class="inner-lead">Not ready to book yet? Ask us anything. We reply within 48 hours.</p>
+
+        <form
+          name="contact-enquiry"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contact/thank-you/"
+          class="contact-form"
+          novalidate
+        >
+          <p class="contact-form__honeypot" aria-hidden="true">
+            <label>Don't fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+
+          <div class="form-field" id="field-enquiry-name">
+            <label for="enquiry-name" class="form-label">
+              Your name <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="enquiry-name"
+              name="name"
+              class="form-input"
+              required
+              aria-required="true"
+              aria-describedby="enquiry-name-error"
+              autocomplete="name"
+            >
+            <p class="form-error" id="enquiry-name-error" role="alert" hidden>Please enter your name.</p>
+          </div>
+
+          <div class="form-field" id="field-enquiry-email">
+            <label for="enquiry-email" class="form-label">
+              Email address <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="enquiry-email"
+              name="email"
+              class="form-input"
+              required
+              aria-required="true"
+              aria-describedby="enquiry-email-error"
+              autocomplete="email"
+            >
+            <p class="form-error" id="enquiry-email-error" role="alert" hidden>Please enter a valid email address.</p>
+          </div>
+
+          <div class="form-field" id="field-enquiry-message">
+            <label for="enquiry-message" class="form-label">
+              Message <span class="form-req" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="enquiry-message"
+              name="message"
+              class="form-input form-textarea"
+              rows="5"
+              required
+              aria-required="true"
+              aria-describedby="enquiry-message-error"
+            ></textarea>
+            <p class="form-error" id="enquiry-message-error" role="alert" hidden>Please enter a message.</p>
+          </div>
+
+          <p class="form-privacy">
+            We only use this information to respond to your enquiry. <a href="/privacy/">Privacy Policy</a>.
+          </p>
+
+          <p class="form-required-note">Fields marked <span class="form-req" aria-hidden="true">*</span> are required.</p>
+
+          <button type="submit" class="btn btn--primary form-submit">Send Message</button>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="/components/nav-loader.js"></script>
+  <script src="/script.js"></script>
+  <script src="/components/contact-form.js"></script>
+</body>
+</html>

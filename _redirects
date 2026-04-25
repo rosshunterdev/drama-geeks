@@ -1,0 +1,18 @@
+# Redirects for IA restructure (April 2026)
+# /whats-on/* → flat top-level pages
+# /parents/fees/* → /fees/
+
+/whats-on                       /shows            301
+/whats-on/                      /shows            301
+/whats-on/productions           /shows            301
+/whats-on/productions/          /shows            301
+/whats-on/productions/*         /shows/:splat     301
+/whats-on/holiday-workshops     /workshops        301
+/whats-on/holiday-workshops/    /workshops        301
+/whats-on/holiday-workshops/*   /workshops/:splat 301
+/whats-on/gallery               /gallery          301
+/whats-on/gallery/              /gallery          301
+/whats-on/gallery/*             /gallery/:splat   301
+/parents/fees                   /fees             301
+/parents/fees/                  /fees             301
+/parents/fees/*                 /fees/:splat      301

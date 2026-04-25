@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fees &amp; Pricing - Drama Geeks</title>
+  <meta name="description" content="Simple monthly pricing for all Drama Geeks classes. Multi-class and sibling discounts available. Payments taken automatically via ClassManager.">
+  <script src="/components/head-loader.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .discount-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-6);
+      align-items: start;
+      margin-top: var(--sp-6);
+    }
+    @media (max-width: 700px) {
+      .discount-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .discount-grid__heading {
+      font-family: var(--font-body);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: var(--sp-2);
+    }
+    .discount-grid__desc {
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.65;
+      margin-bottom: var(--sp-4);
+    }
+    .styled-table .discount {
+      color: var(--blue);
+      font-weight: 600;
+    }
+    .styled-table .price-amount {
+      font-weight: 600;
+    }
+    .styled-table .muted {
+      color: var(--mid);
+      font-size: 13px;
+      font-weight: 400;
+    }
+    .styled-table th:last-child,
+    .styled-table td:last-child {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar component -->
+  <div id="nav-placeholder"></div>
+  <noscript>
+    <style>
+      .noscript-nav{background:#0D3B5C;display:flex;align-items:center;flex-wrap:wrap;gap:20px;padding:12px 20px;font-family:system-ui,sans-serif}
+      .noscript-nav__logo{display:flex;align-items:center;gap:8px;margin-right:auto;text-decoration:none}
+      .noscript-nav__links{display:flex;flex-wrap:wrap;gap:16px;list-style:none;margin:0;padding:0}
+      .noscript-nav__links a{color:#c8dce8;font-size:14px;text-decoration:none}
+      .noscript-nav__links a:hover{color:#fff}
+      .noscript-nav__cta{background:#00A8DC;border-radius:100px;color:#fff!important;font-weight:600;padding:6px 16px}
+      .noscript-nav__cta:hover{background:#0090c0}
+    </style>
+    <nav class="noscript-nav" aria-label="Main navigation">
+      <a href="/" class="noscript-nav__logo" aria-label="Drama Geeks home">
+        <img src="/images/logo-icon.png" alt="" width="32" height="32">
+        <img src="/images/logo-text.png" alt="Drama Geeks" height="22">
+      </a>
+      <ul class="noscript-nav__links">
+        <li><a href="/classes/">Classes</a></li>
+        <li><a href="/shows/">Shows</a></li>
+        <li><a href="/workshops/">Workshops</a></li>
+        <li><a href="/fees/">Fees</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/parents/">Parents</a></li>
+        <li><a href="/contact/" class="noscript-nav__cta">Contact</a></li>
+      </ul>
+    </nav>
+  </noscript>
+
+  <main>
+
+    <!-- ── PageHeader component ── -->
+    <header class="page-header">
+      <div class="page-header__inner">
+        <p class="page-header__eyebrow">What it costs</p>
+        <h1 class="page-header__title">Fees &amp; <span class="page-header__title-accent">Pricing</span></h1>
+        <p class="page-header__subtitle">Simple monthly fees, with discounts for families doing multiple classes or with more than one child enrolled.</p>
+      </div>
+    </header>
+
+    <!-- ── Class prices ── -->
+    <section class="inner-section">
+      <div class="inner-content inner-content--narrow">
+        <span class="inner-eyebrow">Per class, per month</span>
+        <h2 class="inner-heading">Class prices</h2>
+        <p class="inner-lead">Fees are charged monthly and cover each class your child attends. Discounts for multiple classes or siblings are applied on top of these prices - see below.</p>
+        <div class="table-wrap">
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Class</th>
+                <th>Monthly fee</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Shrek Jr</strong> <span class="muted">Main Production</span></td>
+                <td><span class="price-amount">£15</span></td>
+              </tr>
+              <tr>
+                <td><strong>Hadestown</strong> <span class="muted">Teen Production</span></td>
+                <td><span class="price-amount">£15</span></td>
+              </tr>
+              <tr>
+                <td><strong>Thursday Singing</strong></td>
+                <td><span class="price-amount">£15</span></td>
+              </tr>
+              <tr>
+                <td><strong>A Midsummer Night's Dream</strong></td>
+                <td><span class="price-amount">£10</span></td>
+              </tr>
+              <tr>
+                <td><strong>Extra Drama</strong></td>
+                <td><span class="price-amount">£7.50</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mini MT</strong></td>
+                <td><span class="price-amount">£5</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Discounts ── -->
+    <section class="inner-section inner-section--alt" id="discounts">
+      <div class="inner-content">
+        <span class="inner-eyebrow">Saving more</span>
+        <h2 class="inner-heading">Discounts</h2>
+        <p class="inner-lead" style="max-width:640px">We offer two types of discount - one for children doing more than one class, and one for families with more than one child enrolled.</p>
+
+        <div class="discount-grid">
+
+          <!-- Multi-class discount -->
+          <div>
+            <h3 class="discount-grid__heading">Multi-class discount</h3>
+            <p class="discount-grid__desc">When a child attends more than one class, their most expensive class is charged at full price and each additional class gets a bigger discount. Discounts are applied in order of class price - highest price first.</p>
+            <div class="table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Class (by price, highest first)</th>
+                    <th>Discount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1st class</td>
+                    <td>Full price</td>
+                  </tr>
+                  <tr>
+                    <td>2nd class</td>
+                    <td><span class="discount">20% off</span></td>
+                  </tr>
+                  <tr>
+                    <td>3rd class</td>
+                    <td><span class="discount">30% off</span></td>
+                  </tr>
+                  <tr>
+                    <td>4th class</td>
+                    <td><span class="discount">40% off</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Sibling discount -->
+          <div>
+            <h3 class="discount-grid__heading">Sibling discount</h3>
+            <p class="discount-grid__desc">When you have more than one child enrolled, younger siblings receive a discount across all of their classes. The discount applies to the child's total fee.</p>
+            <div class="table-wrap">
+              <table class="styled-table">
+                <thead>
+                  <tr>
+                    <th>Child</th>
+                    <th>Discount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1st child</td>
+                    <td>Full price</td>
+                  </tr>
+                  <tr>
+                    <td>2nd child</td>
+                    <td><span class="discount">20% off</span></td>
+                  </tr>
+                  <tr>
+                    <td>3rd child and beyond</td>
+                    <td><span class="discount">30% off</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <p class="table-note">Not sure how a discount applies in your situation? <a href="/contact/">Get in touch</a> and we'll work it out for you.</p>
+      </div>
+    </section>
+
+    <!-- ── Payments ── -->
+    <section class="inner-section inner-section--cream">
+      <div class="inner-content inner-content--narrow">
+        <span class="inner-eyebrow">How to pay</span>
+        <h2 class="inner-heading">Payments</h2>
+        <p class="inner-lead">Fees are collected automatically each month through our ClassManager portal - there's nothing to remember or do manually.</p>
+        <div class="inner-body">
+          <p>Payments are taken on the 1st of each month. Rather than charging by term, your annual fee is spread evenly across the whole year, with planned breaks already factored in. That means the amount stays consistent every month - there's no extra charge for busy terms and no credit for holidays. What you see is what you pay, month in, month out.</p>
+          <p>When you enrol, we'll send you a link to set up your payments through ClassManager. If you have any questions about billing, just <a href="/contact/">get in touch</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTABanner component ── -->
+    <section class="cta-banner">
+      <div class="cta-banner__inner">
+        <p class="cta-banner__eyebrow">Got a question?</p>
+        <h2 class="cta-banner__title">We're happy to <span class="cta-banner__title-accent">help</span></h2>
+        <p class="cta-banner__subtitle">Not sure about fees, discounts, or how to pay? Drop us a message and we'll get back to you.</p>
+        <div class="cta-banner__actions">
+          <a href="/contact/" class="btn btn--white">Get in Touch</a>
+          <a href="/classes/" class="btn btn--outline-white">See All Classes</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer component -->
+  <div id="footer-placeholder"></div>
+
+  <script src="/components/nav-loader.js"></script>
+  <script src="/script.js"></script>
+</body>
+</html>
