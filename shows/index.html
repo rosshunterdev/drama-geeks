@@ -40,11 +40,10 @@
 
   <main>
 
-    <header class="page-header">
-      <div class="page-header__inner">
-        <p class="page-header__eyebrow">What's On</p>
-        <h1 class="page-header__title">Produc<span class="page-header__title-accent">tions</span></h1>
-        <p class="page-header__subtitle">From debut performances to full-scale musicals - our students take the stage every term.</p>
+    <header class="page-header" style="background:#ede0f7;color:var(--ink)">
+      <div class="page-header__inner" style="text-align:center">
+        <h1 class="page-header__title" style="color:var(--blue-deep);text-align:center">Produc<span class="page-header__title-accent">tions</span></h1>
+        <p class="page-header__subtitle" style="text-align:center;margin:0 auto">From debut performances to full-scale musicals - our students take the stage every term.</p>
       </div>
     </header>
 
@@ -53,19 +52,24 @@
       <div class="inner-content">
         <span class="inner-eyebrow">This term</span>
         <h2 class="inner-heading">Current production</h2>
-        <!-- TODO: owner content - replace with real current show details -->
         <div class="production-feature-grid">
-          <div>
-            <img src="/images/hero-musical.JPG" alt="Current production placeholder" style="width:100%;border-radius:16px;object-fit:cover;max-height:380px">
-          </div>
-          <div>
-            <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:var(--sp-2)"><!-- TODO: owner content -->Coming [Month Year]</p>
-            <h3 style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-0.025em;margin-bottom:var(--sp-3)"><!-- TODO: owner content -->Show Title</h3>
-            <p style="color:var(--mid);line-height:1.7;margin-bottom:var(--sp-4)"><!-- TODO: owner content -->Brief synopsis and details about the current show. Which classes are performing, dates, venue, and what audiences can expect.</p>
-            <div class="info-row" style="flex-direction:column;gap:var(--sp-2)">
-              <div class="info-row__item"><strong>Venue:</strong> <!-- TODO: owner content -->The Customs House / The Westovian Theatre</div>
-              <div class="info-row__item"><strong>Dates:</strong> <!-- TODO: owner content -->Day Month Year</div>
-              <div class="info-row__item"><strong>Tickets:</strong> <!-- TODO: owner content -->Available from [link/contact]</div>
+          <img src="/images/productions/midsommer.png" alt="A Midsummer Night's Dream" class="production-feature-img">
+          <div style="align-self: start; padding: var(--sp-5); display: flex; flex-direction: column;">
+            <p style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--blue);margin-bottom:var(--sp-2)">25 April 2026</p>
+            <h3 style="font-family:'Fraunces',serif;font-size:clamp(28px,4vw,44px);font-weight:700;letter-spacing:-0.025em;margin-bottom:var(--sp-3)">A Midsummer Night's Dream</h3>
+            <p style="color:var(--mid);line-height:1.7;margin-bottom:var(--sp-4)">Come and see our talented Drama Geeks put their fun twist on Shakespeare's "A Midsummer Night's Dream". An immersive, in-the-round, experience that is sure to make you fall in love with this classic tale!</p>
+            <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:var(--sp-4)">
+              <div class="info-row" style="gap:var(--sp-5)">
+                <div class="info-row__item" style="flex-direction:column;align-items:flex-start;gap:2px">
+                  <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue)">Venue</span>
+                  Cleadon Methodist Church
+                </div>
+                <div class="info-row__item" style="flex-direction:column;align-items:flex-start;gap:2px">
+                  <span style="font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--blue)">Date</span>
+                  25 April 2026
+                </div>
+              </div>
+              <a href="https://www.ticketsource.com/whats-on/sunderland/cleadon-methodist-church/a-midsummer-night-s-dream/2026-04-25/d-kloowwfvmqvme" class="btn btn--primary" target="_blank" rel="noopener noreferrer">Buy Tickets</a>
             </div>
           </div>
         </div>
@@ -84,22 +88,10 @@
               <img src="/images/productions/shrek.png" alt="Shrek Jr" class="production-card__img" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
             </div>
             <div class="production-card__body">
-              <p class="production-card__date">The Customs House</p>
+              <p class="production-card__date">13 June 2026 · The Customs House</p>
               <p class="production-card__title">Shrek Jr</p>
               <p class="production-card__desc">Shrek’s unique story of discovery encourages each of us to examine our prejudices, review what we believe to be our limitations and work to better understand ourselves and others.</p>
               <a href="https://www.ticketsource.com/whats-on?q=Westovians+Shrek" class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="margin-top:var(--sp-3)">Buy Tickets</a>
-            </div>
-          </div>
-
-          <div class="production-card">
-            <div style="overflow:hidden;height:100%">
-              <img src="/images/productions/midsommer.png" alt="A Midsummer Night's Dream" class="production-card__img" style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block">
-            </div>
-            <div class="production-card__body">
-              <p class="production-card__date">25 April 2026 · Cleadon Methodist Church</p>
-              <p class="production-card__title">A Midsummer Night's Dream</p>
-              <p class="production-card__desc">Come and see our talented Drama Geeks put their fun twist on Shakespeare’s “A Midsummer Night’s Dream”. An immersive, in-the-round, experience that is sure to make you fall in love with this classic tale!</p>
-              <a href="https://www.ticketsource.com/whats-on/sunderland/cleadon-methodist-church/a-midsummer-night-s-dream/2026-04-25/d-kloowwfvmqvme" class="btn btn--primary" target="_blank" rel="noopener noreferrer" style="margin-top:var(--sp-3)">Buy Tickets</a>
             </div>
           </div>
 

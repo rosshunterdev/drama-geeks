@@ -25,6 +25,84 @@
   photoRevealObserver.observe(photoRevealSection);
 })();
 
+// ── Photo strip drag-to-scroll ──
+(function () {
+  var mask  = document.querySelector('.photo-reveal-mask');
+  var track = document.querySelector('.photo-reveal-track');
+  if (!mask || !track) return;
+
+  track.style.animation = 'none';
+
+  var offset          = 0;
+  var speed           = 1;
+  var paused          = false;
+  var dragging        = false;
+  var dragStartX      = 0;
+  var dragStartOffset = 0;
+
+  function loopWidth() { return track.children[8].offsetLeft; }
+
+  function wrap(val) {
+    var w = loopWidth();
+    return ((val % w) + w) % w;
+  }
+
+  function tick() {
+    if (!paused) {
+      offset = wrap(offset + speed);
+      track.style.transform = 'translateX(-' + offset + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+
+  mask.style.cursor = 'grab';
+
+  mask.addEventListener('mouseenter', function () { paused = true; });
+  mask.addEventListener('mouseleave', function () { if (!dragging) paused = false; });
+
+  mask.addEventListener('mousedown', function (e) {
+    dragging        = true;
+    paused          = true;
+    dragStartX      = e.clientX;
+    dragStartOffset = offset;
+    mask.style.cursor = 'grabbing';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', function (e) {
+    if (!dragging) return;
+    offset = wrap(dragStartOffset + (dragStartX - e.clientX));
+    track.style.transform = 'translateX(-' + offset + 'px)';
+  });
+
+  document.addEventListener('mouseup', function () {
+    if (!dragging) return;
+    dragging = false;
+    mask.style.cursor = 'grab';
+    paused = false;
+  });
+
+  mask.addEventListener('touchstart', function (e) {
+    dragging        = true;
+    paused          = true;
+    dragStartX      = e.touches[0].clientX;
+    dragStartOffset = offset;
+  }, { passive: true });
+
+  mask.addEventListener('touchmove', function (e) {
+    if (!dragging) return;
+    offset = wrap(dragStartOffset + (dragStartX - e.touches[0].clientX));
+    track.style.transform = 'translateX(-' + offset + 'px)';
+  }, { passive: true });
+
+  mask.addEventListener('touchend', function () {
+    dragging = false;
+    paused = false;
+  });
+
+  requestAnimationFrame(tick);
+})();
+
 // ── FAQ accordion ──
 (function () {
   document.querySelectorAll('.faq-item').forEach(function (item) {
