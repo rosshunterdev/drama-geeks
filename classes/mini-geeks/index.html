@@ -6,6 +6,7 @@
   <title>Mini Musical Theatre with Macie (Ages 2–5) - Drama Geeks</title>
   <meta name="description" content="Mini Musical Theatre with Macie is Drama Geeks' class for children aged 2–5 at The Customs House, South Shields. Different Musical Theatre and Disney themes each week - songs, games, props and dress-ups. Parents stay and join in. Book a free trial.">
   <script src="/components/head-loader.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -42,7 +43,7 @@
   <main>
 
     <!-- ── PageHeader component ── -->
-    <header class="page-header page-header--yellow">
+    <header class="page-header page-header--mini-geeks">
       <div class="page-header__inner">
         <div class="mini-hero-grid">
           <div class="mini-hero-content">
@@ -67,7 +68,7 @@
         <h2 class="inner-heading">Skills we build together</h2>
         <ul class="skill-list">
           <li>
-            <span class="skill-list__icon">🎭</span>
+            <span class="skill-list__icon"><i data-lucide="drama" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Dramatic Play</p>
               <!-- TODO: owner content -->
@@ -75,7 +76,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">🎤</span>
+            <span class="skill-list__icon"><i data-lucide="mic" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Vocal Confidence</p>
               <!-- TODO: owner content -->
@@ -83,7 +84,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">🕺</span>
+            <span class="skill-list__icon"><i data-lucide="music" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Movement &amp; Rhythm</p>
               <!-- TODO: owner content -->
@@ -91,7 +92,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">🤝</span>
+            <span class="skill-list__icon"><i data-lucide="ear" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Listening &amp; Teamwork</p>
               <!-- TODO: owner content -->
@@ -99,7 +100,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">⭐</span>
+            <span class="skill-list__icon"><i data-lucide="star" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Self-Confidence</p>
               <!-- TODO: owner content -->
@@ -256,5 +257,6 @@
 
   <script src="/components/nav-loader.js"></script>
   <script src="/script.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>

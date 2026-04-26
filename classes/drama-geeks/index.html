@@ -6,6 +6,7 @@
   <title>Drama Geeks Class (Ages 4–15) - Drama Geeks</title>
   <meta name="description" content="Drama Geeks is our mixed-age performing arts class for children aged 4–15 in South Shields. Acting, singing and movement - Saturday and Thursday sessions at Cleadon Methodist Church and The Customs House.">
   <script src="/components/head-loader.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -42,19 +43,20 @@
   <main>
 
     <!-- ── PageHeader component ── -->
-    <header class="page-header">
+    <header class="page-header page-header--drama-geeks">
       <div class="page-header__inner">
-        <p class="page-header__eyebrow">Ages 4–15</p>
-        <h1 class="page-header__title">Drama <span class="page-header__title-accent">Geeks</span></h1>
-        <p class="page-header__subtitle">Our flagship class - acting, singing and movement in a fun, mixed-age group that performs on real stages every term.</p>
+        <div class="mini-hero-grid">
+          <div class="mini-hero-content">
+            <p class="page-header__eyebrow">Ages 4–15</p>
+            <h1 class="page-header__title">Drama <span class="page-header__title-accent">Geeks</span></h1>
+            <p class="page-header__subtitle">Our flagship class - acting, singing and movement in a fun, mixed-age group that performs on real stages every term.</p>
+          </div>
+          <div class="mini-hero-image">
+            <img src="/images/frozen.jpg" alt="Drama Geeks performance" />
+          </div>
+        </div>
       </div>
     </header>
-
-    <!-- Hero image -->
-    <div class="class-hero">
-      <!-- TODO: owner content - replace with a real Drama Geeks class photo -->
-      <img src="/images/hero-ensemble.JPG" alt="Drama Geeks class rehearsal" class="class-hero__img">
-    </div>
 
     <!-- Intro -->
     <section class="inner-section inner-section--cream">
@@ -72,7 +74,7 @@
         <h2 class="inner-heading">Skills we build together</h2>
         <ul class="skill-list">
           <li>
-            <span class="skill-list__icon">🎭</span>
+            <span class="skill-list__icon"><i data-lucide="theatre" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Acting Technique</p>
               <!-- TODO: owner content -->
@@ -80,7 +82,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">🎤</span>
+            <span class="skill-list__icon"><i data-lucide="mic" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Singing &amp; Vocal Work</p>
               <!-- TODO: owner content -->
@@ -88,7 +90,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">💃</span>
+            <span class="skill-list__icon"><i data-lucide="music" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Movement &amp; Dance</p>
               <!-- TODO: owner content -->
@@ -96,7 +98,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">🤝</span>
+            <span class="skill-list__icon"><i data-lucide="users" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Teamwork &amp; Ensemble</p>
               <!-- TODO: owner content -->
@@ -104,7 +106,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon">⭐</span>
+            <span class="skill-list__icon"><i data-lucide="trophy" width="28" height="28" style="color: var(--blue)"></i></span>
             <div>
               <p class="skill-list__title">Confidence &amp; Self-Expression</p>
               <!-- TODO: owner content -->
@@ -282,5 +284,6 @@
 
   <script src="/components/nav-loader.js"></script>
   <script src="/script.js"></script>
+  <script>lucide.createIcons();</script>
 </body>
 </html>
