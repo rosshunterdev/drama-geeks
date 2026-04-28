@@ -8,6 +8,7 @@
   <script src="/components/head-loader.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
+  <script src="/components/scroll-reveal.js" defer></script>
 </head>
 <body>
 
@@ -88,25 +89,25 @@
             <p><!-- TODO: owner content - real parent testimonial -->"You wouldn't believe how much you and your girls have helped her. You have helped bring so much happiness back to her life, which has brought so much back to ours."</p>
           </blockquote>
           <figcaption>
-            <span class="trust-strip__quote-name"><!-- TODO: owner content -->Drama Geeks Parent Name</span>
-            <span class="trust-strip__quote-meta"><!-- TODO: owner content -->Parent, Drama Geeks family since 2022</span>
+            <span class="trust-strip__quote-name">Drama Geeks Parent</span>
+            <span class="trust-strip__quote-meta">Parent</span>
           </figcaption>
         </figure>
 
         <ul class="trust-strip__signals">
-          <li class="trust-strip__signal">
+          <li class="trust-strip__signal reveal">
             <span class="trust-strip__signal-stat">8+</span>
             <span class="trust-strip__signal-label">years running, since 2017</span>
           </li>
-          <li class="trust-strip__signal">
+          <li class="trust-strip__signal reveal reveal--delay-1">
             <span class="trust-strip__signal-stat">100s</span>
             <span class="trust-strip__signal-label">of students through our doors</span>
           </li>
-          <li class="trust-strip__signal">
+          <li class="trust-strip__signal reveal reveal--delay-2">
             <span class="trust-strip__signal-stat">50+</span>
             <span class="trust-strip__signal-label">shows staged across Tyneside</span>
           </li>
-          <li class="trust-strip__signal">
+          <li class="trust-strip__signal reveal reveal--delay-3">
             <span class="trust-strip__signal-stat">NODA</span>
             <span class="trust-strip__signal-label">affiliated - the national theatre standard</span>
           </li>
@@ -164,7 +165,7 @@
       <div class="class-grid">
 
         <!-- ClassCard: Mini Geeks -->
-        <a href="/classes/mini-geeks/" class="class-card" data-class-id="mini-geeks">
+        <a href="/classes/mini-geeks/" class="class-card reveal" data-class-id="mini-geeks">
           <img src="/images/sky1.JPG" alt="Mini Geeks - ages 2 to 5" class="class-card__img" loading="lazy">
           <div class="age">MINI GEEKS</div>
           <div class="age-num">2<em>-</em>5</div>
@@ -179,7 +180,7 @@
         </a>
 
         <!-- ClassCard: Drama Geeks -->
-        <a href="/classes/drama-geeks/" class="class-card" data-class-id="drama-geeks">
+        <a href="/classes/drama-geeks/" class="class-card reveal reveal--delay-1" data-class-id="drama-geeks">
           <img src="/images/action-img.JPG" alt="Drama Geeks - ages 4 to 15" class="class-card__img" loading="lazy">
           <div class="age">DRAMA GEEKS</div>
           <div class="age-num">4<em>-</em>15</div>
@@ -194,7 +195,7 @@
         </a>
 
         <!-- ClassCard: DG Associates -->
-        <a href="/classes/associates/" class="class-card" data-class-id="associates">
+        <a href="/classes/associates/" class="class-card reveal reveal--delay-2" data-class-id="associates">
           <img src="/images/hero-teens.jpg" alt="DG Associates - ages 11 to 18" class="class-card__img" loading="lazy">
           <div class="age">DG ASSOCIATES</div>
           <div class="age-num">11<em>-</em>18</div>
@@ -212,7 +213,7 @@
       <p style="text-align:center;color:var(--mid);font-size:14px;margin-top:var(--sp-4)">Also offering: Extra Drama (ages 4–12, Saturdays) and Thursday Singing @ Cleadon Methodist. <a href="/classes/" style="color:inherit;text-decoration:underline">See all classes</a></p>
     </section>
 
-    <section class="tagline-strip">
+    <section class="tagline-strip reveal">
       <p>Where confidence takes the centre stage.</p>
     </section>
 
@@ -224,17 +225,17 @@
           <h2 class="section-title">Parents <em>love</em> it.</h2>
         </div>
         <div class="testimonial-grid">
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal">
             <p class="testimonial-card__stars">★★★★★</p>
             <p class="testimonial-card__quote">"Eva has been a Drama Geek for nearly 8 years, joining when she was just 6 years old. From the very first day she was nurtured, supported and encouraged by Charlotte and her wonderful team. Over the years, Drama Geeks has provided a creative environment that has truly helped Eva to flourish as an aspiring performer. Eva has been able to take on numerous roles in countless productions, every one somehow seeming to reach new levels of brilliance!</p>
             <p class="testimonial-card__author">Eva's Mum</p>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal reveal--delay-1">
             <p class="testimonial-card__stars">★★★★★</p>
             <p class="testimonial-card__quote">"My little girl joined Drama Geeks 4 years ago and she absolutely loves it! She's made so many friends and although she's quite shy, it's been so lovely to see her performing solos or in ensemble and her confidence grow. Charlotte and her team treat all their Drama Geeks like they're one big family and are so caring, nurturing and inclusive, yet give the children wonderful opportunities and a professional experience. The shows they've put on have blown me away. I can't recommend Charlotte and Drama Geeks enough! The best decision I've made to date!"</p>
             <p class="testimonial-card__author">Drama Geeks Parent</p>
           </div>
-          <div class="testimonial-card">
+          <div class="testimonial-card reveal reveal--delay-2">
             <p class="testimonial-card__stars">★★★★★</p>
             <p class="testimonial-card__quote">"You wouldn't believe how much you and your girls have helped her. You have helped bring so much happiness back to her life, which has brought so much back to ours. She's finally found her tribe. I'm so grateful for you, your team and all the kids. I love her being around kind, strong, nurturing women, and this is definitely you. Thank you from the bottom of my heart."</p>
             <p class="testimonial-card__author">Drama Geeks Parent</p>
@@ -244,7 +245,7 @@
     </section>
 
     <!-- ── Instagram Feed ── -->
-    <section class="insta-feed">
+    <section class="insta-feed" style="display:none">
       <div class="insta-feed__header">
         <p class="eyebrow">FOLLOW ALONG</p>
         <h2>We're on <em>Instagram.</em></h2>
@@ -260,7 +261,7 @@
     <section class="inner-section inner-section--cream">
       <div class="inner-content">
         <div class="noda-header-row">
-          <div class="section-head">
+          <div class="section-head reveal">
             <div class="section-eyebrow">RECOGNITION</div>
             <h2 class="section-title">NODA Award <em>Winners</em></h2>
           </div>

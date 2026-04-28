@@ -34,6 +34,7 @@
         navPlaceholder.remove();
         navLoaded = true;
         checkAllLoaded();
+        if (typeof lucide !== 'undefined') lucide.createIcons();
       })
       .catch(function (err) {
         console.error('nav-loader: could not load nav.html', err);
@@ -302,5 +303,11 @@
         observer.observe(document.getElementById(id));
       });
     })();
+
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+      loader.classList.add('fade-out');
+      setTimeout(() => loader.remove(), 400);
+    }
   }
 })();
