@@ -110,7 +110,7 @@ a.class-card:focus-visible {
 
 /* ── Top bar ── */
 .topbar {
-  background: var(--blue-deep);
+  background: #7a6040;
   color: white;
   padding: 12px var(--gutter);
   display: flex;
@@ -1185,7 +1185,7 @@ h1 .dot {
 
 .section-title {
   font-family: var(--font-body);
-  font-size: clamp(40px, 6vw, 64px);
+  font-size: clamp(28px, 7vw, 64px);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.025em;
@@ -1239,7 +1239,7 @@ h1 .dot {
 .class-card .age-num {
   font-family: 'Fraunces', serif;
   font-optical-sizing: auto;
-  font-size: 56px;
+  font-size: clamp(36px, 14vw, 56px);
   font-weight: 300;
   color: var(--ink);
   letter-spacing: -0.03em;
@@ -2268,19 +2268,37 @@ a.class-card {
 }
 
 /* ── NODA section ── */
+.noda-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+
+.noda-header-row .section-head {
+  flex: 0 0 auto;
+  max-width: 340px;
+  text-align: left;
+}
+
+.noda-header-row .noda-hero {
+  flex: 1;
+}
+
 .noda-hero {
   max-width: 880px;
   margin: var(--sp-6) auto;
-  border-radius: var(--r-card);
   overflow: hidden;
   height: 400px;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  clip-path: inset(12% 18% 5% 13% round var(--r-card));
+  filter: drop-shadow(0 10px 50px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .noda-hero:hover {
   transform: scale(1.015);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5);
+  filter: drop-shadow(0 20px 70px rgba(0, 0, 0, 0.5));
 }
 
 .noda-hero img {
@@ -2477,7 +2495,7 @@ a.class-card {
 
 .price-card__amount {
   font-family: 'Fraunces', serif;
-  font-size: 48px;
+  font-size: clamp(32px, 10vw, 48px);
   font-weight: 300;
   line-height: 1;
   color: var(--ink);
@@ -2731,7 +2749,7 @@ a.class-card {
 
 /* ── CTA Banner ── */
 .cta-banner {
-  background: var(--blue-deep);
+  background: #7a6040;
   color: white;
   padding: var(--sp-7) var(--gutter);
   text-align: center;
@@ -3344,8 +3362,27 @@ a.class-card {
     grid-template-columns: 1fr;
   }
 
-  .section-title {
-    font-size: 40px;
+}
+
+@media (max-width: 600px) {
+  .hero-photo-b {
+    right: 0;
+    bottom: -20px;
+    width: 50%;
+    transform: rotate(0deg);
+  }
+
+  .cluster-dot {
+    display: none;
+  }
+
+  .photo img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .photo-2 .photo img {
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -3809,9 +3846,37 @@ a.contact-quick__value:hover {
 .mini-hero-image img:hover {
   /* Slightly tilts back to 0 and grows by 5% */
   transform: rotate(0deg) scale(1.02);
-  
+
   /* Makes the shadow deeper as it "lifts" */
   box-shadow: 0 0 70px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 600px) {
+  .mini-hero-grid {
+    grid-template-columns: 1fr;
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+    text-align: center;
+  }
+
+  .mini-hero-content::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .mini-hero-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    bottom: 0;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .mini-hero-image img:hover {
+    transform: none;
+    box-shadow: 0 0 50px 10px rgba(0, 43, 69, 0.12);
+  }
 }
 
 .page-header--yellow + .inner-section {
@@ -3836,20 +3901,22 @@ a.contact-quick__value:hover {
   align-items: center;
   width: 100%;
   padding: 0.4rem var(--gutter);
-  background: #1e1e2e;
+  background: #7a6040;
 }
 
 .announce-left {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  border-left: 2px solid var(--yellow);
-  padding-left: 0.75rem;
+  border: 1px solid rgba(255, 210, 63, 0.35);
+  padding: 0.2rem 0.9rem;
+  border-radius: 100px;
 }
 
 .announce-right {
-  border-right: 2px solid var(--yellow);
-  padding-right: 0.75rem;
+  border: 1px solid rgba(255, 210, 63, 0.35);
+  padding: 0.2rem 0.9rem;
+  border-radius: 100px;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.75);
   letter-spacing: 0.04em;
