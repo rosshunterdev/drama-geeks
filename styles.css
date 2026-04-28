@@ -42,6 +42,7 @@ html {
   scroll-padding-top: calc(var(--nav-h) + 24px);
   background: var(--cream);
   color: var(--ink);
+  overflow-x: hidden;
 }
 
 @media (min-width: 900px) {
@@ -192,7 +193,7 @@ nav {
 }
 
 .site-footer .logo-icon {
-  filter: brightness(0) invert(1);
+  filter: none;
 }
 
 .site-footer .logo-text {
@@ -1371,7 +1372,7 @@ a.class-card {
 }
 
 .photo-reveal-mask {
-  overflow: visible;
+  overflow: hidden;
   mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
@@ -3116,6 +3117,7 @@ a.class-card {
   padding-top: var(--sp-7);
   position: relative;
   z-index: 1001;
+  border-top: 3px solid var(--blue);
 }
 
 .footer-inner {
@@ -3123,8 +3125,8 @@ a.class-card {
   margin: 0 auto;
   padding: 0 var(--gutter) var(--sp-7);
   display: grid;
-  grid-template-columns: 260px 1fr;
-  gap: var(--sp-7);
+  grid-template-columns: 240px 1fr auto;
+  gap: var(--sp-5);
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
@@ -3144,13 +3146,52 @@ a.class-card {
 .footer-logo img {
   height: 40px;
   width: auto;
-  filter: brightness(0) invert(1);
+}
+
+.footer-brand {
+  background: var(--cream);
+  border-radius: var(--r-card);
+  padding: var(--sp-4) var(--sp-5);
+  align-self: start;
+}
+
+.footer-brand .footer-logo {
+  justify-content: center;
+}
+
+.footer-brand .logo-icon {
+  height: 32px;
+}
+
+.footer-brand .logo-text {
+  height: 26px;
+  filter: none;
+}
+
+.footer-brand .footer-tagline {
+  color: var(--mid);
+  text-align: center;
+}
+
+.footer-brand .footer-location {
+  color: rgba(0,0,0,0.35);
+  text-align: center;
+}
+
+.footer-brand .footer-social-link {
+  color: var(--blue);
 }
 
 .footer-tagline {
   font-size: 14px;
   color: rgba(255,255,255,0.55);
   line-height: 1.65;
+  margin-bottom: var(--sp-2);
+}
+
+.footer-location {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
   margin-bottom: var(--sp-4);
 }
 
@@ -3162,6 +3203,11 @@ a.class-card {
 .footer-social-link {
   color: rgba(255,255,255,0.5);
   transition: color 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: -10px;
 }
 
 .footer-social-link:hover {
@@ -3170,8 +3216,18 @@ a.class-card {
 
 .footer-nav {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--sp-4);
+  /* reset styles inherited from the broad `nav` selector */
+  position: static;
+  height: auto;
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none;
+  justify-content: initial;
+  align-items: initial;
 }
 
 .footer-heading {
@@ -3179,26 +3235,30 @@ a.class-card {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: var(--blue);
   margin-bottom: var(--sp-3);
 }
 
-.footer-nav ul {
+.footer-nav ul,
+.footer-contact {
   list-style: none;
 }
 
-.footer-nav li {
+.footer-nav li,
+.footer-contact-col li {
   margin-bottom: var(--sp-2);
 }
 
-.footer-nav a {
+.footer-nav a,
+.footer-contact-col a:not(.btn) {
   font-size: 14px;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   transition: color 0.15s;
 }
 
-.footer-nav a:hover {
+.footer-nav a:hover,
+.footer-contact-col a:not(.btn):hover {
   color: white;
 }
 
@@ -3209,18 +3269,26 @@ a.class-card {
   margin-left: 4px;
 }
 
-.footer-contact {
-  list-style: none !important;
+.footer-contact-col {
+  min-width: 180px;
 }
 
-.footer-contact__book {
-  margin-top: var(--sp-4);
+.footer-contact {
+  margin-bottom: var(--sp-4);
+}
+
+.footer-contact__cta {
+  display: inline-block;
 }
 
 .footer-bottom {
+  background: rgba(0,0,0,0.25);
+  padding: var(--sp-4) var(--gutter);
+}
+
+.footer-bottom__inner {
   max-width: var(--col);
   margin: 0 auto;
-  padding: var(--sp-4) var(--gutter);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3230,7 +3298,7 @@ a.class-card {
 
 .footer-copy {
   font-size: 12px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.55);
 }
 
 .footer-legal {
@@ -3241,7 +3309,7 @@ a.class-card {
 
 .footer-legal a {
   font-size: 12px;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.55);
   text-decoration: none;
   transition: color 0.15s;
 }
@@ -3256,16 +3324,12 @@ a.class-card {
   }
 
   .footer-nav {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .footer-nav {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .footer-bottom {
+  .footer-bottom__inner {
     flex-direction: column;
     text-align: center;
   }
