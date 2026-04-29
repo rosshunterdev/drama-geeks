@@ -111,7 +111,7 @@ a.class-card:focus-visible {
 
 /* ── Top bar ── */
 .topbar {
-  background: #7a6040;
+  background: #2d1b45;
   color: white;
   padding: 12px var(--gutter);
   display: flex;
@@ -290,8 +290,9 @@ nav {
   color: var(--ink);
 }
 
-.btn--primary:hover {
-  background: #f0c800;
+.btn--primary:hover,
+.btn--yellow:hover {
+  background: #ffe066 !important;
 }
 
 /* ── Nav CTA (desktop) ── */
@@ -2816,7 +2817,13 @@ a.class-card {
 
 .btn--outline-white:hover {
   border-color: white;
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.1) !important;
+  color: white;
+}
+
+a.btn:hover,
+button.btn:hover {
+  filter: brightness(1.1);
 }
 
 .btn--outline-blue {
@@ -3112,7 +3119,7 @@ a.class-card {
 
 /* ── Footer ── */
 .site-footer {
-  background: var(--ink);
+  background: #2d1b45;
   color: white;
   padding-top: var(--sp-7);
   position: relative;
@@ -3125,9 +3132,13 @@ a.class-card {
   margin: 0 auto;
   padding: 0 var(--gutter) var(--sp-7);
   display: grid;
-  grid-template-columns: 240px 1fr auto;
+  grid-template-columns: 1.2fr repeat(4, 1fr);
   gap: var(--sp-5);
   border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-logo-block img {
+  filter: brightness(0) invert(1);
 }
 
 .footer-logo {
@@ -3215,19 +3226,12 @@ a.class-card {
 }
 
 .footer-nav {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--sp-4);
-  /* reset styles inherited from the broad `nav` selector */
-  position: static;
-  height: auto;
-  padding: 0;
-  background: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-  justify-content: initial;
-  align-items: initial;
+  display: contents;
+}
+
+.footer-col-group {
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: var(--sp-3);
 }
 
 .footer-heading {
@@ -3237,6 +3241,22 @@ a.class-card {
   text-transform: uppercase;
   color: var(--blue);
   margin-bottom: var(--sp-3);
+  text-decoration: none;
+  display: block;
+  transition: color 0.15s, background 0.15s;
+}
+
+a.footer-heading:hover {
+  color: var(--ink);
+  background: var(--yellow);
+  border-radius: 4px;
+}
+
+p.footer-heading,
+span.footer-heading {
+  pointer-events: none;
+  cursor: default;
+  color: var(--blue);
 }
 
 .footer-nav ul,
@@ -3257,9 +3277,17 @@ a.class-card {
   transition: color 0.15s;
 }
 
-.footer-nav a:hover,
+.footer-nav a:not(.footer-heading) {
+  display: inline-block;
+}
+
+.footer-nav a:not(.footer-heading):hover,
 .footer-contact-col a:not(.btn):hover {
-  color: white;
+  color: var(--ink);
+  background: var(--yellow);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin: -2px -6px;
 }
 
 .footer-age {
@@ -3279,6 +3307,19 @@ a.class-card {
 
 .footer-contact__cta {
   display: inline-block;
+}
+
+.footer-cta-stack {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  width: fit-content;
+}
+
+.footer-cta-stack .btn {
+  width: auto;
 }
 
 .footer-bottom {
@@ -3320,15 +3361,15 @@ a.class-card {
 
 @media (max-width: 1024px) {
   .footer-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-nav {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
+
   .footer-bottom__inner {
     flex-direction: column;
     text-align: center;
@@ -3967,7 +4008,7 @@ a.contact-quick__value:hover {
   align-items: center;
   width: 100%;
   padding: 0.4rem var(--gutter);
-  background: #7a6040;
+  background: #2d1b45;
 }
 
 .announce-left {
