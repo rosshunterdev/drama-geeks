@@ -9,7 +9,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <link rel="stylesheet" href="/styles.css">
 </head>
-<body>
+<body class="page-mini-geeks">
 
   <!-- Navbar component -->
   <div id="nav-placeholder"></div>
@@ -43,14 +43,16 @@
   <main>
 
     <!-- ── PageHeader component ── -->
-    <header class="page-header page-header--mini-geeks" style="background:#ede0f7;color:var(--ink)">
+    <header class="page-header page-header--mini-geeks" style="color:var(--ink)">
       <div class="page-header__inner">
         <div class="mini-hero-grid">
           <div class="mini-hero-content">
             <div>
               <p class="page-header__eyebrow">Ages 2–5</p>
-              <h1 class="page-header__title" style="color:var(--blue-deep)">Mini <span class="page-header__title-accent">Geeks</span></h1>
-              <p class="page-header__subtitle">Musical Theatre fun for little performers aged 2-5. Different themes each week with favourite Disney and Musical Theatre songs, props and dress-ups - grown-ups stay and join in!</p>
+              <div style="background:rgba(251,248,243,0.55);border-radius:var(--r-card);padding:var(--sp-4) var(--sp-5);margin-top:var(--sp-3);box-shadow:inset 0 2px 10px rgba(0,0,0,0.08),inset 0 1px 3px rgba(0,0,0,0.05),0 0 24px 10px rgba(252,232,243,0.95)">
+                <h1 class="page-header__title" style="color:var(--blue-deep)">Mini <span class="page-header__title-accent">Geeks</span></h1>
+                <p class="page-header__subtitle">Musical Theatre fun for little performers aged 2-5. Different themes each week with favourite Disney and Musical Theatre songs, props and dress-ups - grown-ups stay and join in!</p>
+              </div>
             </div>
           </div>
           <div class="mini-hero-image">
@@ -68,7 +70,7 @@
         <h2 class="inner-heading">Skills we build together</h2>
         <ul class="skill-list">
           <li>
-            <span class="skill-list__icon"><i data-lucide="drama" width="28" height="28" style="color: var(--blue)"></i></span>
+            <span class="skill-list__icon"><i data-lucide="drama" width="28" height="28" style="color: var(--pink)"></i></span>
             <div>
               <p class="skill-list__title">Dramatic Play</p>
               <!-- TODO: owner content -->
@@ -76,7 +78,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><i data-lucide="mic" width="28" height="28" style="color: var(--blue)"></i></span>
+            <span class="skill-list__icon"><i data-lucide="mic" width="28" height="28" style="color: var(--pink)"></i></span>
             <div>
               <p class="skill-list__title">Vocal Confidence</p>
               <!-- TODO: owner content -->
@@ -84,7 +86,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><i data-lucide="music" width="28" height="28" style="color: var(--blue)"></i></span>
+            <span class="skill-list__icon"><i data-lucide="music" width="28" height="28" style="color: var(--pink)"></i></span>
             <div>
               <p class="skill-list__title">Movement &amp; Rhythm</p>
               <!-- TODO: owner content -->
@@ -92,7 +94,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><i data-lucide="ear" width="28" height="28" style="color: var(--blue)"></i></span>
+            <span class="skill-list__icon"><i data-lucide="ear" width="28" height="28" style="color: var(--pink)"></i></span>
             <div>
               <p class="skill-list__title">Listening &amp; Teamwork</p>
               <!-- TODO: owner content -->
@@ -100,7 +102,7 @@
             </div>
           </li>
           <li>
-            <span class="skill-list__icon"><i data-lucide="star" width="28" height="28" style="color: var(--blue)"></i></span>
+            <span class="skill-list__icon"><i data-lucide="star" width="28" height="28" style="color: var(--pink)"></i></span>
             <div>
               <p class="skill-list__title">Self-Confidence</p>
               <!-- TODO: owner content -->
@@ -183,6 +185,7 @@
             <p class="price-card__period">approx. 10 weeks per term</p>
             <ul class="price-card__includes">
               <li>Weekly 45-minute class</li>
+              <li>Developing stage craft &amp; performance skills</li>
               <li>End-of-term showcase</li>
               <li>Progress updates for parents</li>
               <li>First trial class free</li>

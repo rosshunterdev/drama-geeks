@@ -8,6 +8,11 @@
   --mid:         #5D6577;
   --blue-wash:   #EAF7FC;
   --yellow-wash: #FFF6D1;
+  --pink:        #D4427E;
+  --pink-wash:   #FCE8F3;
+  --yellow-dark: #C9860A;
+  --purple:      #7C3DB8;
+  --purple-wash: #ede0f7;
   --line:        rgba(17, 17, 17, 0.09);
   --font-display: 'Fraunces', serif;
   --font-body:    'Poppins', sans-serif;
@@ -52,7 +57,7 @@ html {
 }
 
 body {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.6;
   background: var(--cream);
@@ -271,7 +276,7 @@ nav {
 /* ── Button component ── */
 .btn {
   display: inline-block;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.06em;
@@ -427,6 +432,25 @@ nav {
 
 .mega-card:hover {
   background: var(--blue-wash);
+}
+
+.nav-mega .mega-card--mini-geeks:hover {
+  background: var(--pink-wash);
+  box-shadow: inset 0 2px 8px rgba(212,66,126,0.12), inset 0 1px 3px rgba(212,66,126,0.08);
+}
+
+.nav-mega .mega-card--drama-geeks:hover {
+  background: rgba(255,217,62,0.35);
+  box-shadow: inset 0 2px 8px rgba(201,134,10,0.12), inset 0 1px 3px rgba(201,134,10,0.08);
+}
+
+.nav-mega .mega-card--dg-associates:hover {
+  background: var(--blue-wash);
+  box-shadow: inset 0 2px 8px rgba(0,168,220,0.12), inset 0 1px 3px rgba(0,168,220,0.08);
+}
+
+.mega-card--mini-geeks:focus-visible {
+  outline-color: var(--pink);
 }
 
 .mega-view-all-wrap,
@@ -704,7 +728,7 @@ nav {
   border-radius: var(--r-card);
   overflow: hidden;
   transform: rotate(3deg);
-  box-shadow: 0 8px 32px rgba(20, 20, 43, 0.18);
+  box-shadow: 0 0 20px 10px rgba(0, 168, 220, 0.5);
 }
 
 .hero-photo-b img {
@@ -727,6 +751,18 @@ nav {
 .about-intro__img:hover,
 .production-feature-grid > div:first-child:hover {
   transform: translateY(-4px) scale(1.02);
+}
+
+.hero-photo-a:hover {
+  box-shadow: 0 0 32px 16px rgba(255, 210, 63, 0.65);
+}
+
+.hero-photo-b:hover {
+  box-shadow: 0 0 32px 16px rgba(0, 168, 220, 0.65);
+}
+
+.about-intro__img:hover,
+.production-feature-grid > div:first-child:hover {
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 }
 
@@ -777,7 +813,7 @@ nav {
 
 .trust-strip__eyebrow {
   display: block;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -826,7 +862,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
 }
 
 .trust-strip__quote-name {
@@ -867,7 +903,7 @@ nav {
 }
 
 .trust-strip__signal-label {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   line-height: 1.45;
   color: var(--mid);
@@ -997,7 +1033,7 @@ nav {
 }
 
 h1 {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   text-align: left;
   font-size: clamp(56px, 10vw, 112px);
@@ -1076,7 +1112,7 @@ h1 .dot {
   background: var(--blue);
   color: white;
   padding: 14px var(--sp-5);
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.06em;
@@ -1091,18 +1127,77 @@ h1 .dot {
 }
 
 .hero-venues {
-  margin-top: var(--sp-5);
-  padding-top: var(--sp-3);
-  border-top: 1px solid var(--line);
-  font-size: 12px;
-  color: var(--mid);
-  line-height: 1.5;
+  position: absolute;
+  bottom: -40px;
+  left: -80px;
+  width: 44%;
+  background: rgba(255, 248, 220, 0.92);
+  border-radius: var(--r-card);
+  padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.hero-venues__label {
+.hero-venues:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.07);
+  transform: translateY(-2px);
+}
+
+.hero-venues__heading {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-venues__heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--blue), transparent);
+  opacity: 0.4;
+}
+
+.hero-venues__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 8px;
+}
+
+.hero-venues__list span {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-venues__list span::before {
+  content: '–';
+  color: var(--blue);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.hero-venues__sub {
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.04em;
-  margin-right: 6px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue);
+  opacity: 0.85;
 }
 
 /* ── Photo cluster ── */
@@ -1220,12 +1315,22 @@ h1 .dot {
   padding: var(--sp-5) var(--sp-4);
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .class-card:hover {
   border-color: var(--blue);
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(20, 20, 43, 0.08);
+}
+
+.class-card--mini-geeks:hover {
+  border-color: var(--pink);
+}
+
+.class-card--drama-geeks:hover {
+  border-color: var(--yellow-dark);
 }
 
 .class-card .age {
@@ -1238,7 +1343,7 @@ h1 .dot {
 }
 
 .class-card .age-num {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(36px, 14vw, 56px);
   font-weight: 300;
@@ -1276,6 +1381,7 @@ h1 .dot {
   font-weight: 500;
   padding-top: var(--sp-3);
   border-top: 1px solid var(--line);
+  margin-top: auto;
 }
 
 .class-card .meta span {
@@ -1287,7 +1393,16 @@ h1 .dot {
 a.class-card {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+a.class-card--mini-geeks:hover {
+  border-color: var(--pink);
+}
+
+a.class-card--drama-geeks:hover {
+  border-color: var(--yellow-dark);
 }
 
 /* ── ClassCard — image variant ── */
@@ -1302,8 +1417,10 @@ a.class-card {
 
 /* ── ClassCard — CTA link ── */
 .class-card__cta {
-  display: inline-block;
+  display: block;
+  text-align: center;
   margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -1317,7 +1434,7 @@ a.class-card {
 }
 
 .class-card .meta span::before {
-  content: '→ ';
+  content: '• ';
   color: var(--blue);
 }
 
@@ -1473,7 +1590,7 @@ a.class-card {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 500;
   color: var(--ink);
@@ -1564,7 +1681,7 @@ a.class-card {
 }
 
 .page-header__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(36px, 6vw, 64px);
   font-weight: 700;
@@ -1769,7 +1886,7 @@ a.class-card {
 }
 
 .stat-item__number {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: clamp(40px, 6vw, 64px);
   font-weight: 300;
   line-height: 1;
@@ -1854,7 +1971,7 @@ a.class-card {
 
 .session-step::before {
   content: counter(step-counter, decimal-leading-zero);
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: 40px;
   font-weight: 300;
   color: var(--blue);
@@ -1873,6 +1990,36 @@ a.class-card {
   font-size: 14px;
   color: var(--mid);
   line-height: 1.6;
+}
+
+/* ── FAQ cards ── */
+.faq-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+  margin-top: var(--sp-4);
+}
+
+.faq-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: var(--r-card);
+  padding: var(--sp-5);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-card__q {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: var(--sp-3);
+}
+
+.faq-card__a {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--mid);
+  font-style: italic;
 }
 
 /* ── Testimonial cards ── */
@@ -1965,6 +2112,13 @@ a.class-card {
   border-radius: var(--r-card);
   overflow: hidden;
   width: 100%;
+  box-shadow: 0 0 20px 10px rgba(124, 61, 184, 0.5);
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.faq-split__img:hover {
+  transform: rotate(1deg) scale(1.02);
+  box-shadow: 0 0 32px 16px rgba(124, 61, 184, 0.65);
 }
 .faq-split__img img {
   width: 100%;
@@ -2006,7 +2160,7 @@ a.class-card {
   background: none;
   border: none;
   cursor: pointer;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
   color: var(--ink);
@@ -2261,7 +2415,8 @@ a.class-card {
 .testimonial-card:hover,
 .team-card:hover,
 .venue-card:hover,
-.production-card:hover {
+.production-card:hover,
+.faq-card:hover {
   border-color: var(--blue);
   transform: translateY(-4px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
@@ -2412,7 +2567,7 @@ a.class-card {
 .form-group input,
 .form-group select,
 .form-group textarea {
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   color: var(--ink);
   background: white;
@@ -2495,7 +2650,7 @@ a.class-card {
 }
 
 .price-card__amount {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: clamp(32px, 10vw, 48px);
   font-weight: 300;
   line-height: 1;
@@ -2685,7 +2840,7 @@ a.class-card {
 }
 
 .upcoming-item__day {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: 32px;
   font-weight: 300;
   line-height: 1;
@@ -2771,7 +2926,7 @@ a.class-card {
 }
 
 .cta-banner__title {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-size: clamp(28px, 5vw, 48px);
   font-weight: 700;
@@ -3044,7 +3199,7 @@ a.class-card {
 }
 
 .not-found__number {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: clamp(80px, 20vw, 160px);
   font-weight: 300;
   line-height: 1;
@@ -3134,7 +3289,7 @@ a.class-card {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 15px;
   letter-spacing: -0.01em;
@@ -3509,7 +3664,7 @@ a.class-card {
 }
 
 .session-card__production {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-optical-sizing: auto;
   font-style: italic;
   font-size: 15px;
@@ -3537,7 +3692,7 @@ a.class-card {
 }
 
 .age-finder__label {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 400;
   font-style: italic;
@@ -3553,7 +3708,7 @@ a.class-card {
 }
 
 .age-finder__btn {
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -3584,7 +3739,7 @@ a.class-card {
 
 .age-finder__hint {
   display: block;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -3625,7 +3780,7 @@ a.class-card {
   right: 12px;
   background: var(--yellow);
   color: var(--ink);
-  font-family: 'Inter Tight', sans-serif;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -3811,7 +3966,7 @@ a.contact-quick__value:hover {
   border-radius: 50%;
   background: var(--yellow);
   color: var(--ink);
-  font-family: 'Fraunces', serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
   display: flex;
@@ -3860,8 +4015,34 @@ a.contact-quick__value:hover {
 
 .tagline-strip {
   text-align: center;
-  padding: var(--sp-xl) var(--gutter);
+  padding: var(--sp-6) var(--gutter);
   background: var(--yellow);
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.tagline-strip::before,
+.tagline-strip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.tagline-strip::before {
+  top: -10px;
+  background: linear-gradient(to bottom, transparent, rgba(255,217,62,0.4));
+}
+
+.tagline-strip::after {
+  bottom: -10px;
+  background: linear-gradient(to top, transparent, rgba(255,217,62,0.4));
 }
 
 .tagline-strip p {
@@ -4051,7 +4232,7 @@ a.contact-quick__value:hover {
   min-height: 0;
 }
 .page-header--mini-geeks {
-  background: #fef9e7 !important;
+  background: var(--pink-wash) !important;
   color: var(--dark) !important;
   padding-top: var(--sp-4);
   padding-bottom: 0;
@@ -4059,25 +4240,157 @@ a.contact-quick__value:hover {
 }
 
 .page-header--drama-geeks {
-  background: #fff0f0 !important;
-  color: var(--dark) !important;
+  background: var(--yellow-wash) !important;
+  color: var(--ink) !important;
   padding-top: var(--sp-4);
   padding-bottom: 0;
   overflow: visible;
+}
+
+.page-header--drama-geeks .page-header__eyebrow {
+  color: var(--blue-deep) !important;
+}
+
+.page-header--drama-geeks .page-header__title-accent {
+  color: var(--yellow-dark);
 }
 
 .page-header--dg-associates {
-  background: #f5f0ff !important;
-  color: var(--dark) !important;
+  background: var(--blue-wash) !important;
+  color: var(--ink) !important;
   padding-top: var(--sp-4);
   padding-bottom: 0;
   overflow: visible;
 }
 
-.page-header--drama-geeks .eyebrow,
-.page-header--dg-associates .eyebrow,
-.page-header--mini-geeks .eyebrow {
-  color: var(--blue) !important;
+.page-header--dg-associates .page-header__eyebrow {
+  color: var(--blue-deep) !important;
+}
+
+.page-header--dg-associates .page-header__title-accent {
+  color: var(--blue);
+}
+
+.page-header--mini-geeks .page-header__eyebrow {
+  color: var(--blue-deep) !important;
+}
+
+.page-header--mini-geeks .page-header__title-accent {
+  color: var(--pink);
+}
+
+/* ── Mini Geeks page accent overrides ── */
+.page-mini-geeks .inner-eyebrow {
+  color: var(--pink);
+}
+
+.page-mini-geeks .inner-section--alt {
+  background: var(--pink-wash);
+}
+
+.page-mini-geeks .session-step::before {
+  color: var(--pink);
+}
+
+.page-mini-geeks .venue-info {
+  border-left-color: var(--pink);
+}
+
+.page-mini-geeks .price-card__label {
+  color: var(--pink);
+}
+
+.page-mini-geeks .price-card--featured {
+  border-color: var(--pink);
+}
+
+.page-mini-geeks .price-card__badge {
+  background: var(--pink);
+}
+
+.page-mini-geeks .price-card__includes li::before {
+  color: var(--pink);
+}
+
+.page-mini-geeks .testimonial-card:hover {
+  border-color: var(--pink);
+}
+
+/* ── Drama Geeks page accent overrides ── */
+.page-drama-geeks .inner-eyebrow {
+  color: var(--yellow-dark);
+}
+
+.page-drama-geeks .inner-section--alt {
+  background: var(--yellow-wash);
+}
+
+.page-drama-geeks .session-step::before {
+  color: var(--yellow-dark);
+}
+
+.page-drama-geeks .venue-info {
+  border-left-color: var(--yellow-dark);
+}
+
+.page-drama-geeks .price-card--featured {
+  border-color: var(--yellow-dark);
+}
+
+.page-drama-geeks .price-card__label {
+  color: var(--yellow-dark);
+}
+
+.page-drama-geeks .price-card__badge {
+  background: var(--yellow);
+  color: var(--ink);
+}
+
+.page-drama-geeks .price-card__includes li::before {
+  color: var(--yellow-dark);
+}
+
+.page-drama-geeks .testimonial-card:hover {
+  border-color: var(--yellow);
+}
+
+/* ── DG Associates page accent overrides ── */
+.page-dg-associates .price-card--featured {
+  border-color: var(--blue);
+}
+
+/* ── About page header ── */
+.page-header--about {
+  background: var(--purple-wash) !important;
+  color: var(--ink) !important;
+  padding-top: var(--sp-4);
+  padding-bottom: 0;
+  overflow: visible;
+}
+
+.page-header--about .page-header__eyebrow {
+  color: var(--blue-deep) !important;
+}
+
+.page-header--about .page-header__title-accent {
+  color: var(--purple);
+}
+
+/* ── About page accent overrides ── */
+.page-about .inner-eyebrow {
+  color: var(--purple);
+}
+
+.page-about .inner-section--alt {
+  background: var(--purple-wash);
+}
+
+.page-about .link-card__arrow {
+  color: var(--purple);
+}
+
+.page-about .link-card:hover {
+  border-color: var(--purple);
 }
 
 /* ── Page loader ── */
