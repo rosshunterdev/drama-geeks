@@ -139,6 +139,16 @@
           mobileNav.classList.remove('is-open');
         });
       });
+
+      // Close button inside the drawer
+      var closeBtn = mobileNav.querySelector('.mobile-nav-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          navToggle.setAttribute('aria-expanded', 'false');
+          mobileNav.classList.remove('is-open');
+          navToggle.focus();
+        });
+      }
     }
 
     // ── Mobile accordion (sub-menu parent buttons) ──
@@ -156,23 +166,46 @@
     // ── Nav pill hover effect ──
     var navLinks = document.querySelector('.nav-links');
     var navInner = document.querySelector('.nav-inner');
+    var navLeft  = document.querySelector('.nav-left');
     if (navLinks && navInner && window.innerWidth > 900) {
       var pill = document.createElement('div');
       pill.className = 'nav-pill';
       pill.setAttribute('aria-hidden', 'true');
-      navLinks.appendChild(pill);
+      navInner.appendChild(pill);
 
       var PAD = 10;
-      navLinks.querySelectorAll('.nav-item').forEach(function (item) {
-        if (item.classList.contains('nav-cta')) return;
-        item.addEventListener('mouseenter', function () {
-          pill.style.left    = (item.offsetLeft - PAD) + 'px';
-          pill.style.width   = (item.offsetWidth + PAD * 2) + 'px';
-          pill.style.opacity = '1';
+
+      function positionPill(el, height, pad) {
+        var p         = (pad !== undefined) ? pad : PAD;
+        var elRect    = el.getBoundingClientRect();
+        var innerRect = navInner.getBoundingClientRect();
+        pill.style.left    = (elRect.left - innerRect.left - p) + 'px';
+        pill.style.width   = (elRect.width + p * 2) + 'px';
+        pill.style.height  = (height || 36) + 'px';
+        pill.style.opacity = '1';
+      }
+
+      if (navLeft) {
+        navLeft.addEventListener('mouseenter', function () {
+          positionPill(navLeft, 56);
         });
+      }
+
+      navLinks.querySelectorAll('.nav-item').forEach(function (item) {
+        if (item.classList.contains('nav-cta')) {
+          var btn = item.querySelector('.btn');
+          item.addEventListener('mouseenter', function () {
+            var target = btn || item;
+            positionPill(target, target.offsetHeight || 40, 0);
+          });
+        } else {
+          item.addEventListener('mouseenter', function () {
+            positionPill(item, 36);
+          });
+        }
       });
 
-      navLinks.addEventListener('mouseleave', function () {
+      navInner.addEventListener('mouseleave', function () {
         pill.style.opacity = '0';
       });
     }
