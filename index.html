@@ -68,13 +68,28 @@
           <div class="hero-photo-b">
             <img src="/images/sky1.JPG" alt="Drama Geeks students in performance">
           </div>
-          <div class="hero-venues">
-            <p class="hero-venues__heading">Locations</p>
-            <div class="hero-venues__list">
-              <span>Cleadon Methodist Church</span>
-              <span>The Customs House</span>
-              <span>The Westovian Theatre</span>
-            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Venue strip ── -->
+    <section class="venues-strip reveal">
+      <div class="venues-strip__inner">
+        <p class="venues-strip__label">Where to find us</p>
+        <div class="venues-strip__locations">
+          <div class="venues-strip__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Cleadon Methodist Church</span>
+          </div>
+          <div class="venues-strip__divider"></div>
+          <div class="venues-strip__item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>The Customs House</span>
+          </div>
+          <div class="venues-strip__divider"></div>
+          <div class="venues-strip__item venues-strip__item--sub">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>The Westovian Theatre <em>Productions &amp; Summer School</em></span>
           </div>
         </div>
       </div>
@@ -268,7 +283,6 @@
     </section>
 
     <!-- ── NODA Awards ── -->
-    <!-- TODO: owner content - replace placeholder award names/years with real data from Charlotte -->
     <section class="inner-section inner-section--cream">
       <div class="inner-content">
 
@@ -278,105 +292,91 @@
           <p class="section-sub">Recognised by the National Operatic &amp; Dramatic Association for excellence in youth theatre.</p>
         </div>
 
-        <div class="noda-awards-grid">
+        <!-- Part 1: action photo gallery -->
+        <div class="noda-gallery reveal">
+          <div class="noda-gallery__photo"><img src="/images/noda/noda1.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+          <div class="noda-gallery__photo"><img src="/images/noda/noda2.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+          <div class="noda-gallery__photo"><img src="/images/noda/noda3.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+          <div class="noda-gallery__photo"><img src="/images/noda/noda4.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+          <div class="noda-gallery__photo"><img src="/images/noda/noda5.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+          <div class="noda-gallery__photo"><img src="/images/noda/noda6.jpg" alt="Drama Geeks NODA performance" loading="lazy"></div>
+        </div>
 
-          <div class="award-card reveal">
-            <img src="/images/noda/noda-award1.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Youth Production</h3>
-              <p class="award-card__year">2023</p>
+        <hr class="noda-section-divider">
+
+        <!-- Part 2: awards carousel -->
+        <!-- TODO: owner content - replace placeholder award names/years with real data from Charlotte -->
+        <div class="noda-carousel reveal" id="noda-carousel">
+
+          <button class="noda-carousel__btn noda-carousel__btn--prev" aria-label="Previous award">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="noda-carousel__btn noda-carousel__btn--next" aria-label="Next award">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+
+          <div class="noda-carousel__viewport">
+            <div class="noda-carousel__track">
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award1.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award2.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award3.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award4.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award5.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award6.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award7.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award8.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award9.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award10.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
+              <div class="award-card noda-carousel__card">
+                <img src="/images/noda/noda-award11.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
+              </div>
+
             </div>
           </div>
 
-          <div class="award-card reveal reveal--delay-1">
-            <img src="/images/noda/noda-award2.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Outstanding Musical Direction</h3>
-              <p class="award-card__year">2023</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-2">
-            <img src="/images/noda/noda-award3.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Choreography</h3>
-              <p class="award-card__year">2022</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal">
-            <img src="/images/noda/noda-award4.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Youth Performance</h3>
-              <p class="award-card__year">2022</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-1">
-            <img src="/images/noda/noda-award5.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Outstanding Youth Production</h3>
-              <p class="award-card__year">2021</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-2">
-            <img src="/images/noda/noda-award6.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Direction</h3>
-              <p class="award-card__year">2021</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal">
-            <img src="/images/noda/noda-award7.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Youth Actress</h3>
-              <p class="award-card__year">2020</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-1">
-            <img src="/images/noda/noda-award8.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Most Promising Newcomer</h3>
-              <p class="award-card__year">2020</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-2">
-            <img src="/images/noda/noda-award9.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Ensemble</h3>
-              <p class="award-card__year">2019</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal">
-            <img src="/images/noda/noda-award10.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Outstanding Achievement</h3>
-              <p class="award-card__year">2019</p>
-            </div>
-          </div>
-
-          <div class="award-card reveal reveal--delay-1">
-            <img src="/images/noda/noda-award11.jpg" alt="NODA Award" class="award-card__photo" loading="lazy">
-            <div class="award-card__body">
-              <p class="award-card__ribbon">★ NODA Award</p>
-              <h3 class="award-card__name">Best Musical</h3>
-              <p class="award-card__year">2018</p>
-            </div>
+          <div class="noda-carousel__dots" aria-hidden="true">
+            <button class="noda-carousel__dot is-active" aria-label="Award 1"></button>
+            <button class="noda-carousel__dot" aria-label="Award 2"></button>
+            <button class="noda-carousel__dot" aria-label="Award 3"></button>
+            <button class="noda-carousel__dot" aria-label="Award 4"></button>
+            <button class="noda-carousel__dot" aria-label="Award 5"></button>
+            <button class="noda-carousel__dot" aria-label="Award 6"></button>
+            <button class="noda-carousel__dot" aria-label="Award 7"></button>
+            <button class="noda-carousel__dot" aria-label="Award 8"></button>
+            <button class="noda-carousel__dot" aria-label="Award 9"></button>
+            <button class="noda-carousel__dot" aria-label="Award 10"></button>
+            <button class="noda-carousel__dot" aria-label="Award 11"></button>
           </div>
 
         </div>
@@ -417,75 +417,65 @@
   <script src="/components/age-finder.js"></script>
   <script>
   (function () {
-    var strip = document.getElementById('noda-strip');
-    var track = document.getElementById('noda-track');
-    if (!strip || !track) return;
+    var carousel = document.getElementById('noda-carousel');
+    if (!carousel) return;
+    var track = carousel.querySelector('.noda-carousel__track');
+    var cards = Array.from(carousel.querySelectorAll('.noda-carousel__card'));
+    var dots = Array.from(carousel.querySelectorAll('.noda-carousel__dot'));
+    var btnPrev = carousel.querySelector('.noda-carousel__btn--prev');
+    var btnNext = carousel.querySelector('.noda-carousel__btn--next');
+    var current = 0;
+    var total = cards.length;
+    var timer;
 
-    var offset = 0;
-    var speed = 1;
-    var paused = false;
-    var dragging = false;
-    var dragStartX = 0;
-    var dragStartOffset = 0;
-
-    function loopWidth() {
-      // offsetLeft of card 12 (index 11) = exact width of one set including its trailing gap
-      return track.children[11].offsetLeft;
+    function getVisible() {
+      return 1;
     }
 
-    function wrap(val) {
-      var w = loopWidth();
-      return ((val % w) + w) % w;
+    function maxIndex() {
+      return Math.max(0, total - getVisible());
     }
 
-    function tick() {
-      if (!paused) {
-        offset = wrap(offset + speed);
-        track.style.transform = 'translateX(-' + offset + 'px)';
-      }
-      requestAnimationFrame(tick);
+    function goTo(n) {
+      current = Math.max(0, Math.min(n, maxIndex()));
+      var gap = parseInt(window.getComputedStyle(track).gap) || 24;
+      track.style.transform = 'translateX(-' + current * (cards[0].offsetWidth + gap) + 'px)';
+      dots.forEach(function (d, i) { d.classList.toggle('is-active', i === current); });
     }
 
-    strip.addEventListener('mouseenter', function () { paused = true; });
-    strip.addEventListener('mouseleave', function () { if (!dragging) paused = false; });
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
 
-    strip.addEventListener('mousedown', function (e) {
-      dragging = true;
-      paused = true;
-      dragStartX = e.clientX;
-      dragStartOffset = offset;
-      strip.style.cursor = 'grabbing';
-      e.preventDefault();
-    });
-    document.addEventListener('mousemove', function (e) {
-      if (!dragging) return;
-      offset = wrap(dragStartOffset + (dragStartX - e.clientX));
-      track.style.transform = 'translateX(-' + offset + 'px)';
-    });
-    document.addEventListener('mouseup', function () {
-      if (!dragging) return;
-      dragging = false;
-      strip.style.cursor = 'grab';
-      paused = false;
+    function startAuto() {
+      timer = setInterval(function () {
+        goTo(current >= maxIndex() ? 0 : current + 1);
+      }, 4000);
+    }
+
+    function stopAuto() { clearInterval(timer); }
+
+    btnPrev.addEventListener('click', function () { stopAuto(); prev(); startAuto(); });
+    btnNext.addEventListener('click', function () { stopAuto(); next(); startAuto(); });
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { stopAuto(); goTo(i); startAuto(); });
     });
 
-    strip.addEventListener('touchstart', function (e) {
-      dragging = true;
-      paused = true;
-      dragStartX = e.touches[0].clientX;
-      dragStartOffset = offset;
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+
+    var touchX = 0;
+    carousel.addEventListener('touchstart', function (e) {
+      touchX = e.touches[0].clientX;
     }, { passive: true });
-    strip.addEventListener('touchmove', function (e) {
-      if (!dragging) return;
-      offset = wrap(dragStartOffset + (dragStartX - e.touches[0].clientX));
-      track.style.transform = 'translateX(-' + offset + 'px)';
+    carousel.addEventListener('touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) { stopAuto(); dx < 0 ? next() : prev(); startAuto(); }
     }, { passive: true });
-    strip.addEventListener('touchend', function () {
-      dragging = false;
-      paused = false;
-    });
 
-    requestAnimationFrame(tick);
+    window.addEventListener('resize', function () { goTo(current); });
+
+    goTo(0);
+    startAuto();
   })();
   </script>
 </body>
